@@ -416,3 +416,231 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+.text-highlight {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ==========================================================================
+   Hero Section (@ContentStrategist, @RecruiterExp, @VisualDesigner)
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(3.5rem, 7vw, 6.5rem) clamp(3rem, 5vw, 5rem);
+}
+
+.hero-glow {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 960px;
+  height: 480px;
+  background: radial-gradient(ellipse at 40% 35%, rgba(0, 229, 255, 0.14) 0%, rgba(124, 58, 237, 0.12) 45%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+}
+
+/* Availability Status Badge */
+.badge-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.35rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-5);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.08);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--brand-peacock);
+  box-shadow: 0 0 8px var(--brand-peacock);
+  position: relative;
+  flex-shrink: 0;
+  animation: pulse-peacock 2.2s infinite ease-out;
+}
+
+@keyframes pulse-peacock {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(0, 229, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 229, 255, 0);
+  }
+}
+
+/* Hero Typography */
+.hero-title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-5);
+  text-wrap: balance;
+  color: var(--color-text-primary);
+}
+
+.hero-description {
+  font-size: var(--font-size-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  max-width: 65ch;
+  margin-bottom: var(--space-8);
+  text-wrap: pretty;
+}
+
+/* Hero Dual Action Buttons */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-10);
+}
+
+.btn-hero-primary {
+  padding: 0.85rem 1.75rem;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-inverse);
+  background: var(--gradient-brand);
+  border-radius: var(--radius-md);
+  box-shadow: var(--glow-peacock-md);
+  border: 1px solid var(--brand-peacock);
+  min-height: 48px;
+  min-width: 44px;
+}
+
+.btn-hero-primary:hover,
+.btn-hero-primary:focus-visible {
+  color: var(--color-text-inverse);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.45), 0 0 35px rgba(157, 78, 221, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-hero-secondary {
+  padding: 0.85rem 1.75rem;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-1);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  min-height: 48px;
+  min-width: 44px;
+}
+
+.btn-hero-secondary:hover,
+.btn-hero-secondary:focus-visible {
+  border-color: var(--brand-peacock);
+  background-color: var(--color-surface-2);
+  color: #ffffff;
+  box-shadow: var(--glow-peacock-sm);
+  transform: translateY(-2px);
+}
+
+/* Secondary Recruiter Action Strip */
+.hero-recruiter-strip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.recruiter-label {
+  font-size: var(--font-size-xs);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.recruiter-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.recruiter-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  min-height: 44px;
+  padding-inline: var(--space-1);
+}
+
+.recruiter-link:hover,
+.recruiter-link:focus-visible {
+  color: var(--brand-peacock);
+}
+
+.icon-svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-recruiter-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .recruiter-links {
+    gap: var(--space-3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot {
+    animation: none !important;
+  }
+
+  .btn-hero-primary:hover,
+  .btn-hero-secondary:hover {
+    transform: none !important;
+  }
+}
