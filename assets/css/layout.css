@@ -99,13 +99,18 @@ body {
   margin: 0;
 }
 
+/* Body scroll lock when mobile navigation drawer is active */
+body.nav-open {
+  overflow: hidden;
+}
+
 /* Header & Main Landmarks */
 .site-header {
   position: sticky;
   top: 0;
   z-index: var(--z-nav);
   height: var(--header-height);
-  background-color: rgba(7, 10, 18, 0.85);
+  background-color: rgba(11, 15, 25, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border-subtle);

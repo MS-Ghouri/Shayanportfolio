@@ -1,9 +1,296 @@
 /**
  * Modular Component Styles & Primitives
  * Portfolio Engineering Team
- * Personas: @VisualDesigner & @FrontendEng
+ * Personas: @VisualDesigner, @FrontendEng, @AccessibilityEng, @UXArchitect
  * Standard: WCAG 2.2 Level AA
  */
+
+/* ==========================================================================
+   Brand Logo
+   ========================================================================== */
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  transition: color var(--transition-fast);
+}
+
+.brand-logo:hover {
+  color: #ffffff;
+}
+
+.brand-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--gradient-brand);
+  box-shadow: var(--glow-peacock-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.brand-logo:hover .brand-dot {
+  transform: scale(1.3);
+  box-shadow: var(--glow-peacock-md);
+}
+
+/* ==========================================================================
+   Navigation Bar (Desktop Default)
+   ========================================================================== */
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.nav-link {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  padding: var(--space-2) var(--space-1);
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--brand-peacock);
+}
+
+/* Subtle animated underline on hover */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-brand);
+  transition: width var(--transition-fast);
+  border-radius: var(--radius-full);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  width: 100%;
+}
+
+/* Secondary CTA in Nav ("Projects") */
+.nav-link-projects {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Primary CTA Button in Nav ("Let's Talk") */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-left: var(--space-2);
+}
+
+.btn-talk {
+  position: relative;
+  padding: 0.55rem 1.25rem;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.15) 0%, rgba(157, 78, 221, 0.25) 100%);
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-talk:hover,
+.btn-talk:focus-visible {
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.25) 0%, rgba(157, 78, 221, 0.4) 100%);
+  border-color: var(--brand-peacock);
+  box-shadow: var(--glow-dual);
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Mobile Navigation Toggle Button
+   WCAG 2.2 AA: 44px min touch target, aria-expanded animated hamburger
+   ========================================================================== */
+.nav-toggle {
+  display: none;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.nav-toggle:hover {
+  border-color: var(--brand-peacock);
+  background-color: rgba(0, 229, 255, 0.08);
+}
+
+.nav-toggle-icon {
+  display: block;
+  position: relative;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-text-primary);
+  transition: background-color var(--transition-fast);
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-text-primary);
+  left: 0;
+  transition: transform var(--transition-base), top var(--transition-base);
+}
+
+.nav-toggle-icon::before {
+  top: -7px;
+}
+
+.nav-toggle-icon::after {
+  top: 7px;
+}
+
+/* Animated Close State (X icon when aria-expanded="true") */
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon {
+  background-color: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+  background-color: var(--brand-peacock);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+  background-color: var(--brand-peacock);
+}
+
+/* ==========================================================================
+   Responsive Mobile Navigation Drawer (<= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(100vh - var(--header-height));
+    background-color: rgba(11, 15, 25, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--color-border-subtle);
+    padding: var(--space-8) var(--container-padding);
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-6);
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity var(--transition-base), transform var(--transition-base), visibility var(--transition-base);
+  }
+
+  .nav-menu.is-open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2);
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--font-size-lg);
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  .nav-link:hover,
+  .nav-link:focus-visible {
+    background-color: rgba(0, 229, 255, 0.08);
+    border-color: rgba(0, 229, 255, 0.2);
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-actions {
+    margin-left: 0;
+    margin-top: var(--space-4);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border-subtle);
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-talk {
+    width: 100%;
+    min-height: 48px;
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .nav-menu,
+  .nav-toggle-icon,
+  .nav-toggle-icon::before,
+  .nav-toggle-icon::after,
+  .btn-talk {
+    transition: none !important;
+    transform: none !important;
+  }
+}
 
 /* ==========================================================================
    Button Primitives
