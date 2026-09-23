@@ -1,47 +1,53 @@
 /**
- * Modular Component Styles
- * Lead Personas: @VisualDesigner & @FrontendDev
+ * Modular Component Styles & Primitives
+ * Portfolio Engineering Team
+ * Personas: @VisualDesigner & @FrontendEng
+ * Standard: WCAG 2.2 Level AA
  */
 
-/* Button Primitives */
+/* ==========================================================================
+   Button Primitives
+   ========================================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
   padding: 0.625rem 1.25rem;
+  font-family: var(--font-sans);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
-  line-height: 1;
+  line-height: var(--leading-none);
   border-radius: var(--radius-md);
   border: 1px solid transparent;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
   cursor: pointer;
   white-space: nowrap;
 }
 
 .btn-primary {
-  background-color: var(--color-accent-primary);
-  color: #ffffff;
-  border-color: var(--color-accent-primary);
+  background-color: var(--brand-peacock);
+  color: var(--color-text-inverse);
+  border-color: var(--brand-peacock);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
-  color: #ffffff;
+  background-color: var(--brand-peacock-teal);
+  border-color: var(--brand-peacock-teal);
+  box-shadow: var(--glow-peacock-sm);
 }
 
 .btn-secondary {
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-1);
   color: var(--color-text-primary);
-  border-color: var(--color-border);
+  border-color: var(--color-border-subtle);
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-surface-hover);
-  border-color: var(--color-border-focus);
+  background-color: var(--color-surface-2);
+  border-color: var(--brand-peacock);
   color: #ffffff;
+  box-shadow: var(--glow-peacock-sm);
 }
 
 .btn-sm {
@@ -50,7 +56,9 @@
   border-radius: var(--radius-sm);
 }
 
-/* Credibility Category Badges */
+/* ==========================================================================
+   Credibility Category Badges
+   ========================================================================== */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -60,46 +68,64 @@
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
   border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
-  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  background-color: var(--color-surface-1);
   color: var(--color-text-secondary);
 }
 
 .badge-core {
-  background-color: rgba(37, 99, 235, 0.15);
-  border-color: rgba(56, 189, 248, 0.3);
-  color: var(--color-accent-cyan);
+  background-color: var(--brand-peacock-subtle);
+  border-color: rgba(0, 229, 255, 0.3);
+  color: var(--brand-peacock);
+}
+
+.badge-purple {
+  background-color: var(--brand-purple-subtle);
+  border-color: rgba(157, 78, 221, 0.35);
+  color: var(--brand-purple-magenta);
 }
 
 .badge-working {
-  background-color: rgba(16, 185, 129, 0.12);
+  background-color: var(--color-success-subtle);
   border-color: rgba(16, 185, 129, 0.3);
   color: #34d399;
 }
 
 .badge-learning {
-  background-color: rgba(245, 158, 11, 0.12);
+  background-color: var(--color-warning-subtle);
   border-color: rgba(245, 158, 11, 0.3);
   color: #fbbf24;
 }
 
-/* Card Primitives */
+/* ==========================================================================
+   Card Primitives
+   ========================================================================== */
 .card {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background-color: var(--color-surface-1);
+  border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-panel);
 }
 
 .card:hover {
-  border-color: rgba(56, 189, 248, 0.4);
-  box-shadow: var(--shadow-elevated);
+  border-color: var(--color-border-active);
+  box-shadow: var(--shadow-elevated), var(--glow-peacock-sm);
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .card:hover {
     transform: translateY(-2px);
   }
+}
+
+/* ==========================================================================
+   Gradient Text Utility
+   ========================================================================== */
+.text-gradient {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

@@ -1,9 +1,11 @@
 /**
  * Modern Accessible CSS Reset & Baseline
- * Lead Personas: @FrontendDev & @AccessibilityAuditor
+ * Portfolio Engineering Team
+ * Personas: @FrontendEng & @AccessibilityEng
  * Standard: WCAG 2.2 Level AA
  */
 
+/* 1. Box-sizing border-box for all elements and pseudo-elements */
 *,
 *::before,
 *::after {
@@ -12,118 +14,97 @@
   padding: 0;
 }
 
+/* 2. HTML baseline & smooth scrolling (scoped to prefers-reduced-motion: no-preference) */
 html {
-  font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: var(--leading-normal);
-  color: var(--color-text-primary);
-  background-color: var(--color-canvas);
   -webkit-text-size-adjust: 100%;
   tab-size: 4;
-  scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: no-preference) {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
   }
 }
 
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-canvas);
-  color: var(--color-text-primary);
-  overflow-x: hidden;
-}
-
-/* Accessible focus styling for all interactive elements */
-:focus-visible {
-  outline: var(--focus-ring);
-  outline-offset: var(--focus-ring-offset);
-  border-radius: var(--radius-sm);
-}
-
-:focus:not(:focus-visible) {
-  outline: none;
-}
-
-/* Headings Baseline */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: var(--font-weight-bold);
-  line-height: var(--leading-tight);
-  color: var(--color-text-primary);
-  letter-spacing: -0.02em;
-}
-
-p {
-  color: var(--color-text-secondary);
-  line-height: var(--leading-relaxed);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-a:hover {
-  color: var(--color-accent-cyan);
-}
-
-ul, ol {
-  list-style: none;
-}
-
-img, svg, picture, video {
+/* 3. Fluid media rules */
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-button, input, select, textarea {
-  font: inherit;
+/* 4. Form and button typography inheritance */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
   color: inherit;
-  background: transparent;
+  margin: 0;
+  padding: 0;
   border: none;
+  background: transparent;
 }
 
-button {
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
   cursor: pointer;
 }
 
-/* Accessible Skip Link */
-.skip-link {
-  position: absolute;
-  top: -100px;
-  left: 1rem;
-  z-index: var(--z-skip-link);
-  padding: var(--space-2) var(--space-4);
-  background-color: var(--color-accent-primary);
-  color: #ffffff;
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  border-radius: var(--radius-sm);
-  transition: top var(--transition-fast);
+/* 5. List and link resets */
+ul,
+ol {
+  list-style: none;
 }
 
-.skip-link:focus {
-  top: 1rem;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-/* Visually Hidden Utility for Screen Readers */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+/* 6. Typography heading and paragraph baseline */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--font-h1); }
+h2 { font-size: var(--font-h2); }
+h3 { font-size: var(--font-h3); }
+h4 { font-size: var(--font-h4); }
+h5 { font-size: var(--font-h5); }
+h6 { font-size: var(--font-h6); }
+
+p {
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  text-wrap: pretty;
+}
+
+/* 7. Strict prefers-reduced-motion accessibility guardrail */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
