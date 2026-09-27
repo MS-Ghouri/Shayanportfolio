@@ -91,12 +91,6 @@
   width: 100%;
 }
 
-/* Secondary CTA in Nav ("Projects") */
-.nav-link-projects {
-  color: var(--color-text-primary);
-  font-weight: var(--font-weight-semibold);
-}
-
 /* Primary CTA Button in Nav ("Let's Talk") */
 .nav-actions {
   display: flex;
