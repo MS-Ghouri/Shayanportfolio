@@ -4065,4 +4065,215 @@
   }
 }
 
+/* ==========================================================================
+   Contact & Final CTA Redesign (@Architect, @FrontendEng, @UXArchitect)
+   Step 11: High-Conversion Contact Section, Primary WhatsApp Action, Compact Direct Methods
+   ========================================================================== */
+
+/* Layout & Column Balance */
+@media (min-width: 992px) {
+  .contact-section .contact-grid {
+    grid-template-columns: 1fr 1.15fr;
+    align-items: start;
+    gap: clamp(1.75rem, 3vw, 2.5rem);
+  }
+}
+
+/* Primary CTA Box (Lead Conversion Area) */
+.primary-cta-box {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(37, 99, 235, 0.03) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  position: relative;
+}
+
+.primary-cta-action {
+  padding-top: var(--space-2);
+}
+
+.btn-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.9rem 1.65rem;
+  background-color: var(--accent);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.35);
+  transition: all var(--transition-fast);
+  min-height: 48px;
+}
+
+.btn-cta-primary:hover,
+.btn-cta-primary:focus-visible {
+  background-color: var(--accent-hover);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(59, 130, 246, 0.5);
+}
+
+.btn-cta-primary .icon-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.btn-cta-primary:hover .icon-arrow {
+  transform: translateX(4px);
+}
+
+/* Compact Contact Methods Grid */
+.contact-methods-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.methods-heading-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--foreground-subtle);
+}
+
+.contact-methods-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.contact-method-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.contact-method-link {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-method-link:hover,
+.contact-method-link:focus-visible {
+  background: rgba(59, 130, 246, 0.05);
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: translateY(-1px);
+}
+
+.method-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.method-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--accent-light);
+  flex-shrink: 0;
+}
+
+.method-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.method-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.method-label {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--foreground);
+  line-height: var(--leading-tight);
+}
+
+.method-sub {
+  font-size: 0.725rem;
+  color: var(--foreground-muted);
+}
+
+.method-link-arrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-light);
+  font-weight: var(--font-weight-medium);
+  transition: transform var(--transition-fast);
+}
+
+.contact-method-link:hover .method-link-arrow {
+  transform: translateX(3px);
+  color: #FFFFFF;
+}
+
+.method-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.method-link {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--foreground-muted);
+  text-decoration: none;
+  word-break: break-all;
+  transition: color var(--transition-fast);
+}
+
+.method-link:hover,
+.method-link:focus-visible {
+  color: var(--accent-light);
+}
+
+/* Reduced Motion for Contact */
+@media (prefers-reduced-motion: reduce) {
+  .btn-cta-primary,
+  .btn-cta-primary:hover,
+  .contact-method-link,
+  .contact-method-link:hover {
+    transition: none;
+    transform: none;
+  }
+
+  .btn-cta-primary .icon-arrow,
+  .contact-method-link:hover .method-link-arrow {
+    transform: none;
+  }
+}
+
+
 
