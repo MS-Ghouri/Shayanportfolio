@@ -2567,7 +2567,8 @@
 }
 
 /* ==========================================================================
-   Specialized Services & Offerings Section (@ProductStrategist, @FrontendEng)
+   Services & Solutions Section (@FrontendEng, @ProductStrategist, @VisualDesigner)
+   6-Card Client-Oriented Offering Architecture
    ========================================================================== */
 .services-section {
   position: relative;
@@ -2576,24 +2577,19 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-6);
-}
-
-@media (min-width: 992px) {
-  .services-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+  margin-top: var(--space-6);
 }
 
 .service-card {
-  background-color: var(--surface);
-  border: 1px solid var(--border-subtle);
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-medium);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--space-4);
   box-shadow: var(--shadow-sm);
   position: relative;
   overflow: hidden;
@@ -2602,124 +2598,74 @@
 
 .service-card:hover,
 .service-card:focus-within {
-  border-color: var(--border-hover);
-  box-shadow: var(--shadow-md);
   transform: translateY(-2px);
+  border-color: var(--border-hover);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.05);
 }
 
-/* Distinct Collaborative Team Delivery Card Styling */
-.service-card--team {
-  background-color: var(--surface);
-  border-color: rgba(99, 102, 241, 0.2);
+/* Featured Service Highlight (WordPress Development) */
+.service-card--featured {
+  border-color: rgba(59, 130, 246, 0.3);
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.03) 0%, rgba(13, 15, 22, 0.95) 100%);
 }
 
-.service-card--team:hover,
-.service-card--team:focus-within {
-  border-color: rgba(99, 102, 241, 0.4);
+.service-card--featured:hover,
+.service-card--featured:focus-within {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(59, 130, 246, 0.1);
 }
 
 .service-card-header {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: 0.35rem;
 }
 
-.service-badge {
-  display: inline-flex;
+.service-card-meta {
+  display: flex;
   align-items: center;
-  gap: var(--space-2);
-  align-self: flex-start;
-  padding: 0.25rem 0.65rem;
-  font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
-  border-radius: var(--radius-full);
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
 }
 
-.service-badge--solo {
+.service-number {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: var(--font-weight-semibold);
   color: var(--accent-light);
-  background-color: var(--accent-subtle);
-  border: 1px solid var(--accent-border);
+  letter-spacing: var(--tracking-wider);
 }
 
-.service-badge--team {
-  color: #A5B4FC;
-  background-color: var(--accent-indigo-subtle);
-  border: 1px solid rgba(99, 102, 241, 0.3);
-}
-
-.service-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: var(--radius-full);
-  background-color: var(--accent);
-}
-
-.service-dot--purple {
-  background-color: var(--accent-indigo);
-}
-
-.service-delivery-model {
+.service-category-tag {
   font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
+  font-size: 0.6875rem;
   color: var(--foreground-subtle);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
 }
 
-.service-delivery-model--team {
-  color: #A5B4FC;
-  font-weight: var(--font-weight-medium);
-}
-
 .service-title {
   font-family: var(--font-sans);
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-bold);
   color: var(--foreground);
-  line-height: var(--leading-snug);
+  line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
-}
-
-.service-card-body {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  flex: 1;
+  margin: 0;
 }
 
 .service-desc {
   font-size: var(--font-size-sm);
   color: var(--foreground-muted);
   line-height: var(--leading-relaxed);
+  margin: 0;
 }
 
-/* Mandatory Team Transparency Disclaimer */
-.service-team-disclaimer {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-4);
-  background-color: rgba(99, 102, 241, 0.06);
-  border: 1px solid rgba(99, 102, 241, 0.2);
-  border-left: 3px solid var(--accent-indigo);
-  border-radius: var(--radius-sm);
-  font-size: var(--font-size-xs);
-  color: var(--foreground-muted);
-  line-height: var(--leading-normal);
-}
-
-.service-team-disclaimer strong {
-  color: var(--foreground);
-}
-
-.disclaimer-icon {
-  color: #A5B4FC;
-  font-weight: bold;
-  flex-shrink: 0;
-}
-
-/* Deliverables */
+/* Key Capabilities / Deliverables List */
 .service-deliverables-block {
   display: flex;
   flex-direction: column;
@@ -2729,13 +2675,13 @@
   border-top: 1px solid var(--border-subtle);
 }
 
-.deliverables-heading {
+.service-deliverables-title {
   font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
+  font-size: 0.6875rem;
   text-transform: uppercase;
-  letter-spacing: var(--tracking-wide);
+  letter-spacing: var(--tracking-wider);
   color: var(--foreground-subtle);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
 }
 
 .service-deliverables-list {
@@ -2744,13 +2690,13 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: 0.35rem;
 }
 
 .service-deliverables-list li {
   position: relative;
   padding-left: 1.25rem;
-  font-size: var(--font-size-sm);
+  font-size: 0.8125rem;
   color: var(--foreground-muted);
   line-height: var(--leading-normal);
 }
@@ -2760,56 +2706,129 @@
   position: absolute;
   left: 0;
   color: var(--accent);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: bold;
 }
 
-.service-card--team .service-deliverables-list li::before {
-  color: #818CF8;
-}
-
-/* Footer & Action CTA */
-.service-card-footer {
+/* Technology Pills inside Service Card */
+.service-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
   padding-top: var(--space-3);
-  margin-top: auto;
+  border-top: 1px solid var(--border-subtle);
 }
 
-.service-cta-link {
+.service-tech-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--foreground-subtle);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+  line-height: 1.3;
+}
+
+/* Verified Link for Landing Page */
+.service-external-link {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
   font-family: var(--font-mono);
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
   color: var(--accent-light);
   text-decoration: none;
-  padding: var(--space-2) 0;
-  transition: color var(--transition-fast), transform var(--transition-fast);
-  min-height: 40px;
+  padding-top: var(--space-2);
+  transition: all var(--transition-fast);
 }
 
-.service-cta-link .cta-arrow {
-  display: inline-block;
-  transition: transform var(--transition-fast);
-}
-
-.service-cta-link:hover,
-.service-cta-link:focus-visible {
+.service-external-link:hover,
+.service-external-link:focus-visible {
   color: #FFFFFF;
+  transform: translateX(2px);
 }
 
-.service-cta-link:hover .cta-arrow,
-.service-cta-link:focus-visible .cta-arrow {
-  transform: translateX(4px);
+/* Services Bottom CTA Block */
+.services-footer-cta {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  background: var(--surface-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  box-shadow: var(--shadow-sm);
 }
 
-.service-cta-link--team {
-  color: #A5B4FC;
+.services-cta-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  max-width: 60ch;
 }
 
-.service-cta-link--team:hover,
-.service-cta-link--team:focus-visible {
-  color: #FFFFFF;
+.services-cta-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-widest);
+  color: var(--accent-light);
+  text-transform: uppercase;
+}
+
+.services-cta-heading {
+  font-family: var(--font-sans);
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--foreground);
+  line-height: var(--leading-tight);
+  margin: 0;
+}
+
+.services-cta-sub {
+  font-size: var(--font-size-sm);
+  color: var(--foreground-muted);
+  line-height: var(--leading-normal);
+  margin: 0;
+}
+
+/* Responsive Breakpoints for Services Grid */
+@media (max-width: 1024px) and (min-width: 681px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .service-card {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .services-footer-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .services-footer-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card:hover,
+  .service-external-link:hover {
+    transform: none !important;
+  }
 }
 
 /* ==========================================================================
