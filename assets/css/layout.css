@@ -106,6 +106,33 @@ body {
 /* Body scroll lock when mobile navigation drawer is active */
 body.nav-open {
   overflow: hidden;
+  touch-action: none;
+}
+
+/* Smooth scrolling with sticky header offset */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Offset anchor scrolling to account for sticky navbar */
+section[id],
+.section[id],
+#hero,
+#about,
+#skills,
+#experience,
+#projects,
+#services,
+#process,
+#proof,
+#contact {
+  scroll-margin-top: calc(var(--header-height, 4.25rem) + 1.25rem);
 }
 
 /* ==========================================================================
@@ -116,13 +143,19 @@ body.nav-open {
   top: 0;
   z-index: var(--z-nav);
   height: var(--header-height);
-  background-color: rgba(9, 10, 15, 0.82);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border-subtle);
+  background-color: rgba(9, 10, 15, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
   display: flex;
   align-items: center;
-  transition: background-color var(--transition-base), border-color var(--transition-base);
+  transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.site-header.is-scrolled {
+  background-color: rgba(9, 10, 15, 0.94);
+  border-bottom: 1px solid var(--border-medium);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
 .site-main {
@@ -131,8 +164,8 @@ body.nav-open {
 
 .site-footer {
   border-top: 1px solid var(--border-subtle);
-  background-color: var(--color-canvas-subtle);
-  padding-block: var(--space-12);
+  background-color: #07080C;
+  padding-block: var(--space-16) var(--space-8);
 }
 
 /* ==========================================================================
