@@ -158,7 +158,7 @@ export function initNavigation() {
           navLinkMap.forEach((link, id) => {
             if (id === currentId) {
               link.classList.add('is-active');
-              link.setAttribute('aria-current', 'true');
+              link.setAttribute('aria-current', 'page');
             } else {
               link.classList.remove('is-active');
               link.removeAttribute('aria-current');
