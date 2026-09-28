@@ -950,7 +950,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .status-dot,
-  .floating-badge-dot {
+  .floating-badge-dot,
+  .currently-dot {
     animation: none !important;
   }
 
@@ -958,7 +959,8 @@
   .btn-hero-secondary:hover,
   .recruiter-link:hover,
   .hero-code-window:hover,
-  .about-card:hover,
+  .about-philosophy-card:hover,
+  .about-meta-card:hover,
   .skills-tier-card:hover,
   .project-card:hover,
   .service-card:hover {
@@ -967,13 +969,8 @@
 }
 
 /* ==========================================================================
-   About & Academic Foundation Section (@ContentStrategist, @RecruiterExp)
+   Section Global Utilities
    ========================================================================== */
-.about-section {
-  position: relative;
-  border-top: 1px solid var(--border-subtle);
-}
-
 .section-eyebrow {
   display: inline-block;
   font-family: var(--font-mono);
@@ -996,158 +993,291 @@
   text-wrap: balance;
 }
 
-.about-narrative {
-  max-width: 78ch;
-  margin-bottom: var(--space-10);
+/* ==========================================================================
+   About & Personal Foundation Section (@Architect, @BrandStrategist, @FrontendEng)
+   Two-column personal introduction with philosophy quote & metadata grid
+   ========================================================================== */
+.about-section {
+  position: relative;
+  border-top: 1px solid var(--border-subtle);
+  padding-block: clamp(4.5rem, 8vw, 7rem);
 }
 
-.about-narrative p {
-  font-size: var(--font-size-base);
-  line-height: var(--leading-relaxed);
-  color: var(--foreground-muted);
-  margin-bottom: var(--space-4);
-}
-
-.about-narrative p:last-child {
-  margin-bottom: 0;
-}
-
-.about-lead {
-  font-size: var(--font-size-lg) !important;
-  color: var(--foreground) !important;
-}
-
-.about-cards-grid {
+.about-layout {
   display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.35fr);
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+/* Left Column: Intro Header, Philosophy Quote & Supporting Focus */
+.about-col-intro {
+  display: flex;
+  flex-direction: column;
   gap: var(--space-6);
 }
 
-@media (min-width: 768px) {
-  .about-cards-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+.about-intro-header {
+  display: flex;
+  flex-direction: column;
 }
 
-.about-card {
-  background-color: var(--surface);
-  border: 1px solid var(--border-subtle);
+.about-title {
+  font-size: clamp(2rem, 3.4vw, 2.75rem);
+  line-height: 1.2;
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: 0;
+  color: var(--foreground);
+}
+
+.about-philosophy-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-medium);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+  gap: var(--space-3);
   position: relative;
-  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(8px);
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
 }
 
-.about-card:hover,
-.about-card:focus-within {
+.about-philosophy-card:hover {
   border-color: var(--border-hover);
-  box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
 
-.about-card-header {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-}
-
-.about-card-icon {
+.philosophy-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-md);
-  background-color: var(--accent-subtle);
-  color: var(--accent-light);
-  border: 1px solid var(--accent-border);
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  color: var(--accent);
   flex-shrink: 0;
 }
 
-.about-card-icon-purple {
-  background-color: var(--accent-indigo-subtle);
-  color: #A5B4FC;
-  border-color: rgba(99, 102, 241, 0.25);
+.icon-quote {
+  width: 1.125rem;
+  height: 1.125rem;
 }
 
-.about-card-title {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
+.about-philosophy-quote {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  font-style: italic;
+  line-height: var(--leading-relaxed);
   color: var(--foreground);
-  line-height: var(--leading-snug);
-  letter-spacing: var(--tracking-tight);
+  letter-spacing: -0.01em;
 }
 
-.about-card-body {
+.about-focus-pills {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  font-size: var(--font-size-sm);
-  color: var(--foreground-muted);
-  line-height: var(--leading-normal);
-  flex: 1;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
 }
 
-.about-meta-row {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-.about-meta-label {
+.focus-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.8rem;
   font-family: var(--font-mono);
   font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--foreground-muted);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.focus-pill:hover {
+  color: var(--foreground);
+  border-color: var(--border-medium);
+}
+
+/* Right Column: Bio Narrative, Currently Block & Metadata Grid */
+.about-col-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.about-bio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.about-bio p {
+  font-size: var(--font-size-base);
+  line-height: var(--leading-relaxed);
+  color: var(--foreground-muted);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.about-lead {
+  font-size: clamp(1.05rem, 1.3vw, 1.15rem) !important;
+  color: var(--foreground) !important;
+  line-height: var(--leading-relaxed);
+}
+
+/* "Currently" Spotlight Card */
+.about-currently-card {
+  background: linear-gradient(180deg, rgba(22, 25, 34, 0.9) 0%, rgba(17, 19, 25, 0.95) 100%);
+  border: 1px solid var(--border-medium);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  box-shadow: var(--shadow-xs);
+  backdrop-filter: blur(8px);
+}
+
+.currently-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  color: var(--accent-light);
+}
+
+.currently-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: var(--radius-full);
+  background-color: var(--accent);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.7);
+  flex-shrink: 0;
+  animation: pulse-accent 2.4s infinite ease-out;
+}
+
+.currently-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: var(--leading-relaxed);
+  color: var(--foreground-muted);
+}
+
+/* Compact Metadata Highlights Grid */
+.about-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.about-meta-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.about-meta-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
-  letter-spacing: var(--tracking-wide);
+  letter-spacing: var(--tracking-wider);
   color: var(--foreground-subtle);
 }
 
-.about-meta-value {
+.meta-title {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: var(--font-weight-semibold);
   color: var(--foreground);
-  font-weight: var(--font-weight-medium);
+  line-height: var(--leading-snug);
 }
 
-.about-tag-cloud {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.375rem;
-  margin-top: var(--space-2);
-}
-
-.tag-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.15rem 0.5rem;
-  font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
-  border-radius: var(--radius-sm);
-  background-color: var(--surface-elevated);
-  border: 1px solid var(--border-subtle);
+.meta-sub {
+  font-size: 0.8125rem;
   color: var(--foreground-muted);
+  line-height: 1.4;
 }
 
-.about-feature-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
+/* Responsive Behavior for About Section */
+@media (max-width: 991px) {
+  .about-layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .about-col-intro,
+  .about-col-content {
+    display: contents;
+  }
+
+  .about-intro-header {
+    order: 1;
+  }
+
+  .about-bio {
+    order: 2;
+  }
+
+  .about-currently-card {
+    order: 3;
+  }
+
+  .about-meta-grid {
+    order: 4;
+  }
+
+  .about-philosophy-card {
+    order: 5;
+  }
+
+  .about-focus-pills {
+    order: 6;
+  }
 }
 
-.about-feature-item {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-2);
-  font-size: var(--font-size-sm);
-}
+@media (max-width: 640px) {
+  .about-section {
+    padding-block: var(--space-10) var(--space-8);
+  }
 
-.about-feature-check {
-  color: var(--accent);
-  flex-shrink: 0;
-  margin-top: 2px;
+  .about-title {
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
+  }
+
+  .about-meta-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .about-philosophy-card {
+    padding: var(--space-4) var(--space-5);
+  }
+
+  .about-currently-card {
+    padding: var(--space-4) var(--space-5);
+  }
 }
 
 /* ==========================================================================
