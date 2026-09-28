@@ -23,6 +23,13 @@ body {
   overflow-x: hidden;
 }
 
+/* Inline code and technical element wrapping safeguard */
+code, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  word-break: break-word;
+}
+
 /* ==========================================================================
    Accessible Keyboard Focus Rings (:focus-visible)
    High-visibility electric blue accent with positive outline offset
