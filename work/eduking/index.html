@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Metadata (@SEOEngineer) -->
+  <title>EduKing Case Study | LMS &amp; Custom Plugin Architecture — Muhammad Shayan Ghouri</title>
+  <meta name="description"
+    content="Case study of EduKing — an Australian online learning platform customized with bespoke WordPress plugin architecture, LearnDash, BuddyBoss, and WooCommerce Stripe integration.">
+  <meta name="author" content="Muhammad Shayan Ghouri">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ms-ghouri.github.io/Shayanportfolio/work/eduking/">
+  <meta name="theme-color" content="#070A12">
+
+  <!-- Open Graph Protocol -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="EduKing Case Study | LMS &amp; Custom Plugin Architecture — Muhammad Shayan Ghouri">
+  <meta property="og:description"
+    content="Deep dive into the architecture, custom plugin development, and role workflows of the EduKing online school platform.">
+  <meta property="og:url" content="https://ms-ghouri.github.io/Shayanportfolio/work/eduking/">
+  <meta property="og:site_name" content="Muhammad Shayan Ghouri Portfolio">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Modular Design System Stylesheets -->
+  <link rel="stylesheet" href="../../assets/css/variables.css?v=2.0">
+  <link rel="stylesheet" href="../../assets/css/reset.css?v=2.0">
+  <link rel="stylesheet" href="../../assets/css/layout.css?v=2.0">
+  <link rel="stylesheet" href="../../assets/css/components.css?v=2.0">
+  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2.0">
+</head>
+
+<body class="case-study-page">
+
+  <!-- Accessible Skip Link -->
+  <a href="#case-study-main" class="skip-link">Skip to case study content</a>
+
+  <!-- Top Sticky Navigation Bar -->
+  <nav class="case-study-nav-bar" aria-label="Case Study Navigation">
+    <div class="case-study-container nav-bar-inner">
+      <a href="../../index.html#projects" class="nav-back-link" aria-label="Return to Selected Work on homepage">
+        <span class="nav-back-arrow" aria-hidden="true">&larr;</span>
+        <span>Back to Selected Work</span>
+      </a>
+
+      <div class="nav-status-indicator" aria-label="Project Status: Live Production Client Project">
+        <span class="status-dot-pulse" aria-hidden="true"></span>
+        <span>Live Production</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Case Study Content -->
+  <main id="case-study-main" class="case-study-main">
+    <div class="case-study-container">
+
+      <!-- Case Study Header -->
+      <header class="case-study-hero">
+        <div class="case-study-content-narrow">
+          <div class="hero-meta-strip">
+            <span class="badge-project-type">CLIENT PROJECT</span>
+            <span class="badge-project-region">AUSTRALIA</span>
+            <span class="badge-project-category">ONLINE LEARNING PLATFORM / LMS</span>
+          </div>
+
+          <h1 class="case-study-title">EduKing</h1>
+
+          <p class="case-study-tagline">
+            An online learning platform for an Australian school, combining course delivery with customized student, parent, teacher and administrative workflows.
+          </p>
+
+          <!-- Tech Chips -->
+          <div class="tech-pills-list" aria-label="Technologies used in EduKing" style="margin-bottom: var(--space-6);">
+            <span class="tech-tag-pill">WordPress</span>
+            <span class="tech-tag-pill">LearnDash</span>
+            <span class="tech-tag-pill">BuddyBoss</span>
+            <span class="tech-tag-pill">Custom PHP Plugin</span>
+            <span class="tech-tag-pill">WooCommerce</span>
+            <span class="tech-tag-pill">Stripe API</span>
+            <span class="tech-tag-pill">MySQL</span>
+            <span class="tech-tag-pill">CSS3</span>
+          </div>
+
+          <!-- Hero Action CTAs -->
+          <div class="hero-actions-group">
+            <a href="https://eduking.com.au" target="_blank" rel="noopener noreferrer" class="btn btn-project-primary" aria-label="Visit EduKing live platform in Australia (opens in new tab)">
+              <span>View Live Platform</span>
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </a>
+            <a href="../../index.html#projects" class="btn btn-project-secondary">
+              <span>&larr; All Projects</span>
+            </a>
+          </div>
+
+          <!-- Metadata Quick Grid -->
+          <div class="project-meta-grid" role="region" aria-label="Project Metadata">
+            <div class="meta-item">
+              <span class="meta-label">Project Type</span>
+              <span class="meta-value">Production Client Project</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Location / Domain</span>
+              <span class="meta-value">Australian School Education</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Shayan's Role</span>
+              <span class="meta-value">Custom WP &amp; Plugin Developer</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Live Platform</span>
+              <span class="meta-value">eduking.com.au</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Large Visual Stage (Browser Frame Mockup) -->
+        <div class="case-study-visual-hero">
+          <div class="visual-mockup-frame">
+            <div class="browser-header">
+              <div class="browser-dots">
+                <span class="dot-red"></span>
+                <span class="dot-amber"></span>
+                <span class="dot-green"></span>
+              </div>
+              <div class="browser-address-bar">
+                <svg class="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+                <span>https://eduking.com.au</span>
+              </div>
+              <div class="browser-actions">
+                <span class="browser-badge-live">LIVE PRODUCTION</span>
+              </div>
+            </div>
+
+            <div class="browser-viewport">
+              <div class="viewport-canvas lms-canvas">
+                <div class="canvas-grid-pattern" aria-hidden="true"></div>
+                <div class="canvas-content-preview">
+                  <div class="preview-hero-bar">
+                    <span class="preview-pill">Australian School Curriculum</span>
+                    <span class="preview-badge-status">Automated Role Routing</span>
+                  </div>
+                  <div class="preview-cards-row">
+                    <div class="preview-card-item">
+                      <span class="card-item-tag">LMS Core</span>
+                      <strong class="card-item-title">LearnDash + BuddyBoss</strong>
+                      <span class="card-item-sub">Custom role hierarchies &amp; video lessons</span>
+                    </div>
+                    <div class="preview-card-item preview-card-highlight">
+                      <span class="card-item-tag">Plugin Architecture</span>
+                      <strong class="card-item-title">Custom PHP Plugin</strong>
+                      <span class="card-item-sub">eduking-core-system automations</span>
+                    </div>
+                    <div class="preview-card-item">
+                      <span class="card-item-tag">Checkout Flow</span>
+                      <strong class="card-item-title">WooCommerce + Stripe</strong>
+                      <span class="card-item-sub">Automated subscription billing</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="mockup-caption">Platform preview illustrating core LMS layers, bespoke plugin automations, and Stripe checkout synchronization.</p>
+        </div>
+      </header>
+
+      <!-- Section: Overview -->
+      <section class="case-study-section" aria-labelledby="overview-heading">
+        <div class="case-study-content-narrow">
+          <span class="section-eyebrow-cs">01. CONTEXT</span>
+          <h2 id="overview-heading" class="section-heading-cs">Project Overview</h2>
+          <div class="cs-prose">
+            <p class="cs-lead">
+              EduKing is an online learning platform engineered for an Australian school organization. The platform combines a structured learning management system (LMS) with customized workflows tailored to students, parents, teachers, and school administrators.
+            </p>
+            <p>
+              Rather than functioning purely as an asynchronous video repository, the institution required a unified digital environment where curriculum delivery, community engagement, role-based oversight, and tuition commerce could operate without manual intervention.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: The Challenge -->
+      <section class="case-study-section" aria-labelledby="challenge-heading">
+        <div class="case-study-content-narrow">
+          <span class="section-eyebrow-cs">02. PROBLEM</span>
+          <h2 id="challenge-heading" class="section-heading-cs">The Development Challenge</h2>
+          <div class="cs-prose">
+            <p>
+              The project required extending an existing WordPress/LMS ecosystem to support workflows beyond its standard functionality. Out-of-the-box LMS installations typically assume a single learner model: an individual pays, receives access, and studies independently.
+            </p>
+            <p>
+              In a school environment, this paradigm breaks down:
+            </p>
+            <ul style="padding-left: 1.5rem; margin-block: var(--space-4); display: flex; flex-direction: column; gap: var(--space-2);">
+              <li><strong>Multi-Stakeholder Workflows:</strong> Parents often manage payments and track progress, while students engage with the course materials and discussion groups.</li>
+              <li><strong>Ecosystem Synchronization:</strong> LearnDash handles lesson progression and quizzing, while BuddyBoss provides social community groups. These two engines required synchronized access boundaries.</li>
+              <li><strong>Automated Access Provisioning:</strong> Course access and community group privileges needed to trigger automatically upon successful Stripe payment verification, eliminating administrative delays.</li>
+              <li><strong>Custom Requirements:</strong> Standard plugins lacked the exact hooks required to orchestrate these multi-role workflows cleanly.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: My Role & Contribution -->
+      <section class="case-study-section" aria-labelledby="role-heading">
+        <div class="case-study-content-narrow">
+          <span class="section-eyebrow-cs">03. EXECUTION</span>
+          <h2 id="role-heading" class="section-heading-cs">My Role &amp; What I Built</h2>
+          <div class="cs-prose">
+            <p>
+              I worked directly on the development and technical implementation layers of the platform, focusing on custom backend functionality, system integration, and responsive user experience.
+            </p>
+            <p>
+              My personal contributions included:
+            </p>
+          </div>
+
+          <div class="cs-features-grid">
+            <div class="cs-feature-card">
+              <span class="feature-tag-mini">Backend Logic</span>
+              <h3 class="cs-feature-title">Custom Plugin Development</h3>
+              <p class="cs-feature-desc">Developed the bespoke WordPress plugin (<code>eduking-core-system</code>) to encapsulate platform-specific hooks and automated role triggers.</p>
+            </div>
+
+            <div class="cs-feature-card">
+              <span class="feature-tag-mini">LMS Engineering</span>
+              <h3 class="cs-feature-title">LearnDash Customization</h3>
+              <p class="cs-feature-desc">Configured course hierarchies, lesson prerequisites, certificate rules, and progress tracking for the school's curriculum.</p>
+            </div>
+
+            <div class="cs-feature-card">
+              <span class="feature-tag-mini">Community Layer</span>
+              <h3 class="cs-feature-title">BuddyBoss Integration</h3>
+              <p class="cs-feature-desc">Integrated interactive student community features, role-restricted forums, and member directory permissions.</p>
+            </div>
+
+            <div class="cs-feature-card">
+              <span class="feature-tag-mini">Commerce &amp; Payments</span>
+              <h3 class="cs-feature-title">WooCommerce &amp; Stripe</h3>
+              <p class="cs-feature-desc">Configured checkout flows, recurring tuition packages, and secure Stripe webhook testing to automate instant course enrollments.</p>
+            </div>
+
+            <div class="cs-feature-card">
+              <span class="feature-tag-mini">Frontend UX</span>
+              <h3 class="cs-feature-title">Responsive Styling</h3>
+              <p class="cs-feature-desc">Engineered clean, responsive UI overrides to ensure consistent typography and layout across mobile tablets and desktop monitors.</p>
+            </div>
+
+            <div class="cs-feature-card">
+              <span class="feature-tag-mini">Client Collaboration</span>
+              <h3 class="cs-feature-title">Iteration &amp; Deployment</h3>
+              <p class="cs-feature-desc">Participated in iterative feedback cycles, resolving workflow edge cases and verifying production deployment.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: The Custom Plugin Spotlight -->
+      <section class="case-study-section" aria-labelledby="plugin-heading">
+        <div class="case-study-content-narrow">
+          <span class="section-eyebrow-cs">04. ARCHITECTURE HIGHLIGHT</span>
+          <h2 id="plugin-heading" class="section-heading-cs">Custom Plugin: eduking-core-system</h2>
+          <div class="cs-prose">
+            <p>
+              To maintain update compatibility and prevent core file modification, all bespoke platform functionality was architected as an isolated, modular WordPress plugin: <strong><code>eduking-core-system</code></strong>.
+            </p>
+          </div>
+
+          <div class="engineering-spotlight-box">
+            <div class="spotlight-header">
+              <span class="spotlight-badge">Engineered Plugin Architecture</span>
+              <span class="plugin-slug-tag">eduking-core-system</span>
+            </div>
+            <h3 class="spotlight-title">Bridging Course Commerce with Community Access</h3>
+            <p class="spotlight-text">
+              The custom plugin hooks into WooCommerce post-payment actions (<code>woocommerce_payment_complete</code>). Upon verified transaction confirmation, the plugin queries the ordered curriculum items, invokes LearnDash's course enrollment API methods, and adds the student to their designated BuddyBoss social group—all in a single atomic transaction cycle.
+            </p>
+          </div>
+
+          <div class="cs-prose">
+            <p>
+              By isolating this logic in a dedicated plugin, the school's platform preserves full upgrade paths for WordPress core, LearnDash, and BuddyBoss without risking breakage or code loss during vendor updates.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Technical Integration Story & Architecture Flow -->
+      <section class="case-study-section" aria-labelledby="architecture-heading">
+        <div class="case-study-content-narrow">
+          <span class="section-eyebrow-cs">05. SYSTEM FLOW</span>
+          <h2 id="architecture-heading" class="section-heading-cs">Technical Architecture Story</h2>
+          <p class="cs-lead">
+            The platform functions as an integrated pipeline where commercial checkout, access provisioning, and curriculum delivery interact reliably.
+          </p>
+
+          <div class="architecture-card">
+            <div class="architecture-card-header">
+              <div class="architecture-title">
+                <span>System Pipeline &amp; Integration Architecture</span>
+              </div>
+            </div>
+
+            <div class="architecture-flow">
+              <!-- Node 1 -->
+              <div class="flow-node">
+                <div class="flow-node-content">
+                  <strong class="flow-node-title">1. WordPress Core CMS</strong>
+                  <span class="flow-node-desc">Base content management system, user authentication, and page delivery.</span>
+                </div>
+                <span class="flow-node-badge">Engine Layer</span>
+              </div>
+
+              <div class="flow-arrow-down" aria-hidden="true">&darr;</div>
+
+              <!-- Node 2 -->
+              <div class="flow-node" style="border-left-color: #F59E0B;">
+                <div class="flow-node-content">
+                  <strong class="flow-node-title">2. Custom EduKing Plugin (eduking-core-system)</strong>
+                  <span class="flow-node-desc">Custom PHP business logic bridging events, roles, and automated access hooks.</span>
+                </div>
+                <span class="flow-node-badge" style="color: #FBBF24;">Custom Core</span>
+              </div>
+
+              <div class="flow-arrow-down" aria-hidden="true">&darr;</div>
+
+              <!-- Node 3 -->
+              <div class="flow-node">
+                <div class="flow-node-content">
+                  <strong class="flow-node-title">3. LearnDash LMS &amp; BuddyBoss Social Layer</strong>
+                  <span class="flow-node-desc">Course progression, video lesson delivery, quizzes, student forums, and peer groups.</span>
+                </div>
+                <span class="flow-node-badge">LMS &amp; Community</span>
+              </div>
+
+              <div class="flow-arrow-down" aria-hidden="true">&darr;</div>
+
+              <!-- Node 4 -->
+              <div class="flow-node">
+                <div class="flow-node-content">
+                  <strong class="flow-node-title">4. WooCommerce Storefront</strong>
+                  <span class="flow-node-desc">Tuition package configuration, student checkout handling, and order lifecycle.</span>
+                </div>
+                <span class="flow-node-badge">Commerce Flow</span>
+              </div>
+
+              <div class="flow-arrow-down" aria-hidden="true">&darr;</div>
+
+              <!-- Node 5 -->
+              <div class="flow-node" style="border-left-color: #10B981;">
+                <div class="flow-node-content">
+                  <strong class="flow-node-title">5. Stripe Payment Gateway Integration</strong>
+                  <span class="flow-node-desc">Secure checkout execution, card authorization, and instant webhook verification.</span>
+                </div>
+                <span class="flow-node-badge" style="color: #34D399;">Payment Gateway</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: User Roles & Workflows -->
+      <section class="case-study-section" aria-labelledby="roles-heading">
+        <div class="case-study-content-narrow">
+          <span class="section-eyebrow-cs">06. USER ROLES</span>
+          <h2 id="roles-heading" class="section-heading-cs">Role-Specific Workflows</h2>
+          <p class="cs-prose">
+            The platform architecture addresses four distinct user types, ensuring appropriate privileges and dashboard views for each stakeholder:
+          </p>
+
+          <div class="user-flows-grid">
+            <!-- Student -->
+            <div class="user-role-card">
+              <div class="role-card-header">
+                <h3 class="role-title">Student</h3>
+                <span class="role-badge">Learner</span>
+              </div>
+              <p class="role-desc">Direct access to enrolled Australian curriculum modules and peer community.</p>
+              <ul class="role-checklist">
+                <li>Video lessons &amp; coursework</li>
+                <li>Module progression tracking</li>
+                <li>Cohort discussion groups</li>
+              </ul>
+            </div>
+
+            <!-- Parent -->
+            <div class="user-role-card">
+              <div class="role-card-header">
+                <h3 class="role-title">Parent</h3>
+                <span class="role-badge">Guardian</span>
+              </div>
+              <p class="role-desc">Tuition enrollment handling and student progress oversight.</p>
+              <ul class="role-checklist">
+                <li>Course purchase &amp; enrollment</li>
+                <li>Billing &amp; subscription records</li>
+                <li>Learner milestone visibility</li>
+              </ul>
+            </div>
+
+            <!-- Teacher -->
+            <div class="user-role-card">
+              <div class="role-card-header">
+                <h3 class="role-title">Teacher</h3>
+                <span class="role-badge">Educator</span>
+              </div>
+              <p class="role-desc">Curriculum delivery and student group interaction.</p>
+              <ul class="role-checklist">
+                <li>Course materials management</li>
+                <li>Student progress monitoring</li>
+                <li>Class group announcements</li>
+              </ul>
+            </div>
+
+            <!-- Admin -->
+            <div class="user-role-card">
+              <div class="role-card-header">
+                <h3 class="role-title">Administrator</h3>
+                <span class="role-badge">Management</span>
+              </div>
+              <p class="role-desc">Full governance over platform settings, commerce, and user roles.</p>
+              <ul class="role-checklist">
+                <li>Platform user role assignment</li>
+                <li>Stripe payment verification</li>
+                <li>Site-wide access governance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Outcome & Current State -->
+      <section class="case-study-section" aria-labelledby="outcome-heading">
+        <div class="case-study-content-narrow">
+          <span class="section-eyebrow-cs">07. STATUS</span>
+          <h2 id="outcome-heading" class="section-heading-cs">Project Outcome</h2>
+
+          <div class="outcome-box">
+            <div class="outcome-badge-row">
+              <span class="outcome-status-badge">Active Production Platform</span>
+              <span class="badge-project-region">Australia</span>
+            </div>
+            <p class="cs-prose">
+              EduKing is currently live in production, actively serving students, parents, and educators under the Australian curriculum. The custom plugin architecture continues to automate course access upon payment verification, minimizing manual administrative tasks and providing an organized online learning experience.
+            </p>
+            <div style="margin-top: var(--space-2);">
+              <a href="https://eduking.com.au" target="_blank" rel="noopener noreferrer" class="btn btn-project-primary" aria-label="Visit EduKing live platform (opens in new tab)">
+                <span>Visit EduKing Live</span>
+                <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Previous / Next Case Study Navigation Footer -->
+      <footer class="case-study-content-narrow">
+        <div class="case-study-nav-footer">
+          <a href="../vox-autos/" class="nav-project-btn" aria-label="Previous case study: Vox Autos">
+            <span class="nav-dir-label">&larr; Previous Case Study</span>
+            <span class="nav-project-name">Vox Autos (E-Commerce)</span>
+          </a>
+
+          <a href="../hisaabsync/" class="nav-project-btn next" aria-label="Next case study: HisaabSync">
+            <span class="nav-dir-label">Next Case Study &rarr;</span>
+            <span class="nav-project-name">HisaabSync (Mobile App)</span>
+          </a>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- Clean Footer Landmark -->
+  <footer class="site-footer" role="contentinfo" style="border-top: 1px solid var(--border-subtle); padding-block: var(--space-6);">
+    <div class="case-study-container flex items-center justify-between" style="font-family: var(--font-mono); font-size: var(--font-size-xs); color: var(--foreground-subtle);">
+      <span>Muhammad Shayan Ghouri &bull; Case Studies</span>
+      <a href="../../index.html#projects" style="color: var(--accent-light); text-decoration: none;">&larr; Back to Selected Work</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
