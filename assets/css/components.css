@@ -563,6 +563,21 @@
   max-width: 100%;
 }
 
+/* ==========================================================================
+   Hero Initial Load Stagger Animation (Step 13)
+   Instant, subtle, non-blocking fade-up sequence with backwards fill
+   ========================================================================== */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Availability Status Badge */
 .badge-availability {
   display: inline-flex;
@@ -580,6 +595,7 @@
   backdrop-filter: blur(8px);
   box-shadow: var(--shadow-xs);
   transition: border-color var(--transition-fast);
+  animation: hero-fade-up 420ms var(--ease-out) 40ms backwards;
 }
 
 .badge-availability:hover {
@@ -619,6 +635,7 @@
   margin-bottom: var(--space-5);
   text-wrap: balance;
   color: var(--foreground);
+  animation: hero-fade-up 460ms var(--ease-out) 80ms backwards;
 }
 
 .hero-description {
@@ -628,6 +645,7 @@
   max-width: 54ch;
   margin-bottom: var(--space-6);
   text-wrap: pretty;
+  animation: hero-fade-up 460ms var(--ease-out) 140ms backwards;
 }
 
 /* Credibility Line */
@@ -641,6 +659,7 @@
   border-radius: var(--radius-md);
   margin-bottom: var(--space-8);
   max-width: 100%;
+  animation: hero-fade-up 460ms var(--ease-out) 190ms backwards;
 }
 
 .credibility-dot {
@@ -667,6 +686,7 @@
   gap: var(--space-4);
   flex-wrap: wrap;
   margin-bottom: var(--space-8);
+  animation: hero-fade-up 460ms var(--ease-out) 240ms backwards;
 }
 
 .btn-hero-primary {
@@ -732,6 +752,7 @@
   padding-top: var(--space-6);
   border-top: 1px solid var(--border-subtle);
   width: 100%;
+  animation: hero-fade-up 460ms var(--ease-out) 290ms backwards;
 }
 
 .recruiter-label {
@@ -799,6 +820,7 @@
   box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.04), 0 0 35px -5px rgba(59, 130, 246, 0.15);
   backdrop-filter: blur(12px);
   transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  animation: hero-fade-up 500ms var(--ease-out) 160ms backwards;
 }
 
 .hero-code-window:hover {
@@ -944,6 +966,7 @@
   color: var(--foreground);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(59, 130, 246, 0.2);
   backdrop-filter: blur(12px);
+  animation: hero-fade-up 460ms var(--ease-out) 320ms backwards;
 }
 
 .floating-badge-dot {
@@ -1029,8 +1052,18 @@
 @media (prefers-reduced-motion: reduce) {
   .status-dot,
   .floating-badge-dot,
-  .currently-dot {
+  .currently-dot,
+  .badge-availability,
+  .hero-title,
+  .hero-description,
+  .hero-credibility,
+  .hero-cta-group,
+  .hero-recruiter-strip,
+  .hero-code-window,
+  .hero-floating-badge {
     animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   .btn-hero-primary:hover,
@@ -4620,13 +4653,295 @@
   }
 }
 
+/* ==========================================================================
+   Motion System & Micro-Interactions (Step 13)
+   Consistent, restrained, performant animations across the portfolio
+   ========================================================================== */
+
+/* 1. Scroll-Reveal System (Progressive Enhancement)
+   Only hidden when .js-motion class is confirmed active by JavaScript */
+.js-motion .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity var(--duration-reveal) var(--ease-smooth),
+              transform var(--duration-reveal) var(--ease-smooth);
+}
+
+.js-motion .reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 2. Global Button Interactions (Default, Hover, Active, Focus) */
+.btn,
+.btn-hero-primary,
+.btn-hero-secondary,
+.btn-talk,
+.btn-cta-primary,
+.btn-footer-cta,
+.btn-submit,
+.btn-copy-chip {
+  cursor: pointer;
+  user-select: none;
+  transition: transform var(--transition-fast),
+              background-color var(--transition-fast),
+              border-color var(--transition-fast),
+              box-shadow var(--transition-fast),
+              color var(--transition-fast);
+}
+
+/* Active / Pressed State: clean 1px tactile feedback */
+.btn:active,
+.btn-hero-primary:active,
+.btn-hero-secondary:active,
+.btn-talk:active,
+.btn-cta-primary:active,
+.btn-footer-cta:active,
+.btn-submit:active,
+.btn-copy-chip:active {
+  transform: translateY(1px) scale(0.995) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Button & Link Arrow Micro-Movement on Hover */
+@media (hover: hover) and (pointer: fine) {
+  .btn .icon-arrow,
+  .btn-cta-primary .icon-arrow,
+  .btn-submit svg,
+  .btn-footer-cta svg,
+  .service-card .service-cta-arrow,
+  .process-step-card .process-step-arrow svg {
+    transition: transform var(--transition-fast);
+  }
+
+  .btn:hover .icon-arrow,
+  .btn-cta-primary:hover .icon-arrow,
+  .btn-submit:hover svg,
+  .btn-footer-cta:hover svg,
+  .service-card:hover .service-cta-arrow,
+  .process-step-card:hover .process-step-arrow svg {
+    transform: translateX(3px);
+  }
+
+  .proof-link-primary svg,
+  .footer-social-link .footer-ext-icon {
+    transition: transform var(--transition-fast);
+  }
+
+  .proof-link-primary:hover svg,
+  .footer-social-link:hover .footer-ext-icon {
+    transform: translate(2px, -2px);
+  }
+
+  .nav-back-link:hover {
+    transform: translateX(-2px);
+  }
+}
+
+/* 3. Desktop Hover Card Elevations (Guarded against touch device sticking) */
+@media (hover: hover) and (pointer: fine) {
+  .selected-work-card {
+    transition: transform var(--transition-base),
+                border-color var(--transition-base),
+                box-shadow var(--transition-base),
+                background-color var(--transition-base);
+  }
+
+  .selected-work-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+    box-shadow: 0 14px 30px -8px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--border-active);
+  }
+
+  .selected-work-card .work-card-media img,
+  .selected-work-card .visual-mockup-frame {
+    transition: transform var(--transition-smooth);
+  }
+
+  .selected-work-card:hover .work-card-media img,
+  .selected-work-card:hover .visual-mockup-frame {
+    transform: scale(1.025);
+  }
+
+  .service-card {
+    transition: transform var(--transition-base),
+                border-color var(--transition-base),
+                box-shadow var(--transition-base),
+                background-color var(--transition-base);
+  }
+
+  .service-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-hover);
+    box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--border-active);
+  }
+
+  .service-card .service-icon {
+    transition: transform var(--transition-fast), color var(--transition-fast);
+  }
+
+  .service-card:hover .service-icon {
+    transform: scale(1.06);
+    color: var(--accent-light);
+  }
+
+  .process-step-card {
+    transition: transform var(--transition-base),
+                border-color var(--transition-base),
+                box-shadow var(--transition-base),
+                background-color var(--transition-base);
+  }
+
+  .process-step-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-hover);
+    box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.4);
+  }
+
+  .proof-card {
+    transition: transform var(--transition-base),
+                border-color var(--transition-base),
+                box-shadow var(--transition-base),
+                background-color var(--transition-base);
+  }
+
+  .proof-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-hover);
+    box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.4);
+  }
+
+  .tech-category-card {
+    transition: transform var(--transition-base),
+                border-color var(--transition-base),
+                box-shadow var(--transition-base),
+                background-color var(--transition-base);
+  }
+
+  .tech-category-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-hover);
+    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.35);
+  }
+
+  .timeline-card {
+    transition: transform var(--transition-base),
+                border-color var(--transition-base),
+                box-shadow var(--transition-base),
+                background-color var(--transition-base);
+  }
+
+  .timeline-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-hover);
+    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.35);
+  }
+
+  .contact-method-card {
+    transition: transform var(--transition-base),
+                border-color var(--transition-base),
+                box-shadow var(--transition-base),
+                background-color var(--transition-base);
+  }
+
+  .contact-method-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-hover);
+    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.35);
+  }
+
+  .about-philosophy-card,
+  .about-currently-card,
+  .about-meta-card {
+    transition: transform var(--transition-base),
+                border-color var(--transition-base),
+                box-shadow var(--transition-base),
+                background-color var(--transition-base);
+  }
+
+  .about-philosophy-card:hover,
+  .about-currently-card:hover,
+  .about-meta-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-hover);
+    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* 4. Form Micro-Interactions (Inputs & Textarea Focus) */
+.form-input,
+.form-textarea {
+  transition: border-color var(--transition-fast),
+              box-shadow var(--transition-fast),
+              background-color var(--transition-fast);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18) !important;
+  background-color: var(--surface-hover) !important;
+  outline: none !important;
+}
+
+/* 5. Comprehensive WCAG 2.2 AA Reduced-Motion Standard */
 @media (prefers-reduced-motion: reduce) {
-  .btn-footer-cta,
-  .footer-link,
-  .footer-social-link,
-  .footer-ext-icon,
-  .back-to-top-link {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js-motion .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
     transition: none !important;
+  }
+
+  .badge-availability,
+  .hero-title,
+  .hero-description,
+  .hero-credibility,
+  .hero-cta-group,
+  .hero-recruiter-strip,
+  .hero-code-window,
+  .hero-floating-badge,
+  .status-dot,
+  .floating-badge-dot,
+  .currently-dot {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .selected-work-card:hover,
+  .service-card:hover,
+  .tech-category-card:hover,
+  .timeline-card:hover,
+  .process-step-card:hover,
+  .proof-card:hover,
+  .contact-method-card:hover,
+  .about-philosophy-card:hover,
+  .about-currently-card:hover,
+  .about-meta-card:hover,
+  .hero-code-window:hover,
+  .btn:hover,
+  .btn:active,
+  .btn-hero-primary:hover,
+  .btn-hero-primary:active,
+  .btn-hero-secondary:hover,
+  .btn-hero-secondary:active,
+  .btn-talk:hover,
+  .btn-talk:active,
+  .btn-cta-primary:hover,
+  .btn-cta-primary:active,
+  .btn-footer-cta:hover,
+  .btn-footer-cta:active,
+  .btn-submit:hover,
+  .btn-submit:active {
     transform: none !important;
   }
 }

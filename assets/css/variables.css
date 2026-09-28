@@ -209,13 +209,23 @@
   --glow-dual: 0 0 20px rgba(59, 130, 246, 0.15), 0 0 32px rgba(99, 102, 241, 0.1);
 
   /* ==========================================================================
-     10. Global Motion & Transitions
-     Crisp, responsive timing (150ms - 250ms) using natural easing curves
+     10. Global Motion System Tokens (Step 13)
+     Crisp, responsive timing (120ms - 600ms) using natural easing curves
      ========================================================================== */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-fast: 150ms var(--ease-out);
-  --transition-base: 220ms var(--ease-out);
+
+  --duration-fast: 150ms;       /* 120ms-180ms: Micro-interactions, link hovers, active buttons */
+  --duration-normal: 250ms;     /* 200ms-300ms: UI transitions, card elevation, border highlights */
+  --duration-emphasis: 400ms;   /* 350ms-500ms: Drawer opening, focal reveals */
+  --duration-reveal: 600ms;     /* 500ms-700ms: Major entrance & scroll reveals */
+
+  --transition-fast: var(--duration-fast) var(--ease-out);
+  --transition-base: var(--duration-normal) var(--ease-out);
+  --transition-normal: var(--transition-base);
+  --transition-smooth: var(--duration-emphasis) var(--ease-smooth);
+  --transition-reveal: var(--duration-reveal) var(--ease-smooth);
   --transition-slow: 320ms var(--ease-out);
 
   /* ==========================================================================
