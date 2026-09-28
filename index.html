@@ -624,206 +624,334 @@
       </div>
     </section>
 
-    <!-- Featured Projects & Case Studies Section (@CaseStudySpec, @FrontendEng, @VisualDesigner, @AccessibilityEng) -->
+    <!-- Selected Work & Featured Projects Section (@Architect, @CaseStudySpec, @VisualDesigner, @FrontendEng) -->
     <section id="projects" class="section projects-section" aria-labelledby="projects-title">
       <div class="container">
         <!-- Section Eyebrow & Title -->
-        <span class="section-eyebrow">FEATURED WORK</span>
+        <span class="section-eyebrow">SELECTED WORK</span>
         <h2 id="projects-title" class="section-title">
-          Engineered Solutions <span class="text-gradient">&amp; Live Systems</span>
+          Things I've <span class="text-gradient">Built</span>
         </h2>
         <p class="section-subtitle">
-          Detailed architectural breakdowns of verified, production software engineering and live client platforms.
+          A selection of client projects, applications and digital products I've worked on.
         </p>
 
-        <!-- Project Cards Stack -->
-        <div class="projects-grid">
-          <!-- Project 1: EduKing -->
-          <article class="project-card" id="project-eduking">
-            <div class="project-card-header">
-              <div class="project-meta-pill">
-                <span class="project-type">Production E-Learning Platform &amp; LMS</span>
-                <span class="project-dot" aria-hidden="true">•</span>
-                <span class="project-domain">eduking.com.au</span>
+        <!-- Selected Work Showcase Stack -->
+        <div class="projects-showcase">
+          <!-- FLAGSHIP FEATURED PROJECT: EduKing -->
+          <article class="project-showcase-card project-card-featured" id="project-eduking">
+            <!-- Large Project Visual Stage (Browser Frame Mockup) -->
+            <div class="project-visual-stage" aria-label="EduKing Platform Visual Preview">
+              <div class="browser-mockup">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot-red"></span>
+                    <span class="dot-amber"></span>
+                    <span class="dot-green"></span>
+                  </div>
+                  <div class="browser-address-bar">
+                    <svg class="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                    <span>https://eduking.com.au</span>
+                  </div>
+                  <div class="browser-actions">
+                    <span class="browser-badge-live">LIVE PRODUCTION</span>
+                  </div>
+                </div>
+
+                <div class="browser-viewport">
+                  <!-- Visual Showcase Placeholder Canvas with Stylized UI Blueprint -->
+                  <div class="viewport-canvas lms-canvas">
+                    <div class="canvas-grid-pattern" aria-hidden="true"></div>
+                    <div class="canvas-content-preview">
+                      <div class="preview-hero-bar">
+                        <span class="preview-pill">Australian School Curriculum</span>
+                        <span class="preview-badge-status">Automated Role Routing</span>
+                      </div>
+                      <div class="preview-cards-row">
+                        <div class="preview-card-item">
+                          <span class="card-item-tag">LMS Core</span>
+                          <strong class="card-item-title">LearnDash + BuddyBoss</strong>
+                          <span class="card-item-sub">Custom role hierarchies &amp; video lessons</span>
+                        </div>
+                        <div class="preview-card-item preview-card-highlight">
+                          <span class="card-item-tag">Plugin Architecture</span>
+                          <strong class="card-item-title">Custom PHP Plugin</strong>
+                          <span class="card-item-sub">Bespoke student workflow automations</span>
+                        </div>
+                        <div class="preview-card-item">
+                          <span class="card-item-tag">Checkout Flow</span>
+                          <strong class="card-item-title">WooCommerce + Stripe</strong>
+                          <span class="card-item-sub">Automated subscription billing</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="project-actions">
-                <a href="https://eduking.com.au" target="_blank" rel="noopener noreferrer" class="btn-project-link"
-                  aria-label="Visit EduKing live platform (opens in new tab)">
-                  <span>Live Site</span>
-                  <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            </div>
+
+            <!-- Featured Content Details -->
+            <div class="project-card-content">
+              <header class="project-header-row">
+                <div class="project-meta-badges">
+                  <span class="badge-project-type">CLIENT PROJECT</span>
+                  <span class="badge-project-region">AUSTRALIA</span>
+                  <span class="badge-project-category">ONLINE LEARNING PLATFORM / LMS</span>
+                </div>
+                <h3 class="project-showcase-title">EduKing &mdash; Online School &amp; Community Platform</h3>
+              </header>
+
+              <p class="project-showcase-description">
+                An online learning platform for an Australian school, customized around student, parent, teacher and administrative workflows. Built to streamline curriculum delivery, social community interaction, and automated recurring tuition access.
+              </p>
+
+              <!-- Technical Highlight Box -->
+              <div class="project-highlight-box">
+                <div class="highlight-box-header">
+                  <span class="highlight-box-icon" aria-hidden="true">★</span>
+                  <span class="highlight-box-title">Key Engineering Contribution: Custom Plugin Development</span>
+                </div>
+                <p class="highlight-box-text">
+                  Engineered bespoke WordPress plugin logic to bridge LearnDash course progress with automated BuddyBoss community access, ensuring seamless role transitions upon WooCommerce Stripe checkout verification.
+                </p>
+              </div>
+
+              <!-- Feature Labels & Tech Pills -->
+              <div class="project-tags-section">
+                <div class="feature-badges-list" aria-label="EduKing Key Capabilities">
+                  <span class="feature-tag">LMS</span>
+                  <span class="feature-tag">Custom Plugin</span>
+                  <span class="feature-tag">Course Access</span>
+                  <span class="feature-tag">Payment Integration</span>
+                  <span class="feature-tag">Responsive Experience</span>
+                </div>
+
+                <div class="tech-pills-list" aria-label="EduKing Technologies">
+                  <span class="tech-tag-pill">WordPress</span>
+                  <span class="tech-tag-pill">LearnDash</span>
+                  <span class="tech-tag-pill">BuddyBoss</span>
+                  <span class="tech-tag-pill">Custom PHP Plugin</span>
+                  <span class="tech-tag-pill">WooCommerce</span>
+                  <span class="tech-tag-pill">Stripe API</span>
+                  <span class="tech-tag-pill">CSS3</span>
+                </div>
+              </div>
+
+              <!-- Project Action CTAs -->
+              <div class="project-card-actions">
+                <a href="https://eduking.com.au" target="_blank" rel="noopener noreferrer" class="btn btn-project-primary" aria-label="Visit EduKing live platform (opens in new tab)">
+                  <span>View Live</span>
+                  <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                     <polyline points="15 3 21 3 21 9" />
                     <line x1="10" y1="14" x2="21" y2="3" />
                   </svg>
-                  <span class="sr-only">(opens in new tab)</span>
+                </a>
+                <a href="#project-eduking" class="btn btn-project-secondary" aria-label="View EduKing Case Study breakdown">
+                  <span>View Case Study &rarr;</span>
                 </a>
               </div>
             </div>
-
-            <h3 class="project-title">EduKing — Online School &amp; Community Platform</h3>
-
-            <p class="project-summary">
-              An Australian educational portal requiring course delivery, member management, structured curriculum
-              access, and automated subscription billing.
-            </p>
-
-            <!-- Role Breakdown Highlight Box -->
-            <div class="project-role-box">
-              <div class="role-header">
-                <span class="role-badge">Shayan's Role &amp; Architecture</span>
-              </div>
-              <p class="role-desc">
-                Core WordPress architecture, LearnDash &amp; BuddyBoss setup, custom PHP plugin engineering, WooCommerce
-                subscription routing, and Stripe checkout configuration.
-              </p>
-              <div class="role-highlights">
-                <span class="highlights-label">Key Engineering Highlights:</span>
-                <ul class="highlights-list">
-                  <li>Built custom plugin extensions to handle bespoke student workflows and automated role access</li>
-                  <li>Refined responsive navigation and player viewports for seamless mobile course playback</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Tech Stack Chips -->
-            <div class="project-tech-stack">
-              <span class="tech-stack-label">Technologies Applied:</span>
-              <ul class="tech-tags" aria-label="Technologies used for EduKing">
-                <li><span class="skill-tag">WordPress</span></li>
-                <li><span class="skill-tag">LearnDash</span></li>
-                <li><span class="skill-tag">BuddyBoss</span></li>
-                <li><span class="skill-tag">Custom PHP Plugin</span></li>
-                <li><span class="skill-tag">WooCommerce</span></li>
-                <li><span class="skill-tag">Stripe API</span></li>
-                <li><span class="skill-tag">CSS3</span></li>
-              </ul>
-            </div>
           </article>
 
-          <!-- Project 2: HisaabSync -->
-          <article class="project-card" id="project-hisaabsync">
-            <div class="project-card-header">
-              <div class="project-meta-pill">
-                <span class="project-type">Cross-Platform Mobile Application</span>
-                <span class="project-dot" aria-hidden="true">•</span>
-                <span class="project-domain">Mobile &amp; API Architecture</span>
+          <!-- SECONDARY PROJECTS GRID: HisaabSync & Vox Autos -->
+          <div class="secondary-projects-grid">
+            <!-- Project 2: HisaabSync -->
+            <article class="project-showcase-card project-card-secondary" id="project-hisaabsync">
+              <!-- Mobile App Visual Stage -->
+              <div class="project-visual-stage visual-stage-mobile" aria-label="HisaabSync Mobile Interface Preview">
+                <div class="mobile-mockup">
+                  <div class="mobile-phone-header">
+                    <span class="mobile-notch"></span>
+                  </div>
+                  <div class="mobile-viewport">
+                    <div class="mobile-canvas-content">
+                      <div class="mobile-app-header">
+                        <span class="mobile-app-name">HisaabSync</span>
+                        <span class="mobile-badge-status">Live Ledger</span>
+                      </div>
+                      <div class="mobile-balance-card">
+                        <span class="balance-label">Shared Society Pool</span>
+                        <strong class="balance-amount">Ledger Sync Active</strong>
+                      </div>
+                      <div class="mobile-txn-list">
+                        <div class="mobile-txn-item">
+                          <span>Maintenance Pool</span>
+                          <span class="txn-green">Verified</span>
+                        </div>
+                        <div class="mobile-txn-item">
+                          <span>Utility Split</span>
+                          <span class="txn-blue">Logged</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="project-actions">
-                <a href="https://github.com/MS-Ghouri" target="_blank" rel="noopener noreferrer"
-                  class="btn-project-link" aria-label="View HisaabSync on GitHub (opens in new tab)">
-                  <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path
-                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-                  </svg>
-                  <span>GitHub Repository</span>
-                  <span class="sr-only">(opens in new tab)</span>
-                </a>
+
+              <!-- Content Details -->
+              <div class="project-card-content">
+                <header class="project-header-row">
+                  <div class="project-meta-badges">
+                    <span class="badge-project-type badge-type-academic">UNIVERSITY / GROUP PROJECT</span>
+                    <span class="badge-project-category">MOBILE APPLICATION</span>
+                  </div>
+                  <h3 class="project-showcase-title">HisaabSync &mdash; Residential Expense &amp; Ledger</h3>
+                </header>
+
+                <p class="project-showcase-description">
+                  A mobile application designed to streamline residential society billing, management and payment workflows. Developed as a collaborative university project, with Shayan contributing mobile frontend architecture, state handling, and secure REST endpoint integration.
+                </p>
+
+                <!-- Feature Labels & Tech Pills -->
+                <div class="project-tags-section">
+                  <div class="feature-badges-list" aria-label="HisaabSync Key Features">
+                    <span class="feature-tag">Authentication</span>
+                    <span class="feature-tag">Resident Management</span>
+                    <span class="feature-tag">Bill Generation</span>
+                    <span class="feature-tag">Admin Verification</span>
+                    <span class="feature-tag">Role-Based Access</span>
+                  </div>
+
+                  <div class="tech-pills-list" aria-label="HisaabSync Technologies">
+                    <span class="tech-tag-pill">React Native</span>
+                    <span class="tech-tag-pill">Expo</span>
+                    <span class="tech-tag-pill">TypeScript</span>
+                    <span class="tech-tag-pill">Node.js</span>
+                    <span class="tech-tag-pill">Express</span>
+                    <span class="tech-tag-pill">MongoDB Atlas</span>
+                  </div>
+                </div>
+
+                <!-- Project Action CTAs -->
+                <div class="project-card-actions">
+                  <a href="https://github.com/MS-Ghouri" target="_blank" rel="noopener noreferrer" class="btn btn-project-primary" aria-label="View HisaabSync on GitHub (opens in new tab)">
+                    <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                    </svg>
+                    <span>GitHub Repository</span>
+                  </a>
+                  <a href="#project-hisaabsync" class="btn btn-project-secondary" aria-label="View HisaabSync Case Study breakdown">
+                    <span>View Case Study &rarr;</span>
+                  </a>
+                </div>
               </div>
-            </div>
+            </article>
 
-            <h3 class="project-title">HisaabSync — Residential Expense &amp; Ledger Management</h3>
+            <!-- Project 3: Vox Autos -->
+            <article class="project-showcase-card project-card-secondary" id="project-voxautos">
+              <!-- E-Commerce Browser Visual Stage -->
+              <div class="project-visual-stage visual-stage-browser" aria-label="Vox Autos E-Commerce Platform Preview">
+                <div class="browser-mockup browser-mockup-compact">
+                  <div class="browser-header">
+                    <div class="browser-dots">
+                      <span class="dot-red"></span>
+                      <span class="dot-amber"></span>
+                      <span class="dot-green"></span>
+                    </div>
+                    <div class="browser-address-bar">
+                      <svg class="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                      </svg>
+                      <span>https://voxautos.com</span>
+                    </div>
+                    <div class="browser-actions">
+                      <span class="browser-badge-live">LIVE STORE</span>
+                    </div>
+                  </div>
 
-            <p class="project-summary">
-              A collaborative expense tracker engineered to eliminate manual financial tracking for shared living spaces
-              and university societies.
-            </p>
-
-            <!-- Role Breakdown Highlight Box -->
-            <div class="project-role-box">
-              <div class="role-header">
-                <span class="role-badge">Shayan's Role &amp; Architecture</span>
+                  <div class="browser-viewport">
+                    <div class="viewport-canvas catalog-canvas">
+                      <div class="canvas-grid-pattern" aria-hidden="true"></div>
+                      <div class="catalog-content-preview">
+                        <div class="catalog-search-mock">
+                          <span class="search-mock-icon">🔍</span>
+                          <span class="search-mock-text">Search vehicle make, model or part number...</span>
+                        </div>
+                        <div class="catalog-parts-grid">
+                          <div class="catalog-part-item">
+                            <span class="part-badge">OEM Spec</span>
+                            <span class="part-name">Brake Systems</span>
+                          </div>
+                          <div class="catalog-part-item">
+                            <span class="part-badge">Accessories</span>
+                            <span class="part-name">Lighting &amp; Optics</span>
+                          </div>
+                          <div class="catalog-part-item">
+                            <span class="part-badge">Engine</span>
+                            <span class="part-name">Filtration Units</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p class="role-desc">
-                Mobile frontend engineering and API integration—designed responsive interface screens, structured state
-                management, and integrated backend REST endpoints.
-              </p>
-              <div class="role-highlights">
-                <span class="highlights-label">Key Engineering Highlights:</span>
-                <ul class="highlights-list">
-                  <li>Designed cross-platform forms with client-side validation and secure token handling</li>
-                  <li>Engineered offline-resilient UI states for consistent transaction logging and ledger
-                    synchronization</li>
-                </ul>
+
+              <!-- Content Details -->
+              <div class="project-card-content">
+                <header class="project-header-row">
+                  <div class="project-meta-badges">
+                    <span class="badge-project-type">PRODUCTION E-COMMERCE</span>
+                    <span class="badge-project-category">AUTOMOTIVE E-COMMERCE</span>
+                  </div>
+                  <h3 class="project-showcase-title">Vox Autos &mdash; Spare Parts &amp; Accessories</h3>
+                </header>
+
+                <p class="project-showcase-description">
+                  An automotive spare-parts e-commerce platform built around product discovery, catalog browsing and online purchasing. Structured for high-SKU filtering and mobile-first buyer checkout.
+                </p>
+
+                <!-- Feature Labels & Tech Pills -->
+                <div class="project-tags-section">
+                  <div class="feature-badges-list" aria-label="Vox Autos Key Features">
+                    <span class="feature-tag">WooCommerce</span>
+                    <span class="feature-tag">Product Catalog</span>
+                    <span class="feature-tag">E-commerce</span>
+                    <span class="feature-tag">Responsive UI</span>
+                  </div>
+
+                  <div class="tech-pills-list" aria-label="Vox Autos Technologies">
+                    <span class="tech-tag-pill">WordPress</span>
+                    <span class="tech-tag-pill">WooCommerce</span>
+                    <span class="tech-tag-pill">Elementor</span>
+                    <span class="tech-tag-pill">PHP</span>
+                    <span class="tech-tag-pill">MySQL</span>
+                  </div>
+                </div>
+
+                <!-- Project Action CTAs -->
+                <div class="project-card-actions">
+                  <a href="https://voxautos.com" target="_blank" rel="noopener noreferrer" class="btn btn-project-primary" aria-label="Visit Vox Autos live platform (opens in new tab)">
+                    <span>View Live</span>
+                    <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                  </a>
+                  <a href="#project-voxautos" class="btn btn-project-secondary" aria-label="View Vox Autos Case Study breakdown">
+                    <span>View Case Study &rarr;</span>
+                  </a>
+                </div>
               </div>
-            </div>
+            </article>
+          </div>
+        </div>
 
-            <!-- Tech Stack Chips -->
-            <div class="project-tech-stack">
-              <span class="tech-stack-label">Technologies Applied:</span>
-              <ul class="tech-tags" aria-label="Technologies used for HisaabSync">
-                <li><span class="skill-tag">React Native</span></li>
-                <li><span class="skill-tag">Expo</span></li>
-                <li><span class="skill-tag">TypeScript</span></li>
-                <li><span class="skill-tag">Node.js</span></li>
-                <li><span class="skill-tag">Express</span></li>
-                <li><span class="skill-tag">MongoDB Atlas</span></li>
-                <li><span class="skill-tag">REST APIs</span></li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- Project 3: Vox Autos -->
-          <article class="project-card" id="project-voxautos">
-            <div class="project-card-header">
-              <div class="project-meta-pill">
-                <span class="project-type">Automotive E-Commerce Architecture</span>
-                <span class="project-dot" aria-hidden="true">•</span>
-                <span class="project-domain">voxautos.com</span>
-              </div>
-              <div class="project-actions">
-                <a href="https://voxautos.com" target="_blank" rel="noopener noreferrer" class="btn-project-link"
-                  aria-label="Visit Vox Autos live platform (opens in new tab)">
-                  <span>Live Site</span>
-                  <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" y1="14" x2="21" y2="3" />
-                  </svg>
-                  <span class="sr-only">(opens in new tab)</span>
-                </a>
-              </div>
-            </div>
-
-            <h3 class="project-title">Vox Autos — Spare Parts &amp; Accessories Platform</h3>
-
-            <p class="project-summary">
-              High-SKU automotive parts retailer requiring an intuitive product hierarchy, fast search, and clean
-              catalog filtering.
-            </p>
-
-            <!-- Role Breakdown Highlight Box -->
-            <div class="project-role-box">
-              <div class="role-header">
-                <span class="role-badge">Shayan's Role &amp; Architecture</span>
-              </div>
-              <p class="role-desc">
-                E-commerce setup, WooCommerce configuration, custom catalog categorization, and performance
-                optimization.
-              </p>
-              <div class="role-highlights">
-                <span class="highlights-label">Key Engineering Highlights:</span>
-                <ul class="highlights-list">
-                  <li>Streamlined multi-tier category navigation and product discovery for fast catalog filtering</li>
-                  <li>Optimized asset delivery and template structure, ensuring fast mobile checkout speeds</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Tech Stack Chips -->
-            <div class="project-tech-stack">
-              <span class="tech-stack-label">Technologies Applied:</span>
-              <ul class="tech-tags" aria-label="Technologies used for Vox Autos">
-                <li><span class="skill-tag">WordPress</span></li>
-                <li><span class="skill-tag">WooCommerce</span></li>
-                <li><span class="skill-tag">Elementor</span></li>
-                <li><span class="skill-tag">PHP</span></li>
-                <li><span class="skill-tag">MySQL</span></li>
-              </ul>
-            </div>
-          </article>
+        <!-- Section End CTA -->
+        <div class="projects-footer-cta">
+          <p class="projects-cta-text">Want to see more?</p>
+          <a href="https://github.com/MS-Ghouri" target="_blank" rel="noopener noreferrer" class="btn-github-more" aria-label="View Muhammad Shayan Ghouri's GitHub Profile (opens in new tab)">
+            <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+            <span>View GitHub &rarr;</span>
+          </a>
         </div>
       </div>
     </section>
