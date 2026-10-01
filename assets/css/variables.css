@@ -266,9 +266,11 @@
   --success: var(--color-success);
 }
 
-/* Compact header height on mobile devices */
-@media (max-width: 640px) {
+/* Responsive layout overrides on mobile devices (<= 768px) */
+@media (max-width: 768px) {
   :root {
+    --container-padding: 1rem;
     --header-height: 3.875rem;
   }
 }
+
