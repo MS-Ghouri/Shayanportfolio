@@ -1,0 +1,717 @@
+/**
+ * Case Study Design System Stylesheet
+ * Portfolio Engineering Team
+ * Personas: @Architect, @VisualDesigner, @FrontendEng, @AccessibilityAuditor
+ *
+ * Provides dedicated editorial layout, typography scale, architecture
+ * diagram styling, user workflow cards, and accessible navigation for
+ * in-depth project case studies.
+ */
+
+/* ==========================================================================
+   Case Study Global Container & Layout
+   ========================================================================== */
+
+.case-study-page {
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-study-main {
+  flex: 1 0 auto;
+  padding-bottom: clamp(4rem, 8vw, 6.5rem);
+}
+
+.case-study-container {
+  width: 100%;
+  max-width: var(--container-lg, var(--container-max-width, 1180px));
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.case-study-content-narrow {
+  max-width: 840px;
+  margin-inline: auto;
+}
+
+/* ==========================================================================
+   Top Navigation & Return Link
+   ========================================================================== */
+
+.case-study-nav-bar {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(7, 10, 18, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky, var(--z-nav, 100));
+}
+
+.nav-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.nav-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--foreground-muted);
+  text-decoration: none;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.nav-back-link:hover,
+.nav-back-link:focus-visible {
+  color: var(--accent-light);
+  background: rgba(59, 130, 246, 0.08);
+  transform: translateX(-2px);
+}
+
+.nav-back-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.nav-back-link:hover .nav-back-arrow {
+  transform: translateX(-3px);
+}
+
+.nav-status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--foreground-subtle);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+.status-dot-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: var(--radius-full);
+  background-color: var(--success, var(--color-success, #10B981));
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+}
+
+/* ==========================================================================
+   Case Study Hero Header
+   ========================================================================== */
+
+.case-study-hero {
+  padding-block: clamp(2.5rem, 5vw, 4.5rem) clamp(2rem, 4vw, 3rem);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.hero-meta-strip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-3);
+}
+
+.case-study-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tighter);
+  color: var(--foreground);
+  margin-bottom: var(--space-3);
+}
+
+.case-study-tagline {
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  line-height: var(--leading-relaxed);
+  color: var(--foreground-muted);
+  max-width: 75ch;
+  margin-bottom: var(--space-6);
+}
+
+.hero-actions-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+}
+
+/* ==========================================================================
+   Project Metadata Grid
+   ========================================================================== */
+
+.project-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  background: var(--surface-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  margin-block: var(--space-6) var(--space-8);
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--foreground-subtle);
+}
+
+.meta-value {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--foreground);
+  line-height: var(--leading-normal);
+}
+
+/* ==========================================================================
+   Hero Visual Showcase Stage
+   ========================================================================== */
+
+.case-study-visual-hero {
+  margin-block: var(--space-8) var(--space-12);
+}
+
+.visual-mockup-frame {
+  background: #090A0F;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+.visual-mockup-frame-mobile {
+  max-width: 320px;
+  margin-inline: auto;
+  border-radius: 36px;
+  border: 2px solid var(--border-medium);
+  padding: 0.85rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+}
+
+.mockup-caption {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--foreground-subtle);
+  text-align: center;
+  margin-top: var(--space-3);
+}
+
+/* ==========================================================================
+   Editorial Content Sections
+   ========================================================================== */
+
+.case-study-section {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.case-study-section:last-of-type {
+  border-bottom: none;
+}
+
+.section-eyebrow-cs {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--accent-light);
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.section-heading-cs {
+  font-family: var(--font-sans);
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-tight);
+  color: var(--foreground);
+  margin-bottom: var(--space-4);
+  letter-spacing: var(--tracking-tight);
+}
+
+.cs-prose {
+  font-size: clamp(1rem, 1.2vw, 1.0625rem);
+  line-height: 1.75;
+  color: var(--foreground-muted);
+}
+
+.cs-prose p {
+  margin-bottom: var(--space-4);
+}
+
+.cs-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.cs-lead {
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+  color: var(--foreground);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-5);
+}
+
+/* ==========================================================================
+   Technical Architecture Flow Visualizer
+   ========================================================================== */
+
+.architecture-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  margin-block: var(--space-6);
+  position: relative;
+  overflow: hidden;
+}
+
+.architecture-card-header {
+  margin-bottom: var(--space-6);
+}
+
+.architecture-title {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--accent-light);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.architecture-flow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: relative;
+}
+
+.flow-node {
+  background: rgba(17, 19, 25, 0.95);
+  border: 1px solid var(--border-medium);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.flow-node:hover {
+  border-color: var(--accent);
+  transform: translateX(4px);
+}
+
+.flow-node-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.flow-node-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--foreground);
+}
+
+.flow-node-desc {
+  font-size: var(--font-size-sm);
+  color: var(--foreground-muted);
+  line-height: var(--leading-normal);
+}
+
+.flow-node-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--foreground-subtle);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.flow-arrow-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--accent);
+  font-size: 1.1rem;
+  line-height: 1;
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   User Flow Roles Grid (EduKing)
+   ========================================================================== */
+
+.user-flows-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+  margin-block: var(--space-6);
+}
+
+.user-role-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: border-color var(--transition-fast);
+}
+
+.user-role-card:hover {
+  border-color: var(--border-hover);
+}
+
+.role-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.role-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--foreground);
+}
+
+.role-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--accent-light);
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+}
+
+.role-desc {
+  font-size: var(--font-size-sm);
+  color: var(--foreground-muted);
+  line-height: var(--leading-normal);
+  margin: 0;
+}
+
+.role-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.role-checklist li {
+  font-size: 0.8125rem;
+  color: var(--foreground-subtle);
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.role-checklist li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   Key Features Cards Grid
+   ========================================================================== */
+
+.cs-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+  margin-block: var(--space-6);
+}
+
+.cs-feature-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.cs-feature-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-medium);
+}
+
+.feature-tag-mini {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--accent-light);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.cs-feature-title {
+  font-size: 0.95rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--foreground);
+}
+
+.cs-feature-desc {
+  font-size: 0.8125rem;
+  color: var(--foreground-muted);
+  line-height: var(--leading-normal);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Custom Plugin / Engineering Spotlight
+   ========================================================================== */
+
+.engineering-spotlight-box {
+  background: rgba(59, 130, 246, 0.04);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  margin-block: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.spotlight-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.spotlight-badge {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--accent-light);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+.plugin-slug-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #FBBF24;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.spotlight-title {
+  font-size: 1.15rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--foreground);
+}
+
+.spotlight-text {
+  font-size: 0.925rem;
+  color: var(--foreground-muted);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Outcome Summary Box
+   ========================================================================== */
+
+.outcome-box {
+  background: var(--surface-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  margin-block: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.outcome-badge-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.outcome-status-badge {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  font-weight: var(--font-weight-semibold);
+  color: #34D399;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   Pagination Footer Navigation (Previous / Next Project)
+   ========================================================================== */
+
+.case-study-nav-footer {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.nav-project-btn {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-decoration: none;
+  padding: var(--space-3) var(--space-5);
+  background: var(--surface-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  min-width: 200px;
+}
+
+.nav-project-btn:hover,
+.nav-project-btn:focus-visible {
+  border-color: var(--accent);
+  background: var(--surface-elevated);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.nav-dir-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--foreground-subtle);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+.nav-project-name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--foreground);
+}
+
+.nav-project-btn:hover .nav-project-name {
+  color: var(--accent-light);
+}
+
+.nav-project-btn.next {
+  text-align: right;
+  margin-left: auto;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .case-study-nav-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-project-btn {
+    width: 100%;
+  }
+
+  .nav-project-btn.next {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .project-meta-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .architecture-card {
+    padding: var(--space-4);
+  }
+
+  .flow-node {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .flow-node-badge {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-bar-inner {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .nav-status-indicator {
+    font-size: 0.65rem;
+  }
+
+  .project-meta-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-actions-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-back-link:hover,
+  .flow-node:hover,
+  .cs-feature-card:hover,
+  .nav-project-btn:hover {
+    transform: none !important;
+  }
+}

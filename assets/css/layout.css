@@ -1,34 +1,44 @@
 /**
  * Foundational Structural Layout Rules
  * Portfolio Engineering Team
- * Personas: @FrontendEng, @AccessibilityEng, @VisualDesigner
+ * Step 1: Global Visual Design System Foundation
  * Standard: WCAG 2.2 Level AA
  */
 
 /* ==========================================================================
-   Base Body Styling
+   Base Body Styling & Ambient Background Detail
    ========================================================================== */
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--color-canvas);
-  color: var(--color-text-primary);
+  background-color: var(--background);
+  /* Linear/Vercel-inspired subtle top radial spotlight */
+  background-image: radial-gradient(ellipse 75% 45% at 50% -10%, rgba(59, 130, 246, 0.08), transparent 75%);
+  background-repeat: no-repeat;
+  color: var(--foreground);
   font-family: var(--font-sans);
   font-size: var(--font-size-base);
   line-height: var(--leading-normal);
   overflow-x: hidden;
 }
 
+/* Inline code and technical element wrapping safeguard */
+code, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  word-break: break-word;
+}
+
 /* ==========================================================================
    Accessible Keyboard Focus Rings (:focus-visible)
-   High-visibility peacock cyan accent with positive outline offset
+   High-visibility electric blue accent with positive outline offset
    ========================================================================== */
 :focus-visible {
   outline: var(--focus-ring);
   outline-offset: var(--focus-ring-offset);
   border-radius: var(--radius-sm);
-  box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
 }
 
 :focus:not(:focus-visible) {
@@ -42,22 +52,23 @@ body {
 .skip-link {
   position: absolute;
   top: -9999px;
-  left: 1rem;
+  left: 1.25rem;
   z-index: var(--z-skip-link);
   padding: var(--space-2) var(--space-4);
-  background-color: var(--brand-peacock);
-  color: var(--color-text-inverse);
+  background-color: var(--accent);
+  color: #FFFFFF;
   font-family: var(--font-mono);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-wide);
   border-radius: var(--radius-sm);
-  box-shadow: var(--glow-peacock-md);
+  box-shadow: var(--shadow-md);
   transition: top var(--transition-fast);
 }
 
 .skip-link:focus,
 .skip-link:focus-visible {
-  top: 1rem;
+  top: 1.25rem;
 }
 
 /* Visually Hidden Utility for Screen Readers */
@@ -75,7 +86,7 @@ body {
 
 /* ==========================================================================
    Container Utility
-   Responsive max-width with fluid inline padding
+   Responsive max-width with balanced horizontal padding
    ========================================================================== */
 .container {
   width: 100%;
@@ -86,36 +97,72 @@ body {
 
 /* ==========================================================================
    Section Wrapper Utility
-   Balanced vertical spacing
+   Generous, predictable vertical breathing room across all viewports
    ========================================================================== */
 .section {
-  padding-block: var(--space-16);
+  padding-block: var(--section-padding-y);
   position: relative;
 }
 
 .section-divider {
   border: 0;
-  border-top: 1px solid var(--color-border-subtle);
+  border-top: 1px solid var(--border-subtle);
   margin: 0;
 }
 
 /* Body scroll lock when mobile navigation drawer is active */
 body.nav-open {
   overflow: hidden;
+  touch-action: none;
 }
 
-/* Header & Main Landmarks */
+/* Smooth scrolling with sticky header offset */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Offset anchor scrolling to account for sticky navbar */
+section[id],
+.section[id],
+#hero,
+#about,
+#skills,
+#experience,
+#projects,
+#services,
+#process,
+#proof,
+#contact {
+  scroll-margin-top: calc(var(--header-height, 4.25rem) + 1.25rem);
+}
+
+/* ==========================================================================
+   Header, Main & Footer Structural Landmarks
+   ========================================================================== */
 .site-header {
   position: sticky;
   top: 0;
   z-index: var(--z-nav);
   height: var(--header-height);
-  background-color: rgba(11, 15, 25, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--color-border-subtle);
+  background-color: rgba(9, 10, 15, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
   display: flex;
   align-items: center;
+  transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.site-header.is-scrolled {
+  background-color: rgba(9, 10, 15, 0.94);
+  border-bottom: 1px solid var(--border-medium);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
 .site-main {
@@ -123,9 +170,9 @@ body.nav-open {
 }
 
 .site-footer {
-  border-top: 1px solid var(--color-border-subtle);
-  background-color: var(--color-canvas-subtle);
-  padding-block: var(--space-12);
+  border-top: 1px solid var(--border-subtle);
+  background-color: #07080C;
+  padding-block: var(--space-16) var(--space-8);
 }
 
 /* ==========================================================================

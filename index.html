@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO & Primary Discovery Metadata (@SEOEngineer) -->
   <title>Muhammad Shayan Ghouri | Web &amp; Mobile Application Developer</title>
-  <meta name="description" content="Portfolio of Muhammad Shayan Ghouri — Web &amp; Mobile Application Developer and Computer Science undergraduate at UBIT. Engineering scalable web systems and mobile apps.">
+  <meta name="description"
+    content="Portfolio of Muhammad Shayan Ghouri — Web &amp; Mobile Application Developer and Computer Science undergraduate at UBIT. Engineering scalable web systems and mobile apps.">
   <meta name="author" content="Muhammad Shayan Ghouri">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://ms-ghouri.github.io/Shayanportfolio/">
   <meta name="theme-color" content="#070A12">
 
+  <!-- Favicon (@SEOEngineer) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23090A0F'/><text x='16' y='23' font-family='Inter,sans-serif' font-size='18' font-weight='700' text-anchor='middle' fill='%233B82F6'>S</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23090A0F'/><text x='16' y='23' font-family='Inter,sans-serif' font-size='18' font-weight='700' text-anchor='middle' fill='%233B82F6'>S</text></svg>">
+
   <!-- Open Graph / Facebook Protocol (@SEOEngineer) -->
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Muhammad Shayan Ghouri | Web &amp; Mobile Application Developer">
-  <meta property="og:description" content="Web &amp; Mobile Application Developer and Computer Science undergraduate at UBIT. Delivering production web platforms, custom LMS/e-commerce architectures, and cross-platform apps.">
+  <meta property="og:description"
+    content="Web &amp; Mobile Application Developer and Computer Science undergraduate at UBIT. Delivering production web platforms, custom LMS/e-commerce architectures, and cross-platform apps.">
   <meta property="og:url" content="https://ms-ghouri.github.io/Shayanportfolio/">
   <meta property="og:image" content="https://ms-ghouri.github.io/Shayanportfolio/assets/img/og-preview.png">
   <meta property="og:site_name" content="Muhammad Shayan Ghouri Portfolio">
@@ -25,7 +32,8 @@
   <!-- Twitter / X Card Protocol (@SEOEngineer) -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Muhammad Shayan Ghouri | Web &amp; Mobile Application Developer">
-  <meta name="twitter:description" content="Web &amp; Mobile Application Developer and Computer Science undergraduate at UBIT. Delivering production web platforms, custom LMS/e-commerce architectures, and cross-platform apps.">
+  <meta name="twitter:description"
+    content="Web &amp; Mobile Application Developer and Computer Science undergraduate at UBIT. Delivering production web platforms, custom LMS/e-commerce architectures, and cross-platform apps.">
   <meta name="twitter:image" content="https://ms-ghouri.github.io/Shayanportfolio/assets/img/og-preview.png">
 
   <!-- JSON-LD Structured Data Schema.org (@SEOEngineer) -->
@@ -74,44 +82,55 @@
   }
   </script>
 
+  <!-- Modern Professional Typography: Inter & JetBrains Mono (@VisualDesigner) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
   <!-- Modular Stylesheets (@VisualDesigner & @FrontendEng) -->
-  <link rel="stylesheet" href="assets/css/variables.css?v=1.3">
-  <link rel="stylesheet" href="assets/css/reset.css?v=1.3">
-  <link rel="stylesheet" href="assets/css/layout.css?v=1.3">
-  <link rel="stylesheet" href="assets/css/components.css?v=1.3">
+  <link rel="stylesheet" href="assets/css/variables.css?v=2.0">
+  <link rel="stylesheet" href="assets/css/reset.css?v=2.0">
+  <link rel="stylesheet" href="assets/css/layout.css?v=2.0">
+  <link rel="stylesheet" href="assets/css/components.css?v=2.0">
 
   <!-- Entry Script Module -->
-  <script type="module" src="assets/js/main.js?v=1.3" defer></script>
+  <script type="module" src="assets/js/main.js?v=2.0" defer></script>
 </head>
+
 <body>
 
   <!-- Accessible Skip Link (@AccessibilityEng) -->
   <a href="#main-content" class="skip-link">Skip to content</a>
 
-  <!-- Header Landmark (@Architect & @UXArchitect) -->
-  <header class="site-header" role="banner">
+  <!-- Header Landmark (@Architect, @VisualDesigner, @FrontendEng) -->
+  <header class="site-header" id="site-header" role="banner">
     <div class="container flex items-center justify-between">
       <!-- Brand Logo / Identity -->
-      <a href="#" class="brand-logo" aria-label="Muhammad Shayan Ghouri Homepage">
-        <span>Muhammad Shayan Ghouri</span>
+      <a href="#hero" class="brand-logo" aria-label="Shayan Ghouri Homepage">
+        <span class="brand-name">Shayan Ghouri</span>
         <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-role" aria-hidden="true">Web &amp; Software Dev</span>
       </a>
 
       <!-- Mobile Navigation Toggle Button -->
-      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
         <span class="nav-toggle-icon" aria-hidden="true"></span>
       </button>
 
       <!-- Navigation Landmark -->
-      <nav class="site-nav" aria-label="Main Navigation">
+      <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
         <div id="nav-menu" class="nav-menu">
-          <ul class="nav-list">
+          <ul class="nav-list" role="list">
             <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
             <li><a href="#experience" class="nav-link">Experience</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#projects" class="nav-link">Work</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
             <li><a href="#services" class="nav-link">Services</a></li>
-            <li><a href="assets/resume/Muhammad_Shayan_Ghouri_Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-link" aria-label="View Muhammad Shayan Ghouri's Resume (PDF opens in new tab)">Resume</a></li>
+            <li><a href="#process" class="nav-link">Process</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="assets/resume/Muhammad_Shayan_Ghouri_Resume.pdf" target="_blank" rel="noopener noreferrer"
+                class="nav-link nav-resume" aria-label="View Resume PDF (opens in new tab)">Resume ↗</a>
+            </li>
           </ul>
           <div class="nav-actions">
             <a href="#contact" class="btn-talk nav-cta">Let's Talk</a>
@@ -123,615 +142,1533 @@
 
   <!-- Main Content Landmark -->
   <main id="main-content" class="site-main">
-    <!-- Hero Section (@ContentStrategist, @RecruiterExp, @VisualDesigner, @FrontendEng) -->
+    <!-- Hero Section (@Architect, @VisualDesigner, @FrontendEng) -->
     <section id="hero" class="hero-section" aria-labelledby="hero-title">
-      <!-- Subtle Ambient Mesh Glow (Zero Canvas, Pure CSS) -->
+      <!-- Subtle Ambient Top Glow -->
       <div class="hero-glow" aria-hidden="true"></div>
 
-      <div class="container hero-content">
-        <!-- Availability Status Badge -->
-        <div class="badge-availability" role="status">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span>Available for internships, junior engineering roles &amp; client projects</span>
-        </div>
-
-        <!-- Main Heading (H1) -->
-        <h1 id="hero-title" class="hero-title">
-          Building <span class="text-gradient">scalable web platforms</span>, <span class="text-gradient">mobile apps</span>, and robust digital solutions.
-        </h1>
-
-        <!-- Subtitle / Value Proposition -->
-        <p class="hero-description">
-          I'm <strong class="text-highlight">Muhammad Shayan Ghouri</strong> — a Web &amp; Mobile Application Developer and Computer Science undergraduate at UBIT (University of Karachi). I bridge solid computer science fundamentals with hands-on full-stack development.
-        </p>
-
-        <!-- Primary Dual CTAs (Client & Recruiter) -->
-        <div class="hero-cta-group">
-          <a href="#contact" class="btn btn-hero-primary">
-            <span>Let's Talk</span>
-            <svg class="icon-svg" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-            </svg>
-          </a>
-          <a href="#projects" class="btn btn-hero-secondary">
-            <span>View Work</span>
-            <svg class="icon-svg" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </a>
-        </div>
-
-        <!-- Secondary Recruiter Action Strip -->
-        <div class="hero-recruiter-strip">
-          <span class="recruiter-label">Quick Links:</span>
-          <ul class="recruiter-links" aria-label="Professional and social links">
-            <li>
-              <a href="assets/resume/Muhammad_Shayan_Ghouri_Resume.pdf" class="recruiter-link" download aria-label="Download Muhammad Shayan Ghouri's Resume (PDF)">
-                <svg class="icon-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                  <polyline points="7 10 12 15 17 10"/>
-                  <line x1="12" y1="15" x2="12" y2="3"/>
-                </svg>
-                <span>Download Resume</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/MS-Ghouri" class="recruiter-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile (opens in new tab)">
-                <svg class="icon-svg" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-                </svg>
-                <span>GitHub</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/muhammad-shayan-ghouri" class="recruiter-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile (opens in new tab)">
-                <svg class="icon-svg" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.8v8.37h-2.8v-8.37M7.86 6.72a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26z"/>
-                </svg>
-                <span>LinkedIn</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://wa.me/923272695810" class="recruiter-link" target="_blank" rel="noopener noreferrer" aria-label="Direct WhatsApp Message (opens in new tab)">
-                <svg class="icon-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                </svg>
-                <span>WhatsApp</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- About & Academic Foundation Section (@ContentStrategist, @RecruiterExp, @VisualDesigner, @FrontendEng) -->
-    <section id="about" class="section about-section" aria-labelledby="about-title">
-      <div class="container">
-        <!-- Section Eyebrow & Title -->
-        <span class="section-eyebrow">BACKGROUND &amp; FOUNDATION</span>
-        <h2 id="about-title" class="section-title">
-          Bridging <span class="text-gradient">Computer Science Rigor</span> with Production Delivery
-        </h2>
-
-        <!-- Narrative Blocks (Fast-Scan & Authentic Technical Depth) -->
-        <div class="about-narrative">
-          <p class="about-lead">
-            I am a Computer Science undergraduate at the Department of Computer Science (UBIT), University of Karachi, currently in my 6th semester. My approach to software development is grounded in core foundational principles—algorithms, data structures, and disciplined systems design—rather than surface-level template engineering.
-          </p>
-          <p>
-            My engineering philosophy centers on translating complex architectural requirements into reliable, high-performance web and mobile products. From engineering custom e-commerce and learning management platforms to designing cross-platform mobile solutions, I deliver clean code prioritized for maintainability, zero-bloat performance, and strict WCAG 2.2 accessibility.
-          </p>
-        </div>
-
-        <!-- Fast-Scan Academic & Core Highlights Grid (3-Card Layout) -->
-        <div class="about-cards-grid">
-          <!-- Card 1: Academic Foundation -->
-          <article class="about-card">
-            <div class="about-card-header">
-              <div class="about-card-icon" aria-hidden="true">
-                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-                </svg>
-              </div>
-              <h3 class="about-card-title">Academic Foundation</h3>
+      <div class="container hero-container">
+        <div class="hero-layout">
+          <!-- Left Column: Primary Pitch, Headline, Credibility & CTAs -->
+          <div class="hero-col-content">
+            <!-- Availability Status Badge -->
+            <div class="badge-availability" role="status">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span>Available for Opportunities &amp; Client Projects</span>
             </div>
-            <div class="about-card-body">
-              <div class="about-meta-row">
-                <span class="about-meta-label">Institution</span>
-                <span class="about-meta-value">University of Karachi (UBIT)</span>
-              </div>
-              <div class="about-meta-row">
-                <span class="about-meta-label">Degree &amp; Status</span>
-                <span class="about-meta-value">BS in Computer Science (2024 – 2027) • 6th Semester</span>
-              </div>
-              <div class="about-meta-row">
-                <span class="about-meta-label">Verified Academic GPA</span>
-                <span class="about-meta-value">3.92 (4th Semester) • 3.30 (3rd Semester)</span>
-              </div>
-              <div class="about-meta-row">
-                <span class="about-meta-label">Core Areas</span>
-                <div class="about-tag-cloud">
-                  <span class="tag-badge">Algorithms</span>
-                  <span class="tag-badge">Compiler Construction</span>
-                  <span class="tag-badge">Database Systems</span>
-                  <span class="tag-badge">Modeling &amp; Simulation</span>
-                </div>
-              </div>
-            </div>
-          </article>
 
-          <!-- Card 2: Engineering Discipline -->
-          <article class="about-card">
-            <div class="about-card-header">
-              <div class="about-card-icon about-card-icon-purple" aria-hidden="true">
-                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="16 18 22 12 16 6"/>
-                  <polyline points="8 6 2 12 8 18"/>
-                </svg>
-              </div>
-              <h3 class="about-card-title">Engineering Discipline</h3>
+            <!-- Main Heading (H1) -->
+            <h1 id="hero-title" class="hero-title">
+              Building Digital Products That <span class="text-gradient">Solve Real Problems.</span>
+            </h1>
+
+            <!-- Supporting Description -->
+            <p class="hero-description">
+              I'm <strong class="text-highlight">Shayan</strong>, a Computer Science student and developer with hands-on experience building websites, e-commerce platforms, mobile apps and custom software for real-world clients and projects.
+            </p>
+
+            <!-- Credibility Line -->
+            <div class="hero-credibility">
+              <span class="credibility-dot" aria-hidden="true"></span>
+              <p class="credibility-text">
+                BS Computer Science @ UBIT &middot; Hands-On Production Delivery &middot; Web, E-Commerce &amp; Mobile
+              </p>
             </div>
-            <div class="about-card-body">
-              <ul class="about-feature-list">
-                <li class="about-feature-item">
-                  <span class="about-feature-check" aria-hidden="true">✓</span>
-                  <span>Clean architecture &amp; modular system design</span>
+
+            <!-- Primary & Secondary CTAs -->
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-hero-primary" aria-label="View My Featured Work and Case Studies">
+                <span>View My Work</span>
+                <svg class="icon-svg" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+              <a href="#contact" class="btn btn-hero-secondary" aria-label="Get in Touch with Muhammad Shayan Ghouri">
+                <span>Let's Talk</span>
+                <svg class="icon-svg" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Fast-Track Recruiter Links -->
+            <div class="hero-recruiter-strip">
+              <span class="recruiter-label">Fast Links:</span>
+              <ul class="recruiter-links" aria-label="Direct professional channels">
+                <li>
+                  <a href="assets/resume/Muhammad_Shayan_Ghouri_Resume.pdf" class="recruiter-link" download
+                    aria-label="Download Muhammad Shayan Ghouri's Resume (PDF)">
+                    <svg class="icon-svg-sm" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    <span>Resume</span>
+                  </a>
                 </li>
-                <li class="about-feature-item">
-                  <span class="about-feature-check" aria-hidden="true">✓</span>
-                  <span>Semantic markup, fluid typography &amp; zero-bloat CSS</span>
+                <li>
+                  <a href="https://github.com/MS-Ghouri" class="recruiter-link" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub Profile (opens in new tab)">
+                    <svg class="icon-svg-sm" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                    </svg>
+                    <span>GitHub</span>
+                  </a>
                 </li>
-                <li class="about-feature-item">
-                  <span class="about-feature-check" aria-hidden="true">✓</span>
-                  <span>Performance-first assets: sub-50KB payloads and 0 CLS</span>
+                <li>
+                  <a href="https://www.linkedin.com/in/muhammad-shayan-ghouri" class="recruiter-link" target="_blank"
+                    rel="noopener noreferrer" aria-label="LinkedIn Profile (opens in new tab)">
+                    <svg class="icon-svg-sm" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.8v8.37h-2.8v-8.37M7.86 6.72a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26z" />
+                    </svg>
+                    <span>LinkedIn</span>
+                  </a>
                 </li>
-                <li class="about-feature-item">
-                  <span class="about-feature-check" aria-hidden="true">✓</span>
-                  <span>Accessible WCAG 2.2 standards &amp; strict Git versioning</span>
+                <li>
+                  <a href="https://wa.me/923272695810" class="recruiter-link" target="_blank" rel="noopener noreferrer"
+                    aria-label="Direct WhatsApp Message (opens in new tab)">
+                    <svg class="icon-svg-sm" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                    </svg>
+                    <span>WhatsApp</span>
+                  </a>
                 </li>
               </ul>
             </div>
-          </article>
+          </div>
 
-          <!-- Card 3: Dual-Track Focus -->
-          <article class="about-card">
-            <div class="about-card-header">
-              <div class="about-card-icon" aria-hidden="true">
-                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="12 2 2 7 12 12 22 7 12 2"/>
-                  <polyline points="2 17 12 22 22 17"/>
-                  <polyline points="2 12 12 17 22 12"/>
-                </svg>
+          <!-- Right Column: Developer Workspace & Architecture Card Visual -->
+          <div class="hero-col-visual" aria-hidden="true">
+            <div class="hero-code-window">
+              <!-- Window Chrome Header -->
+              <div class="code-window-header">
+                <div class="window-controls">
+                  <span class="control-dot dot-close"></span>
+                  <span class="control-dot dot-minimize"></span>
+                  <span class="control-dot dot-expand"></span>
+                </div>
+                <div class="window-title">
+                  <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6" />
+                    <polyline points="8 6 2 12 8 18" />
+                  </svg>
+                  <span>shayan.engineer.ts</span>
+                </div>
+                <div class="window-branch">
+                  <span class="branch-pill">main</span>
+                </div>
               </div>
-              <h3 class="about-card-title">Dual-Track Focus</h3>
+
+              <!-- Window Code Content -->
+              <div class="code-window-body">
+                <pre class="code-block"><code><span class="cl"><span class="line-no">01</span><span class="token-keyword">interface</span> <span class="token-type">DeveloperProfile</span> {</span>
+<span class="cl"><span class="line-no">02</span>  <span class="token-property">engineer</span>: <span class="token-string">"Muhammad Shayan Ghouri"</span>;</span>
+<span class="cl"><span class="line-no">03</span>  <span class="token-property">academic</span>: <span class="token-string">"BS Computer Science @ UBIT"</span>;</span>
+<span class="cl"><span class="line-no">04</span>  <span class="token-property">focus</span>: [<span class="token-string">"Full-Stack Web"</span>, <span class="token-string">"Mobile Apps"</span>];</span>
+<span class="cl"><span class="line-no">05</span>  <span class="token-property">productionWork</span>: {</span>
+<span class="cl"><span class="line-no">06</span>    <span class="token-property">lms</span>: <span class="token-string">"EduKing (eduking.com.au)"</span>,</span>
+<span class="cl"><span class="line-no">07</span>    <span class="token-property">store</span>: <span class="token-string">"Vox Autos (voxautos.com)"</span>,</span>
+<span class="cl"><span class="line-no">08</span>    <span class="token-property">mobile</span>: <span class="token-string">"HisaabSync Ledger"</span></span>
+<span class="cl"><span class="line-no">09</span>  };</span>
+<span class="cl"><span class="line-no">10</span>  <span class="token-property">standards</span>: [<span class="token-string">"WCAG 2.2 AA"</span>, <span class="token-string">"Clean Code"</span>];</span>
+<span class="cl"><span class="line-no">11</span>}</span></code></pre>
+              </div>
+
+              <!-- Floating Context Highlight Badge -->
+              <div class="hero-floating-badge">
+                <span class="floating-badge-dot"></span>
+                <span>Verified Production Architectures</span>
+              </div>
             </div>
-            <div class="about-card-body">
-              <div class="about-meta-row">
-                <span class="about-meta-label">Engineering Roles</span>
-                <span class="about-meta-value">Scalable web apps, APIs, modern frontend architectures.</span>
-              </div>
-              <div class="about-meta-row">
-                <span class="about-meta-label">Client Solutions</span>
-                <span class="about-meta-value">Production WordPress/WooCommerce engineering, custom plugins, and business apps.</span>
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Technical Skills & Competencies Section (@ContentStrategist, @RecruiterExp, @VisualDesigner, @FrontendEng) -->
+    <!-- About & Personal Foundation Section (@Architect, @BrandStrategist, @FrontendEng) -->
+    <section id="about" class="section about-section" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-layout">
+          <!-- Left Column: Identity, Section Heading & Philosophy -->
+          <div class="about-col-intro">
+            <div class="about-intro-header">
+              <span class="section-eyebrow">ABOUT ME</span>
+              <h2 id="about-title" class="section-title about-title">
+                Building with purpose, <span class="text-gradient">learning by doing.</span>
+              </h2>
+            </div>
+
+            <!-- Personal Philosophy Statement Card -->
+            <div class="about-philosophy-card">
+              <div class="philosophy-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-quote">
+                  <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
+                  <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
+                </svg>
+              </div>
+              <blockquote class="about-philosophy-quote">
+                &ldquo;I believe good software starts with understanding the problem &mdash; not choosing the technology first.&rdquo;
+              </blockquote>
+            </div>
+
+            <!-- Subtle Core Focus Pills (Supporting Artifact) -->
+            <div class="about-focus-pills" aria-hidden="true">
+              <span class="focus-pill">Problem First</span>
+              <span class="focus-pill">Direct Client Delivery</span>
+              <span class="focus-pill">Clean Maintainable Code</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Biography, Currently Block & Metadata Grid -->
+          <div class="about-col-content">
+            <!-- Main Personal Biography -->
+            <div class="about-bio">
+              <p class="about-lead">
+                I'm <strong class="text-highlight">Shayan</strong>, a Computer Science student and developer who enjoys turning ideas into working digital products.
+              </p>
+              <p>
+                I'm currently in my 6th semester of BS Computer Science at UBIT, University of Karachi. Alongside university, I work directly with clients building websites, e-commerce platforms, mobile apps and custom software.
+              </p>
+              <p>
+                I like working across both the product and technical sides &mdash; understanding what needs to be built, choosing the right tools, and getting it shipped.
+              </p>
+            </div>
+
+            <!-- "Currently" Spotlight Card -->
+            <div class="about-currently-card">
+              <div class="currently-indicator">
+                <span class="currently-dot" aria-hidden="true"></span>
+                <span class="currently-label">CURRENTLY</span>
+              </div>
+              <p class="currently-text">
+                6th Semester, BS Computer Science @ UBIT &mdash; building real projects alongside university.
+              </p>
+            </div>
+
+            <!-- Compact Metadata Highlights Grid -->
+            <div class="about-meta-grid" role="list" aria-label="Key background highlights">
+              <div class="about-meta-card" role="listitem">
+                <span class="meta-label">EDUCATION</span>
+                <strong class="meta-title">BS Computer Science</strong>
+                <span class="meta-sub">University of Karachi &mdash; UBIT</span>
+              </div>
+
+              <div class="about-meta-card" role="listitem">
+                <span class="meta-label">CURRENTLY</span>
+                <strong class="meta-title">6th Semester</strong>
+                <span class="meta-sub">Undergraduate (2024 &ndash; 2027)</span>
+              </div>
+
+              <div class="about-meta-card" role="listitem">
+                <span class="meta-label">FOCUS</span>
+                <strong class="meta-title">Web &middot; Mobile &middot; Software &middot; AI</strong>
+                <span class="meta-sub">Full-Stack, APIs &amp; E-Commerce</span>
+              </div>
+
+              <div class="about-meta-card" role="listitem">
+                <span class="meta-label">EXPERIENCE</span>
+                <strong class="meta-title">Hands-On Client &amp; Project Work</strong>
+                <span class="meta-sub">Local &amp; International Delivery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Technical Stack Section (@FrontendEng, @VisualDesigner, @Architect) -->
     <section id="skills" class="section skills-section" aria-labelledby="skills-title">
       <div class="container">
         <!-- Section Eyebrow & Title -->
-        <span class="section-eyebrow">SKILLS &amp; CAPABILITIES</span>
+        <span class="section-eyebrow">SKILLS &amp; TECHNOLOGIES</span>
         <h2 id="skills-title" class="section-title">
-          Technical Competencies <span class="text-gradient">&amp; Tooling</span>
+          Tools I <span class="text-gradient">Build With</span>
         </h2>
         <p class="section-subtitle">
-          Categorized by day-to-day production proficiency, practical working knowledge, and active computer science research.
+          I work across the stack to build websites, e-commerce platforms, learning systems, mobile applications and custom software.
         </p>
 
-        <!-- 3-Tier Credibility Architecture Grid -->
-        <div class="skills-grid">
-          <!-- Tier 1: Core Competencies -->
-          <article class="skills-tier-card skills-tier-1">
-            <header class="skills-tier-header">
-              <div class="skills-tier-badge tier-badge-core">
-                <span class="tier-dot" aria-hidden="true"></span>
-                <span>Tier 1: Core Competencies</span>
+        <!-- 8-Category Modern Technical Stack Grid -->
+        <div class="tech-stack-grid" role="list">
+          
+          <!-- Category 1: Frontend -->
+          <article class="tech-category-card" role="listitem">
+            <header class="tech-category-header">
+              <div class="tech-category-badge">
+                <span class="tech-cat-dot dot-blue" aria-hidden="true"></span>
+                <span class="tech-cat-num">01</span>
               </div>
-              <h3 class="skills-tier-title">Interview-Ready &amp; Daily Production</h3>
-              <p class="skills-tier-desc">
-                Technologies and tools I work with daily and can confidently defend in deep technical discussions.
-              </p>
+              <h3 class="tech-category-title">Frontend</h3>
             </header>
-            <div class="skills-tier-body">
-              <ul class="skills-list" aria-label="Core Competencies List">
-                <li><span class="skill-tag">JavaScript (ES6+)</span></li>
-                <li><span class="skill-tag">TypeScript</span></li>
-                <li><span class="skill-tag">React.js</span></li>
-                <li><span class="skill-tag">Next.js</span></li>
-                <li><span class="skill-tag">Node.js</span></li>
-                <li><span class="skill-tag">HTML5 &amp; Modern CSS</span></li>
-                <li><span class="skill-tag">WordPress Core &amp; Plugin Dev</span></li>
-                <li><span class="skill-tag">WooCommerce</span></li>
-                <li><span class="skill-tag">REST APIs</span></li>
-                <li><span class="skill-tag">Git &amp; Version Control</span></li>
-              </ul>
+            <div class="tech-category-tags">
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">JavaScript (ES6+)</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">React.js</span>
             </div>
           </article>
 
-          <!-- Tier 2: Working Knowledge -->
-          <article class="skills-tier-card skills-tier-2">
-            <header class="skills-tier-header">
-              <div class="skills-tier-badge tier-badge-working">
-                <span class="tier-dot" aria-hidden="true"></span>
-                <span>Tier 2: Working Knowledge</span>
+          <!-- Category 2: Backend & APIs -->
+          <article class="tech-category-card" role="listitem">
+            <header class="tech-category-header">
+              <div class="tech-category-badge">
+                <span class="tech-cat-dot dot-indigo" aria-hidden="true"></span>
+                <span class="tech-cat-num">02</span>
               </div>
-              <h3 class="skills-tier-title">Practical Production &amp; Academic Exposure</h3>
-              <p class="skills-tier-desc">
-                Technologies applied across live client solutions, university systems, and mobile architectures.
-              </p>
+              <h3 class="tech-category-title">Backend &amp; APIs</h3>
             </header>
-            <div class="skills-tier-body">
-              <ul class="skills-list" aria-label="Working Knowledge List">
-                <li><span class="skill-tag">React Native</span></li>
-                <li><span class="skill-tag">Expo</span></li>
-                <li><span class="skill-tag">MongoDB Atlas</span></li>
-                <li><span class="skill-tag">Express.js</span></li>
-                <li><span class="skill-tag">PHP</span></li>
-                <li><span class="skill-tag">Shopify &amp; Liquid</span></li>
-                <li><span class="skill-tag">SQL &amp; Relational Schemas</span></li>
-                <li><span class="skill-tag">Python</span></li>
-              </ul>
+            <div class="tech-category-tags">
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Express.js</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">REST APIs</span>
             </div>
           </article>
 
-          <!-- Tier 3: Active Study & Academic Focus -->
-          <article class="skills-tier-card skills-tier-3">
-            <header class="skills-tier-header">
-              <div class="skills-tier-badge tier-badge-learning">
-                <span class="tier-dot" aria-hidden="true"></span>
-                <span>Tier 3: Active Study &amp; Academic Focus</span>
+          <!-- Category 3: Mobile -->
+          <article class="tech-category-card" role="listitem">
+            <header class="tech-category-header">
+              <div class="tech-category-badge">
+                <span class="tech-cat-dot dot-cyan" aria-hidden="true"></span>
+                <span class="tech-cat-num">03</span>
               </div>
-              <h3 class="skills-tier-title">UBIT Coursework &amp; Exploration</h3>
-              <p class="skills-tier-desc">
-                Core computer science topics and specialized areas currently being studied and applied in coursework.
-              </p>
+              <h3 class="tech-category-title">Mobile</h3>
             </header>
-            <div class="skills-tier-body">
-              <ul class="skills-list" aria-label="Active Study and Coursework List">
-                <li><span class="skill-tag">Compiler Construction</span></li>
-                <li><span class="skill-tag">Database Internals</span></li>
-                <li><span class="skill-tag">Modeling &amp; Simulation</span></li>
-                <li><span class="skill-tag">Systems Performance &amp; Queueing Theory</span></li>
-                <li><span class="skill-tag">LLM Scheduling Dynamics</span></li>
-              </ul>
+            <div class="tech-category-tags">
+              <span class="skill-tag">React Native</span>
+              <span class="skill-tag">Expo</span>
+              <span class="skill-tag">Android Development</span>
+            </div>
+          </article>
+
+          <!-- Category 4: CMS & E-Commerce -->
+          <article class="tech-category-card" role="listitem">
+            <header class="tech-category-header">
+              <div class="tech-category-badge">
+                <span class="tech-cat-dot dot-amber" aria-hidden="true"></span>
+                <span class="tech-cat-num">04</span>
+              </div>
+              <h3 class="tech-category-title">CMS &amp; E-Commerce</h3>
+            </header>
+            <div class="tech-category-tags">
+              <span class="skill-tag">WordPress</span>
+              <span class="skill-tag">WooCommerce</span>
+              <span class="skill-tag">LearnDash LMS</span>
+              <span class="skill-tag">BuddyBoss</span>
+              <span class="skill-tag">Shopify</span>
+            </div>
+          </article>
+
+          <!-- Category 5: Database -->
+          <article class="tech-category-card" role="listitem">
+            <header class="tech-category-header">
+              <div class="tech-category-badge">
+                <span class="tech-cat-dot dot-emerald" aria-hidden="true"></span>
+                <span class="tech-cat-num">05</span>
+              </div>
+              <h3 class="tech-category-title">Database</h3>
+            </header>
+            <div class="tech-category-tags">
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">MongoDB Atlas</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">Relational Schemas</span>
+            </div>
+          </article>
+
+          <!-- Category 6: Payments & Integrations -->
+          <article class="tech-category-card" role="listitem">
+            <header class="tech-category-header">
+              <div class="tech-category-badge">
+                <span class="tech-cat-dot dot-purple" aria-hidden="true"></span>
+                <span class="tech-cat-num">06</span>
+              </div>
+              <h3 class="tech-category-title">Payments &amp; Integrations</h3>
+            </header>
+            <div class="tech-category-tags">
+              <span class="skill-tag">Stripe API</span>
+              <span class="skill-tag">Payment Gateways</span>
+              <span class="skill-tag">API Integrations</span>
+              <span class="skill-tag">Webhooks</span>
+            </div>
+          </article>
+
+          <!-- Category 7: Tools & Workflow -->
+          <article class="tech-category-card" role="listitem">
+            <header class="tech-category-header">
+              <div class="tech-category-badge">
+                <span class="tech-cat-dot dot-slate" aria-hidden="true"></span>
+                <span class="tech-cat-num">07</span>
+              </div>
+              <h3 class="tech-category-title">Tools &amp; Workflow</h3>
+            </header>
+            <div class="tech-category-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Hostinger / SFTP</span>
+              <span class="skill-tag">WCAG 2.2 AA</span>
+            </div>
+          </article>
+
+          <!-- Category 8: AI & Development Tools -->
+          <article class="tech-category-card" role="listitem">
+            <header class="tech-category-header">
+              <div class="tech-category-badge">
+                <span class="tech-cat-dot dot-rose" aria-hidden="true"></span>
+                <span class="tech-cat-num">08</span>
+              </div>
+              <h3 class="tech-category-title">AI &amp; Dev Tools</h3>
+            </header>
+            <div class="tech-category-tags">
+              <span class="skill-tag">Cursor / Copilot</span>
+              <span class="skill-tag">Gemini</span>
+              <span class="skill-tag">AI-Assisted Workflows</span>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Subtle Closing Statement -->
+        <div class="skills-footer-note">
+          <span class="skills-closing-text">Always learning. Always building.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Practical Experience & Academic Path Section (@Architect, @BrandStrategist, @FrontendEng) -->
+    <section id="experience" class="section experience-section" aria-labelledby="experience-title">
+      <div class="container">
+        <!-- Section Eyebrow & Title -->
+        <span class="section-eyebrow">EXPERIENCE</span>
+        <h2 id="experience-title" class="section-title">
+          Real-World Development <span class="text-gradient">&amp; Academic Path</span>
+        </h2>
+        <p class="section-subtitle">
+          Hands-on client engineering, production digital products, and computer science foundation at UBIT.
+        </p>
+
+        <!-- Timeline Container -->
+        <div class="experience-timeline">
+          <!-- Timeline Entry 1: Freelance Web & Software Developer -->
+          <article class="timeline-entry" aria-labelledby="role-freelance">
+            <!-- Timeline Marker (Desktop Left Column) -->
+            <div class="timeline-marker">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <span class="timeline-date">2024 &mdash; Present</span>
+            </div>
+
+            <!-- Timeline Content Card -->
+            <div class="timeline-card">
+              <header class="timeline-header">
+                <div class="timeline-title-wrap">
+                  <h3 id="role-freelance" class="timeline-role">Freelance Web &amp; Software Developer</h3>
+                  <div class="timeline-badge-group">
+                    <span class="timeline-type-pill">Independent / Client Projects</span>
+                    <span class="timeline-highlight-pill" aria-label="Development workflow">
+                      <span class="highlight-pill-dot" aria-hidden="true"></span>
+                      Requirements &rarr; Build &rarr; Test &rarr; Deploy
+                    </span>
+                  </div>
+                </div>
+              </header>
+
+              <p class="timeline-description">
+                Building websites, e-commerce platforms and custom software for direct clients &mdash; handling requirements, development, testing and deployment.
+              </p>
+
+              <!-- Responsibilities & Achievement Bullets -->
+              <div class="timeline-responsibilities">
+                <span class="responsibilities-label">Key Work:</span>
+                <ul class="timeline-work-list">
+                  <li>WordPress &amp; WooCommerce development — custom themes, plugins, and checkout flows for client requirements.</li>
+                  <li>Shopify store setup, theme customization, and e-commerce workflow configuration.</li>
+                  <li>Custom web applications and REST API integrations, including payment gateway connections.</li>
+                  <li>Direct client communication from initial brief through delivery and post-launch support.</li>
+                </ul>
+              </div>
+
+              <!-- Selected Production Work Reference Cards -->
+              <div class="selected-work-area">
+                <span class="selected-work-label">Selected Production Work:</span>
+                <div class="selected-work-grid" role="list">
+                  <a href="#project-eduking" class="selected-work-card" role="listitem" aria-label="Jump to EduKing in Featured Projects">
+                    <div class="selected-work-header">
+                      <span class="work-card-tag">Production LMS</span>
+                      <svg class="icon-svg-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="7" y1="17" x2="17" y2="7" />
+                        <polyline points="7 7 17 7 17 17" />
+                      </svg>
+                    </div>
+                    <strong class="work-card-name">EduKing</strong>
+                    <span class="work-card-desc">Online School &amp; Community Platform</span>
+                  </a>
+
+                  <a href="#project-hisaabsync" class="selected-work-card" role="listitem" aria-label="Jump to HisaabSync in Featured Projects">
+                    <div class="selected-work-header">
+                      <span class="work-card-tag">Mobile Application</span>
+                      <svg class="icon-svg-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="7" y1="17" x2="17" y2="7" />
+                        <polyline points="7 7 17 7 17 17" />
+                      </svg>
+                    </div>
+                    <strong class="work-card-name">HisaabSync</strong>
+                    <span class="work-card-desc">Expense &amp; Ledger Management</span>
+                  </a>
+
+                  <a href="#project-voxautos" class="selected-work-card" role="listitem" aria-label="Jump to Vox Autos in Featured Projects">
+                    <div class="selected-work-header">
+                      <span class="work-card-tag">E-Commerce Platform</span>
+                      <svg class="icon-svg-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="7" y1="17" x2="17" y2="7" />
+                        <polyline points="7 7 17 7 17 17" />
+                      </svg>
+                    </div>
+                    <strong class="work-card-name">Vox Autos</strong>
+                    <span class="work-card-desc">Spare Parts &amp; Accessories Store</span>
+                  </a>
+                </div>
+              </div>
+
+
+            </div>
+          </article>
+
+          <!-- Timeline Entry 2: BS Computer Science @ UBIT -->
+          <article class="timeline-entry" aria-labelledby="role-ubit">
+            <!-- Timeline Marker (Desktop Left Column) -->
+            <div class="timeline-marker">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <span class="timeline-date">2024 &mdash; 2027</span>
+            </div>
+
+            <!-- Timeline Content Card -->
+            <div class="timeline-card">
+              <header class="timeline-header">
+                <div class="timeline-title-wrap">
+                  <h3 id="role-ubit" class="timeline-role">BS Computer Science</h3>
+                  <div class="timeline-badge-group">
+                    <span class="timeline-type-pill">University of Karachi &mdash; UBIT</span>
+                    <span class="timeline-status-pill">Currently 6th Semester</span>
+                  </div>
+                </div>
+              </header>
+
+              <p class="timeline-description">
+                Building a foundation in software engineering, algorithms, databases and systems through coursework and practical projects at UBIT.
+              </p>
+
+              <!-- Project-Based Learning Highlights -->
+              <div class="timeline-responsibilities">
+                <span class="responsibilities-label">Relevant Work:</span>
+                <ul class="timeline-work-list">
+                  <li>Built HisaabSync as a group project — a full-stack mobile app using React Native, Node.js &amp; MongoDB.</li>
+                  <li>Applied core CS concepts (databases, algorithms, systems) to real coursework implementations.</li>
+                </ul>
+              </div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Featured Projects & Case Studies Section (@CaseStudySpec, @FrontendEng, @VisualDesigner, @AccessibilityEng) -->
+    <!-- Selected Work & Featured Projects Section (@Architect, @CaseStudySpec, @VisualDesigner, @FrontendEng) -->
     <section id="projects" class="section projects-section" aria-labelledby="projects-title">
       <div class="container">
         <!-- Section Eyebrow & Title -->
-        <span class="section-eyebrow">FEATURED WORK</span>
+        <span class="section-eyebrow">SELECTED WORK</span>
         <h2 id="projects-title" class="section-title">
-          Engineered Solutions <span class="text-gradient">&amp; Live Systems</span>
+          Things I've <span class="text-gradient">Built</span>
         </h2>
         <p class="section-subtitle">
-          Detailed architectural breakdowns of verified, production software engineering and live client platforms.
+          A selection of client projects, applications and digital products I've worked on.
         </p>
 
-        <!-- Project Cards Stack -->
-        <div class="projects-grid">
-          <!-- Project 1: EduKing -->
-          <article class="project-card">
-            <div class="project-card-header">
-              <div class="project-meta-pill">
-                <span class="project-type">Production E-Learning Platform &amp; LMS</span>
-                <span class="project-dot" aria-hidden="true">•</span>
-                <span class="project-domain">eduking.com.au</span>
+        <!-- Selected Work Showcase Stack -->
+        <div class="projects-showcase">
+          <!-- FLAGSHIP FEATURED PROJECT: EduKing -->
+          <article class="project-showcase-card project-card-featured" id="project-eduking">
+            <!-- Large Project Visual Stage (Browser Frame Mockup) -->
+            <div class="project-visual-stage" aria-label="EduKing Platform Visual Preview">
+              <div class="browser-mockup">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="dot-red"></span>
+                    <span class="dot-amber"></span>
+                    <span class="dot-green"></span>
+                  </div>
+                  <div class="browser-address-bar">
+                    <svg class="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                    <span>https://eduking.com.au</span>
+                  </div>
+                  <div class="browser-actions">
+                    <span class="browser-badge-live">LIVE PRODUCTION</span>
+                  </div>
+                </div>
+
+                <div class="browser-viewport">
+                  <!-- Visual Showcase Placeholder Canvas with Stylized UI Blueprint -->
+                  <div class="viewport-canvas lms-canvas">
+                    <div class="canvas-grid-pattern" aria-hidden="true"></div>
+                    <div class="canvas-content-preview">
+                      <div class="preview-hero-bar">
+                        <span class="preview-pill">Australian School Curriculum</span>
+                        <span class="preview-badge-status">Automated Role Routing</span>
+                      </div>
+                      <div class="preview-cards-row">
+                        <div class="preview-card-item">
+                          <span class="card-item-tag">LMS Core</span>
+                          <strong class="card-item-title">LearnDash + BuddyBoss</strong>
+                          <span class="card-item-sub">Custom role hierarchies &amp; video lessons</span>
+                        </div>
+                        <div class="preview-card-item preview-card-highlight">
+                          <span class="card-item-tag">Plugin Architecture</span>
+                          <strong class="card-item-title">Custom PHP Plugin</strong>
+                          <span class="card-item-sub">Bespoke student workflow automations</span>
+                        </div>
+                        <div class="preview-card-item">
+                          <span class="card-item-tag">Checkout Flow</span>
+                          <strong class="card-item-title">WooCommerce + Stripe</strong>
+                          <span class="card-item-sub">Automated subscription billing</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="project-actions">
-                <a href="https://eduking.com.au" target="_blank" rel="noopener noreferrer" class="btn-project-link" aria-label="Visit EduKing live platform (opens in new tab)">
-                  <span>Live Site</span>
+            </div>
+
+            <!-- Featured Content Details -->
+            <div class="project-card-content">
+              <header class="project-header-row">
+                <div class="project-meta-badges">
+                  <span class="badge-project-type">CLIENT PROJECT</span>
+                  <span class="badge-project-region">AUSTRALIA</span>
+                  <span class="badge-project-category">ONLINE LEARNING PLATFORM / LMS</span>
+                </div>
+                <h3 class="project-showcase-title">EduKing &mdash; Online School &amp; Community Platform</h3>
+              </header>
+
+              <p class="project-showcase-description">
+                An online learning platform for an Australian school, built around student, parent, teacher and admin workflows — with custom LMS configuration, recurring billing, and automated role access.
+              </p>
+
+              <!-- Technical Highlight Box -->
+              <div class="project-highlight-box">
+                <div class="highlight-box-header">
+                  <span class="highlight-box-icon" aria-hidden="true">★</span>
+                  <span class="highlight-box-title">Key Contribution: Custom Plugin Development</span>
+                </div>
+                <p class="highlight-box-text">
+                  Built a custom PHP plugin linking LearnDash course progress to BuddyBoss community access, triggered automatically on WooCommerce Stripe checkout.
+                </p>
+              </div>
+
+              <!-- Feature Labels & Tech Pills -->
+              <div class="project-tags-section">
+                <div class="feature-badges-list" aria-label="EduKing Key Capabilities">
+                  <span class="feature-tag">LMS</span>
+                  <span class="feature-tag">Custom Plugin</span>
+                  <span class="feature-tag">Course Access</span>
+                  <span class="feature-tag">Payment Integration</span>
+                  <span class="feature-tag">Responsive Experience</span>
+                </div>
+
+                <div class="tech-pills-list" aria-label="EduKing Technologies">
+                  <span class="tech-tag-pill">WordPress</span>
+                  <span class="tech-tag-pill">LearnDash</span>
+                  <span class="tech-tag-pill">BuddyBoss</span>
+                  <span class="tech-tag-pill">Custom PHP Plugin</span>
+                  <span class="tech-tag-pill">WooCommerce</span>
+                  <span class="tech-tag-pill">Stripe API</span>
+                  <span class="tech-tag-pill">CSS3</span>
+                </div>
+              </div>
+
+              <!-- Project Action CTAs -->
+              <div class="project-card-actions">
+                <a href="https://eduking.com.au" target="_blank" rel="noopener noreferrer" class="btn btn-project-primary" aria-label="Visit EduKing live platform (opens in new tab)">
+                  <span>View Live</span>
                   <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                    <polyline points="15 3 21 3 21 9"/>
-                    <line x1="10" y1="14" x2="21" y2="3"/>
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
                   </svg>
-                  <span class="sr-only">(opens in new tab)</span>
+                </a>
+                <a href="work/eduking/" class="btn btn-project-secondary" aria-label="Read full EduKing LMS platform case study">
+                  <span>View Case Study &rarr;</span>
                 </a>
               </div>
             </div>
-
-            <h3 class="project-title">EduKing — Online School &amp; Community Platform</h3>
-
-            <p class="project-summary">
-              An Australian educational portal requiring course delivery, member management, structured curriculum access, and automated subscription billing.
-            </p>
-
-            <!-- Role Breakdown Highlight Box -->
-            <div class="project-role-box">
-              <div class="role-header">
-                <span class="role-badge">Shayan's Role &amp; Architecture</span>
-              </div>
-              <p class="role-desc">
-                Core WordPress architecture, LearnDash &amp; BuddyBoss setup, custom PHP plugin engineering, WooCommerce subscription routing, and Stripe checkout configuration.
-              </p>
-              <div class="role-highlights">
-                <span class="highlights-label">Key Engineering Highlights:</span>
-                <ul class="highlights-list">
-                  <li>Built custom plugin extensions to handle bespoke student workflows and automated role access</li>
-                  <li>Refined responsive navigation and player viewports for seamless mobile course playback</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Tech Stack Chips -->
-            <div class="project-tech-stack">
-              <span class="tech-stack-label">Technologies Applied:</span>
-              <ul class="tech-tags" aria-label="Technologies used for EduKing">
-                <li><span class="skill-tag">WordPress</span></li>
-                <li><span class="skill-tag">LearnDash</span></li>
-                <li><span class="skill-tag">BuddyBoss</span></li>
-                <li><span class="skill-tag">Custom PHP Plugin</span></li>
-                <li><span class="skill-tag">WooCommerce</span></li>
-                <li><span class="skill-tag">Stripe API</span></li>
-                <li><span class="skill-tag">CSS3</span></li>
-              </ul>
-            </div>
           </article>
 
-          <!-- Project 2: HisaabSync -->
-          <article class="project-card">
-            <div class="project-card-header">
-              <div class="project-meta-pill">
-                <span class="project-type">Cross-Platform Mobile Application</span>
-                <span class="project-dot" aria-hidden="true">•</span>
-                <span class="project-domain">Mobile &amp; API Architecture</span>
+          <!-- SECONDARY PROJECTS GRID: HisaabSync & Vox Autos -->
+          <div class="secondary-projects-grid">
+            <!-- Project 2: HisaabSync -->
+            <article class="project-showcase-card project-card-secondary" id="project-hisaabsync">
+              <!-- Mobile App Visual Stage -->
+              <div class="project-visual-stage visual-stage-mobile" aria-label="HisaabSync Mobile Interface Preview">
+                <div class="mobile-mockup">
+                  <div class="mobile-phone-header">
+                    <span class="mobile-notch"></span>
+                  </div>
+                  <div class="mobile-viewport">
+                    <div class="mobile-canvas-content">
+                      <div class="mobile-app-header">
+                        <span class="mobile-app-name">HisaabSync</span>
+                        <span class="mobile-badge-status">Live Ledger</span>
+                      </div>
+                      <div class="mobile-balance-card">
+                        <span class="balance-label">Shared Society Pool</span>
+                        <strong class="balance-amount">Ledger Sync Active</strong>
+                      </div>
+                      <div class="mobile-txn-list">
+                        <div class="mobile-txn-item">
+                          <span>Maintenance Pool</span>
+                          <span class="txn-green">Verified</span>
+                        </div>
+                        <div class="mobile-txn-item">
+                          <span>Utility Split</span>
+                          <span class="txn-blue">Logged</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="project-actions">
-                <a href="https://github.com/MS-Ghouri" target="_blank" rel="noopener noreferrer" class="btn-project-link" aria-label="View HisaabSync on GitHub (opens in new tab)">
-                  <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                  </svg>
-                  <span>GitHub Repository</span>
-                  <span class="sr-only">(opens in new tab)</span>
-                </a>
+
+              <!-- Content Details -->
+              <div class="project-card-content">
+                <header class="project-header-row">
+                  <div class="project-meta-badges">
+                    <span class="badge-project-type badge-type-academic">UNIVERSITY / GROUP PROJECT</span>
+                    <span class="badge-project-category">MOBILE APPLICATION</span>
+                  </div>
+                  <h3 class="project-showcase-title">HisaabSync &mdash; Residential Expense &amp; Ledger</h3>
+                </header>
+
+                <p class="project-showcase-description">
+                  A university group project — a mobile app for residential society billing and ledger management. I contributed the mobile frontend, state management, and REST API integration.
+                </p>
+
+                <!-- Feature Labels & Tech Pills -->
+                <div class="project-tags-section">
+                  <div class="feature-badges-list" aria-label="HisaabSync Key Features">
+                    <span class="feature-tag">Authentication</span>
+                    <span class="feature-tag">Resident Management</span>
+                    <span class="feature-tag">Bill Generation</span>
+                    <span class="feature-tag">Admin Verification</span>
+                    <span class="feature-tag">Role-Based Access</span>
+                  </div>
+
+                  <div class="tech-pills-list" aria-label="HisaabSync Technologies">
+                    <span class="tech-tag-pill">React Native</span>
+                    <span class="tech-tag-pill">Expo</span>
+                    <span class="tech-tag-pill">TypeScript</span>
+                    <span class="tech-tag-pill">Node.js</span>
+                    <span class="tech-tag-pill">Express</span>
+                    <span class="tech-tag-pill">MongoDB Atlas</span>
+                  </div>
+                </div>
+
+                <!-- Project Action CTAs -->
+                <div class="project-card-actions">
+                  <a href="https://github.com/MS-Ghouri" target="_blank" rel="noopener noreferrer" class="btn btn-project-primary" aria-label="View HisaabSync on GitHub (opens in new tab)">
+                    <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                    </svg>
+                    <span>GitHub Repository</span>
+                  </a>
+                  <a href="work/hisaabsync/" class="btn btn-project-secondary" aria-label="Read full HisaabSync mobile application case study">
+                    <span>View Case Study &rarr;</span>
+                  </a>
+                </div>
               </div>
-            </div>
+            </article>
 
-            <h3 class="project-title">HisaabSync — Residential Expense &amp; Ledger Management</h3>
+            <!-- Project 3: Vox Autos -->
+            <article class="project-showcase-card project-card-secondary" id="project-voxautos">
+              <!-- E-Commerce Browser Visual Stage -->
+              <div class="project-visual-stage visual-stage-browser" aria-label="Vox Autos E-Commerce Platform Preview">
+                <div class="browser-mockup browser-mockup-compact">
+                  <div class="browser-header">
+                    <div class="browser-dots">
+                      <span class="dot-red"></span>
+                      <span class="dot-amber"></span>
+                      <span class="dot-green"></span>
+                    </div>
+                    <div class="browser-address-bar">
+                      <svg class="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                      </svg>
+                      <span>https://voxautos.com</span>
+                    </div>
+                    <div class="browser-actions">
+                      <span class="browser-badge-live">LIVE STORE</span>
+                    </div>
+                  </div>
 
-            <p class="project-summary">
-              A collaborative expense tracker engineered to eliminate manual financial tracking for shared living spaces and university societies.
-            </p>
-
-            <!-- Role Breakdown Highlight Box -->
-            <div class="project-role-box">
-              <div class="role-header">
-                <span class="role-badge">Shayan's Role &amp; Architecture</span>
+                  <div class="browser-viewport">
+                    <div class="viewport-canvas catalog-canvas">
+                      <div class="canvas-grid-pattern" aria-hidden="true"></div>
+                      <div class="catalog-content-preview">
+                        <div class="catalog-search-mock">
+                          <span class="search-mock-icon">🔍</span>
+                          <span class="search-mock-text">Search vehicle make, model or part number...</span>
+                        </div>
+                        <div class="catalog-parts-grid">
+                          <div class="catalog-part-item">
+                            <span class="part-badge">OEM Spec</span>
+                            <span class="part-name">Brake Systems</span>
+                          </div>
+                          <div class="catalog-part-item">
+                            <span class="part-badge">Accessories</span>
+                            <span class="part-name">Lighting &amp; Optics</span>
+                          </div>
+                          <div class="catalog-part-item">
+                            <span class="part-badge">Engine</span>
+                            <span class="part-name">Filtration Units</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p class="role-desc">
-                Mobile frontend engineering and API integration—designed responsive interface screens, structured state management, and integrated backend REST endpoints.
-              </p>
-              <div class="role-highlights">
-                <span class="highlights-label">Key Engineering Highlights:</span>
-                <ul class="highlights-list">
-                  <li>Designed cross-platform forms with client-side validation and secure token handling</li>
-                  <li>Engineered offline-resilient UI states for consistent transaction logging and ledger synchronization</li>
-                </ul>
+
+              <!-- Content Details -->
+              <div class="project-card-content">
+                <header class="project-header-row">
+                  <div class="project-meta-badges">
+                    <span class="badge-project-type">PRODUCTION E-COMMERCE</span>
+                    <span class="badge-project-category">AUTOMOTIVE E-COMMERCE</span>
+                  </div>
+                  <h3 class="project-showcase-title">Vox Autos &mdash; Spare Parts &amp; Accessories</h3>
+                </header>
+
+                <p class="project-showcase-description">
+                  An automotive spare-parts e-commerce store built on WordPress and WooCommerce — structured around product catalog browsing, filtering, and mobile checkout.
+                </p>
+
+                <!-- Feature Labels & Tech Pills -->
+                <div class="project-tags-section">
+                  <div class="feature-badges-list" aria-label="Vox Autos Key Features">
+                    <span class="feature-tag">WooCommerce</span>
+                    <span class="feature-tag">Product Catalog</span>
+                    <span class="feature-tag">E-commerce</span>
+                    <span class="feature-tag">Responsive UI</span>
+                  </div>
+
+                  <div class="tech-pills-list" aria-label="Vox Autos Technologies">
+                    <span class="tech-tag-pill">WordPress</span>
+                    <span class="tech-tag-pill">WooCommerce</span>
+                    <span class="tech-tag-pill">Elementor</span>
+                    <span class="tech-tag-pill">PHP</span>
+                    <span class="tech-tag-pill">MySQL</span>
+                  </div>
+                </div>
+
+                <!-- Project Action CTAs -->
+                <div class="project-card-actions">
+                  <a href="https://voxautos.com" target="_blank" rel="noopener noreferrer" class="btn btn-project-primary" aria-label="Visit Vox Autos live platform (opens in new tab)">
+                    <span>View Live</span>
+                    <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                  </a>
+                  <a href="work/vox-autos/" class="btn btn-project-secondary" aria-label="Read full Vox Autos e-commerce platform case study">
+                    <span>View Case Study &rarr;</span>
+                  </a>
+                </div>
               </div>
-            </div>
+            </article>
+          </div>
+        </div>
 
-            <!-- Tech Stack Chips -->
-            <div class="project-tech-stack">
-              <span class="tech-stack-label">Technologies Applied:</span>
-              <ul class="tech-tags" aria-label="Technologies used for HisaabSync">
-                <li><span class="skill-tag">React Native</span></li>
-                <li><span class="skill-tag">Expo</span></li>
-                <li><span class="skill-tag">TypeScript</span></li>
-                <li><span class="skill-tag">Node.js</span></li>
-                <li><span class="skill-tag">Express</span></li>
-                <li><span class="skill-tag">MongoDB Atlas</span></li>
-                <li><span class="skill-tag">REST APIs</span></li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- Project 3: Vox Autos -->
-          <article class="project-card">
-            <div class="project-card-header">
-              <div class="project-meta-pill">
-                <span class="project-type">Automotive E-Commerce Architecture</span>
-                <span class="project-dot" aria-hidden="true">•</span>
-                <span class="project-domain">voxautos.com</span>
-              </div>
-              <div class="project-actions">
-                <a href="https://voxautos.com" target="_blank" rel="noopener noreferrer" class="btn-project-link" aria-label="Visit Vox Autos live platform (opens in new tab)">
-                  <span>Live Site</span>
-                  <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                    <polyline points="15 3 21 3 21 9"/>
-                    <line x1="10" y1="14" x2="21" y2="3"/>
-                  </svg>
-                  <span class="sr-only">(opens in new tab)</span>
-                </a>
-              </div>
-            </div>
-
-            <h3 class="project-title">Vox Autos — Spare Parts &amp; Accessories Platform</h3>
-
-            <p class="project-summary">
-              High-SKU automotive parts retailer requiring an intuitive product hierarchy, fast search, and clean catalog filtering.
-            </p>
-
-            <!-- Role Breakdown Highlight Box -->
-            <div class="project-role-box">
-              <div class="role-header">
-                <span class="role-badge">Shayan's Role &amp; Architecture</span>
-              </div>
-              <p class="role-desc">
-                E-commerce setup, WooCommerce configuration, custom catalog categorization, and performance optimization.
-              </p>
-              <div class="role-highlights">
-                <span class="highlights-label">Key Engineering Highlights:</span>
-                <ul class="highlights-list">
-                  <li>Streamlined multi-tier category navigation and product discovery for fast catalog filtering</li>
-                  <li>Optimized asset delivery and template structure, ensuring fast mobile checkout speeds</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Tech Stack Chips -->
-            <div class="project-tech-stack">
-              <span class="tech-stack-label">Technologies Applied:</span>
-              <ul class="tech-tags" aria-label="Technologies used for Vox Autos">
-                <li><span class="skill-tag">WordPress</span></li>
-                <li><span class="skill-tag">WooCommerce</span></li>
-                <li><span class="skill-tag">Elementor</span></li>
-                <li><span class="skill-tag">PHP</span></li>
-                <li><span class="skill-tag">MySQL</span></li>
-              </ul>
-            </div>
-          </article>
+        <!-- Section End CTA -->
+        <div class="projects-footer-cta">
+          <p class="projects-cta-text">Want to see more?</p>
+          <a href="https://github.com/MS-Ghouri" target="_blank" rel="noopener noreferrer" class="btn-github-more" aria-label="View Muhammad Shayan Ghouri's GitHub Profile (opens in new tab)">
+            <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+            <span>View GitHub &rarr;</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Specialized Services & Offerings Section (@ProductStrategist, @ClientConversion, @ContentStrategist, @VisualDesigner, @FrontendEng) -->
+    <!-- Services & Capabilities Section (@FrontendEng, @ProductStrategist, @VisualDesigner) -->
     <section id="services" class="section services-section" aria-labelledby="services-title">
       <div class="container">
         <!-- Section Eyebrow & Title -->
-        <span class="section-eyebrow">SERVICES &amp; SOLUTIONS</span>
+        <span class="section-eyebrow">SERVICES</span>
         <h2 id="services-title" class="section-title">
-          Targeted Digital Solutions &amp; <span class="text-gradient">Engineering Services</span>
+          What I <span class="text-gradient">Can Build</span>
         </h2>
         <p class="section-subtitle">
-          Clear, production-focused development services tailored to client needs, backed by transparent delivery models.
+          From business websites to custom applications, I build practical digital solutions around the needs of each project.
         </p>
 
-        <!-- Services 3-Card Grid -->
-        <div class="services-grid">
-          <!-- Service 1: Custom WordPress Engineering -->
-          <article class="service-card">
+        <!-- Services 6-Card Grid -->
+        <div class="services-grid" role="list">
+
+          <!-- Service 1: WordPress Development (Featured) -->
+          <article class="service-card service-card--featured" role="listitem">
             <header class="service-card-header">
-              <div class="service-badge service-badge--solo">
-                <span class="service-dot" aria-hidden="true"></span>
-                <span>CMS Architecture &amp; Custom Code</span>
+              <div class="service-card-meta">
+                <span class="service-number">01 // SPECIALIST AREA</span>
+                <span class="service-category-tag">CMS &amp; ARCHITECTURE</span>
               </div>
-              <span class="service-delivery-model">Independent Specialist &bull; Go-To Solutions</span>
-              <h3 class="service-title">WordPress &amp; WooCommerce Solutions</h3>
+              <h3 class="service-title">WordPress Development</h3>
             </header>
 
-            <div class="service-card-body">
-              <p class="service-desc">
-                Bespoke plugin development, custom post architectures, LMS implementations (LearnDash, BuddyBoss), WooCommerce checkout pipelines, speed optimization, and secure third-party API/gateway integrations.
-              </p>
+            <p class="service-desc">
+              Custom WordPress websites, bespoke plugins, and LMS architectures built around specific business and educational workflows.
+            </p>
 
-              <div class="service-deliverables-block">
-                <span class="deliverables-heading">Key Deliverables</span>
-                <ul class="service-deliverables-list" aria-label="WordPress solutions deliverables">
-                  <li>Custom Plugins &amp; Integrations</li>
-                  <li>Performance &amp; Speed Audits</li>
-                  <li>Payment &amp; API Gateways</li>
-                  <li>Security Hardening &amp; Upgrades</li>
-                </ul>
-              </div>
+            <div class="service-deliverables-block">
+              <span class="service-deliverables-title">Key Capabilities</span>
+              <ul class="service-deliverables-list" aria-label="WordPress Development capabilities">
+                <li>Business websites &amp; custom theme styling</li>
+                <li>Custom plugin development &amp; hooks</li>
+                <li>LMS platforms (LearnDash &amp; BuddyBoss)</li>
+                <li>Performance, security &amp; API integrations</li>
+              </ul>
             </div>
 
-            <footer class="service-card-footer">
-              <a href="https://ms-ghouri.github.io/go-to-solution/" class="service-cta-link" target="_blank" rel="noopener noreferrer" aria-label="Explore Go-To Solutions dedicated WordPress development landing page (opens in new tab)">
-                <span>Visit Go-To Solutions Landing Page</span>
-                <span class="cta-arrow" aria-hidden="true">&rarr;</span>
-              </a>
-            </footer>
+            <div class="service-tech-tags" aria-label="WordPress technologies">
+              <span class="service-tech-tag">WordPress</span>
+              <span class="service-tech-tag">PHP</span>
+              <span class="service-tech-tag">LearnDash</span>
+              <span class="service-tech-tag">BuddyBoss</span>
+              <span class="service-tech-tag">WooCommerce</span>
+              <span class="service-tech-tag">REST APIs</span>
+            </div>
+
+            <a href="https://ms-ghouri.github.io/go-to-solution/" class="service-external-link" target="_blank" rel="noopener noreferrer" aria-label="Visit Go-To Solutions dedicated WordPress landing page (opens in new tab)">
+              <span>Visit Go-To Solutions &rarr;</span>
+            </a>
           </article>
 
-          <!-- Service 2: E-Commerce Storefronts -->
-          <article class="service-card">
+          <!-- Service 2: E-Commerce Development -->
+          <article class="service-card" role="listitem">
             <header class="service-card-header">
-              <div class="service-badge service-badge--solo">
-                <span class="service-dot" aria-hidden="true"></span>
-                <span>E-Commerce Architecture</span>
+              <div class="service-card-meta">
+                <span class="service-number">02</span>
+                <span class="service-category-tag">ONLINE STORES</span>
               </div>
-              <span class="service-delivery-model">Independent Specialist</span>
-              <h3 class="service-title">High-Converting Storefronts</h3>
+              <h3 class="service-title">E-Commerce Development</h3>
             </header>
 
-            <div class="service-card-body">
-              <p class="service-desc">
-                Clean catalog structuring, modern theme customisation, payment/shipping automation, speed-focused mobile checkout experiences, and SEO-friendly merchandising layouts.
-              </p>
+            <p class="service-desc">
+              Practical online store platforms built around catalog discovery, frictionless shopping journeys, and reliable order processing.
+            </p>
 
-              <div class="service-deliverables-block">
-                <span class="deliverables-heading">Key Deliverables</span>
-                <ul class="service-deliverables-list" aria-label="E-Commerce storefronts deliverables">
-                  <li>Store Setup &amp; Customization</li>
-                  <li>Mobile Checkout Optimization</li>
-                  <li>Catalog Migration &amp; Tax/Shipping</li>
-                  <li>Analytics &amp; Conversion Tracking</li>
-                </ul>
-              </div>
+            <div class="service-deliverables-block">
+              <span class="service-deliverables-title">Key Capabilities</span>
+              <ul class="service-deliverables-list" aria-label="E-Commerce capabilities">
+                <li>WooCommerce store configuration</li>
+                <li>High-SKU catalog categorization &amp; search</li>
+                <li>Shopping cart &amp; checkout flow optimization</li>
+                <li>Payment gateway &amp; shipping automation</li>
+              </ul>
             </div>
 
-            <footer class="service-card-footer">
-              <a href="#contact" class="service-cta-link" aria-label="Explore E-Commerce Storefront Services">
-                <span>Explore E-Commerce Services</span>
-                <span class="cta-arrow" aria-hidden="true">&rarr;</span>
-              </a>
-            </footer>
+            <div class="service-tech-tags" aria-label="E-Commerce technologies">
+              <span class="service-tech-tag">WooCommerce</span>
+              <span class="service-tech-tag">WordPress</span>
+              <span class="service-tech-tag">PHP</span>
+              <span class="service-tech-tag">Stripe API</span>
+              <span class="service-tech-tag">MySQL</span>
+            </div>
           </article>
 
-          <!-- Service 3: Full-Stack Web & Mobile Applications (Collaborative Team Delivery) -->
-          <article class="service-card service-card--team">
+          <!-- Service 3: Shopify Development -->
+          <article class="service-card" role="listitem">
             <header class="service-card-header">
-              <div class="service-badge service-badge--team">
-                <span class="service-dot service-dot--purple" aria-hidden="true"></span>
-                <span>Collaborative Team Delivery</span>
+              <div class="service-card-meta">
+                <span class="service-number">03</span>
+                <span class="service-category-tag">STOREFRONTS</span>
               </div>
-              <span class="service-delivery-model service-delivery-model--team">Collaborative Engineering Team</span>
-              <h3 class="service-title">Custom Web &amp; Mobile Platforms</h3>
+              <h3 class="service-title">Shopify Development</h3>
             </header>
 
-            <div class="service-card-body">
-              <p class="service-desc">
-                End-to-end web and mobile products built from specification to production. Designed for businesses requiring custom software, robust backends, and responsive cross-platform mobile apps.
-              </p>
+            <p class="service-desc">
+              Shopify stores and custom storefront solutions designed around your products, brand identity, and customer purchasing flow.
+            </p>
 
-              <!-- Mandatory Team Transparency Callout -->
-              <div class="service-team-disclaimer" role="note">
-                <span class="disclaimer-icon" aria-hidden="true">ℹ</span>
-                <p>
-                  <strong>Delivery Model:</strong> Delivered in collaboration with a trusted team of software engineers and UI/UX designers to guarantee robust full-lifecycle delivery.
-                </p>
-              </div>
-
-              <div class="service-deliverables-block">
-                <span class="deliverables-heading">Key Deliverables</span>
-                <ul class="service-deliverables-list" aria-label="Custom web and mobile deliverables">
-                  <li>React / Next.js Web Apps</li>
-                  <li>React Native Cross-Platform Apps</li>
-                  <li>RESTful APIs &amp; Microservices</li>
-                  <li>Cloud Databases &amp; Secure Backends</li>
-                </ul>
-              </div>
+            <div class="service-deliverables-block">
+              <span class="service-deliverables-title">Key Capabilities</span>
+              <ul class="service-deliverables-list" aria-label="Shopify Development capabilities">
+                <li>Shopify store setup &amp; configuration</li>
+                <li>Theme customization &amp; storefront UI</li>
+                <li>Product catalog &amp; collection architecture</li>
+                <li>App configuration &amp; mobile optimization</li>
+              </ul>
             </div>
 
-            <footer class="service-card-footer">
-              <a href="#contact" class="service-cta-link service-cta-link--team" aria-label="Explore Collaborative Team Solutions">
-                <span>Explore Collaborative Team Solutions</span>
-                <span class="cta-arrow" aria-hidden="true">&rarr;</span>
-              </a>
-            </footer>
+            <div class="service-tech-tags" aria-label="Shopify technologies">
+              <span class="service-tech-tag">Shopify</span>
+              <span class="service-tech-tag">Liquid</span>
+              <span class="service-tech-tag">Theme Styling</span>
+              <span class="service-tech-tag">E-Commerce UI</span>
+            </div>
           </article>
+
+          <!-- Service 4: Custom Web Development -->
+          <article class="service-card" role="listitem">
+            <header class="service-card-header">
+              <div class="service-card-meta">
+                <span class="service-number">04</span>
+                <span class="service-category-tag">WEB APPLICATIONS</span>
+              </div>
+              <h3 class="service-title">Custom Web Development</h3>
+            </header>
+
+            <p class="service-desc">
+              Tailored web applications built with modern JavaScript and robust backends when an off-the-shelf CMS is not enough.
+            </p>
+
+            <div class="service-deliverables-block">
+              <span class="service-deliverables-title">Key Capabilities</span>
+              <ul class="service-deliverables-list" aria-label="Custom Web Development capabilities">
+                <li>Custom component-driven user interfaces</li>
+                <li>RESTful APIs &amp; backend service architecture</li>
+                <li>User authentication &amp; role-based dashboards</li>
+                <li>Database schema design &amp; CRUD workflows</li>
+              </ul>
+            </div>
+
+            <div class="service-tech-tags" aria-label="Custom Web technologies">
+              <span class="service-tech-tag">React.js</span>
+              <span class="service-tech-tag">Node.js</span>
+              <span class="service-tech-tag">Express.js</span>
+              <span class="service-tech-tag">MongoDB</span>
+              <span class="service-tech-tag">TypeScript</span>
+              <span class="service-tech-tag">REST APIs</span>
+            </div>
+          </article>
+
+          <!-- Service 5: Mobile App Development -->
+          <article class="service-card" role="listitem">
+            <header class="service-card-header">
+              <div class="service-card-meta">
+                <span class="service-number">05</span>
+                <span class="service-category-tag">MOBILE APPS</span>
+              </div>
+              <h3 class="service-title">Mobile App Development</h3>
+            </header>
+
+            <p class="service-desc">
+              Cross-platform mobile applications designed around practical user workflows, clean state handling, and backend synchronization.
+            </p>
+
+            <div class="service-deliverables-block">
+              <span class="service-deliverables-title">Key Capabilities</span>
+              <ul class="service-deliverables-list" aria-label="Mobile App Development capabilities">
+                <li>React Native cross-platform apps (iOS &amp; Android)</li>
+                <li>Authentication &amp; token session handling</li>
+                <li>Ledger, balance &amp; transaction dashboards</li>
+                <li>Academic capstone experience (HisaabSync)</li>
+              </ul>
+            </div>
+
+            <div class="service-tech-tags" aria-label="Mobile App technologies">
+              <span class="service-tech-tag">React Native</span>
+              <span class="service-tech-tag">Expo</span>
+              <span class="service-tech-tag">TypeScript</span>
+              <span class="service-tech-tag">Node.js</span>
+              <span class="service-tech-tag">MongoDB Atlas</span>
+            </div>
+          </article>
+
+          <!-- Service 6: Integrations & Custom Solutions -->
+          <article class="service-card" role="listitem">
+            <header class="service-card-header">
+              <div class="service-card-meta">
+                <span class="service-number">06</span>
+                <span class="service-category-tag">GATEWAYS &amp; AUTOMATION</span>
+              </div>
+              <h3 class="service-title">Integrations &amp; Custom Solutions</h3>
+            </header>
+
+            <p class="service-desc">
+              Connecting fragmented systems, third-party payment gateways, and custom business logic to eliminate manual operational bottlenecks.
+            </p>
+
+            <div class="service-deliverables-block">
+              <span class="service-deliverables-title">Key Capabilities</span>
+              <ul class="service-deliverables-list" aria-label="Integrations capabilities">
+                <li>Stripe &amp; online payment gateway integrations</li>
+                <li>Webhook automation &amp; event triggers</li>
+                <li>Third-party REST API connections</li>
+                <li>Custom business workflow automations</li>
+              </ul>
+            </div>
+
+            <div class="service-tech-tags" aria-label="Integration technologies">
+              <span class="service-tech-tag">REST APIs</span>
+              <span class="service-tech-tag">Stripe API</span>
+              <span class="service-tech-tag">Webhooks</span>
+              <span class="service-tech-tag">PHP</span>
+              <span class="service-tech-tag">Node.js</span>
+            </div>
+          </article>
+
         </div>
+
+        <!-- Section Bottom CTA -->
+        <div class="services-footer-cta">
+          <div class="services-cta-content">
+            <span class="services-cta-eyebrow">READY TO BUILD?</span>
+            <h3 class="services-cta-heading">Have a project in mind? Let's talk.</h3>
+            <p class="services-cta-sub">
+              Every project starts with understanding the requirement, then choosing the right technical approach.
+            </p>
+          </div>
+          <a href="#contact" class="btn btn-project-primary" aria-label="Start a conversation about your project">
+            <span>Start a Conversation</span>
+            <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- How I Work / Development Process Section (@Architect, @FrontendEng, @UXArchitect) -->
+    <section id="process" class="section process-section" aria-labelledby="process-title">
+      <div class="container">
+        <!-- Section Eyebrow & Title -->
+        <span class="section-eyebrow">DEVELOPMENT PROCESS</span>
+        <h2 id="process-title" class="section-title">
+          How I Work <span class="text-gradient">— From Idea to Launch</span>
+        </h2>
+        <p class="section-subtitle">
+          I keep the process simple: understand the problem, build the right solution, test it properly, and refine it based on real feedback.
+        </p>
+
+        <!-- Process Flow Wrapper -->
+        <div class="process-flow-wrapper">
+          <ol class="process-steps-list" role="list">
+
+            <!-- Stage 01: Discover -->
+            <li class="process-step-item">
+              <article class="process-step-card">
+                <div class="process-card-top">
+                  <div class="process-step-badge">
+                    <span class="process-step-num">01</span>
+                    <span class="process-icon-wrap" aria-hidden="true">
+                      <svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                      </svg>
+                    </span>
+                  </div>
+                  <span class="process-step-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+
+                <div class="process-card-header">
+                  <h3 class="process-step-title">DISCOVER</h3>
+                  <span class="process-step-subtitle">Understand the project.</span>
+                </div>
+
+                <p class="process-step-desc">
+                  Understanding the business, users, and the actual problem before writing any code.
+                </p>
+
+                <div class="process-step-focus" aria-label="Discover focus areas">
+                  <span class="process-focus-label">Focus</span>
+                  <div class="process-tags">
+                    <span class="process-tag">Requirements</span>
+                    <span class="process-tag">Goals</span>
+                    <span class="process-tag">Users</span>
+                    <span class="process-tag">Existing systems</span>
+                    <span class="process-tag">Project scope</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <!-- Stage 02: Plan -->
+            <li class="process-step-item">
+              <article class="process-step-card">
+                <div class="process-card-top">
+                  <div class="process-step-badge">
+                    <span class="process-step-num">02</span>
+                    <span class="process-icon-wrap" aria-hidden="true">
+                      <svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                      </svg>
+                    </span>
+                  </div>
+                  <span class="process-step-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+
+                <div class="process-card-header">
+                  <h3 class="process-step-title">PLAN</h3>
+                  <span class="process-step-subtitle">Choose the right approach.</span>
+                </div>
+
+                <p class="process-step-desc">
+                  Breaking the project into components and choosing the right technology for the problem.
+                </p>
+
+                <div class="process-step-focus" aria-label="Plan focus areas">
+                  <span class="process-focus-label">Focus</span>
+                  <div class="process-tags">
+                    <span class="process-tag">Features</span>
+                    <span class="process-tag">Architecture</span>
+                    <span class="process-tag">Technology selection</span>
+                    <span class="process-tag">Development plan</span>
+                    <span class="process-tag">Priorities</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <!-- Stage 03: Build -->
+            <li class="process-step-item">
+              <article class="process-step-card">
+                <div class="process-card-top">
+                  <div class="process-step-badge">
+                    <span class="process-step-num">03</span>
+                    <span class="process-icon-wrap" aria-hidden="true">
+                      <svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                      </svg>
+                    </span>
+                  </div>
+                  <span class="process-step-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+
+                <div class="process-card-header">
+                  <h3 class="process-step-title">BUILD</h3>
+                  <span class="process-step-subtitle">Turn the plan into a working product.</span>
+                </div>
+
+                <p class="process-step-desc">
+                  Building in stages — responsive UI, backend logic, integrations — keeping things practical and maintainable.
+                </p>
+
+                <div class="process-step-focus" aria-label="Build focus areas">
+                  <span class="process-focus-label">Focus</span>
+                  <div class="process-tags">
+                    <span class="process-tag">Frontend</span>
+                    <span class="process-tag">Backend</span>
+                    <span class="process-tag">CMS</span>
+                    <span class="process-tag">APIs</span>
+                    <span class="process-tag">Database</span>
+                    <span class="process-tag">Integrations</span>
+                    <span class="process-tag">Responsive UI</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <!-- Stage 04: Test & Refine -->
+            <li class="process-step-item">
+              <article class="process-step-card">
+                <div class="process-card-top">
+                  <div class="process-step-badge">
+                    <span class="process-step-num">04</span>
+                    <span class="process-icon-wrap" aria-hidden="true">
+                      <svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </span>
+                  </div>
+                  <span class="process-step-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+
+                <div class="process-card-header">
+                  <h3 class="process-step-title">TEST &amp; REFINE</h3>
+                  <span class="process-step-subtitle">Make it work properly.</span>
+                </div>
+
+                <p class="process-step-desc">
+                  Testing across devices, fixing issues, and refining based on real feedback.
+                </p>
+
+                <div class="process-step-focus" aria-label="Test and refine focus areas">
+                  <span class="process-focus-label">Focus</span>
+                  <div class="process-tags">
+                    <span class="process-tag">Functional testing</span>
+                    <span class="process-tag">Responsive testing</span>
+                    <span class="process-tag">Bug fixing</span>
+                    <span class="process-tag">User feedback</span>
+                    <span class="process-tag">UI refinement</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <!-- Stage 05: Deploy & Support -->
+            <li class="process-step-item">
+              <article class="process-step-card">
+                <div class="process-card-top">
+                  <div class="process-step-badge">
+                    <span class="process-step-num">05</span>
+                    <span class="process-icon-wrap" aria-hidden="true">
+                      <svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="process-card-header">
+                  <h3 class="process-step-title">DEPLOY &amp; SUPPORT</h3>
+                  <span class="process-step-subtitle">Take it to production.</span>
+                </div>
+
+                <p class="process-step-desc">
+                  Moving to production and providing support and improvements post-launch.
+                </p>
+
+                <div class="process-step-focus" aria-label="Deploy and support focus areas">
+                  <span class="process-focus-label">Focus</span>
+                  <div class="process-tags">
+                    <span class="process-tag">Deployment</span>
+                    <span class="process-tag">Production checks</span>
+                    <span class="process-tag">Handover</span>
+                    <span class="process-tag">Updates</span>
+                    <span class="process-tag">Post-delivery improvements</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+          </ol>
+        </div>
+
+        <!-- Closing Process Summary Note -->
+        <div class="process-closing-note">
+          <div class="closing-note-content">
+            <span class="closing-note-dot" aria-hidden="true"></span>
+            <p class="closing-note-text">Clear requirements. Practical development. Real feedback.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Project Evidence & Social Proof Section (@Architect, @BrandStrategist, @FrontendEng) -->
+    <!-- Case B: Verifiable Project Evidence (Authentic production work & university engineering; zero invented testimonials) -->
+    <section id="proof" class="section proof-section" aria-labelledby="proof-title">
+      <div class="container">
+        <!-- Section Eyebrow & Title -->
+        <span class="section-eyebrow">PROJECT EVIDENCE</span>
+        <h2 id="proof-title" class="section-title">
+          Built for <span class="text-gradient">Real Projects</span>
+        </h2>
+        <p class="section-subtitle">
+          From production client websites to university applications, my work is grounded in practical requirements and real implementation.
+        </p>
+
+        <!-- 3-Column Evidence Cards Grid -->
+        <div class="proof-grid" role="list">
+
+          <!-- Evidence 1: Production Client Work (EduKing) -->
+          <article class="proof-card" role="listitem">
+            <header class="proof-card-header">
+              <div class="proof-card-meta">
+                <span class="proof-card-num">01</span>
+                <span class="proof-card-category">PRODUCTION CLIENT WORK</span>
+              </div>
+              <h3 class="proof-card-title">EduKing</h3>
+            </header>
+
+            <p class="proof-card-desc">
+              Australian online learning platform — custom WordPress/LMS build with payment integration and role-based access.
+            </p>
+
+            <div class="proof-badges-row" aria-label="EduKing project status">
+              <span class="proof-badge proof-badge--live">Production</span>
+              <span class="proof-badge proof-badge--client">Client Project</span>
+              <span class="proof-badge">Live Platform</span>
+            </div>
+
+            <div class="proof-card-actions">
+              <a href="https://eduking.com.au" target="_blank" rel="noopener noreferrer" class="proof-link-primary" aria-label="Visit EduKing live platform (opens in new tab)">
+                <span>View Live Platform</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+              </a>
+              <a href="work/eduking/" class="proof-link-secondary" aria-label="Read full EduKing case study">
+                <span>Case Study &rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Evidence 2: Real-World E-Commerce (Vox Autos) -->
+          <article class="proof-card" role="listitem">
+            <header class="proof-card-header">
+              <div class="proof-card-meta">
+                <span class="proof-card-num">02</span>
+                <span class="proof-card-category">REAL-WORLD E-COMMERCE</span>
+              </div>
+              <h3 class="proof-card-title">Vox Autos</h3>
+            </header>
+
+            <p class="proof-card-desc">
+              Automotive spare-parts e-commerce store — WordPress/WooCommerce, product catalog, and mobile checkout.
+            </p>
+
+            <div class="proof-badges-row" aria-label="Vox Autos project status">
+              <span class="proof-badge proof-badge--live">Production</span>
+              <span class="proof-badge proof-badge--client">Client Project</span>
+              <span class="proof-badge">E-Commerce</span>
+            </div>
+
+            <div class="proof-card-actions">
+              <a href="https://voxautos.com" target="_blank" rel="noopener noreferrer" class="proof-link-primary" aria-label="Visit Vox Autos live storefront (opens in new tab)">
+                <span>View Live Store</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+              </a>
+              <a href="work/vox-autos/" class="proof-link-secondary" aria-label="Read full Vox Autos case study">
+                <span>Case Study &rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Evidence 3: Software Application (HisaabSync) -->
+          <article class="proof-card" role="listitem">
+            <header class="proof-card-header">
+              <div class="proof-card-meta">
+                <span class="proof-card-num">03</span>
+                <span class="proof-card-category">SOFTWARE APPLICATION</span>
+              </div>
+              <h3 class="proof-card-title">HisaabSync</h3>
+            </header>
+
+            <p class="proof-card-desc">
+              University group project — a React Native mobile app for society billing and ledger management, with Node.js/Express backend and MongoDB.
+            </p>
+
+            <div class="proof-badges-row" aria-label="HisaabSync project status">
+              <span class="proof-badge proof-badge--academic">University Project</span>
+              <span class="proof-badge">Group Project</span>
+              <span class="proof-badge">Mobile App</span>
+            </div>
+
+            <div class="proof-card-actions">
+              <a href="work/hisaabsync/" class="proof-link-primary" aria-label="Read full HisaabSync case study">
+                <span>View Case Study</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="https://github.com/MS-Ghouri" target="_blank" rel="noopener noreferrer" class="proof-link-secondary" aria-label="View HisaabSync repository on GitHub (opens in new tab)">
+                <span>GitHub &rarr;</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Factual Trust Strip (Non-numerical, verifiably accurate) -->
+        <div class="trust-strip" role="region" aria-label="Key delivery pillars">
+          <div class="trust-strip-item">
+            <span class="trust-strip-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </span>
+            <div class="trust-strip-info">
+              <strong class="trust-strip-label">Client Projects</strong>
+              <span class="trust-strip-sub">Direct requirements &amp; custom delivery</span>
+            </div>
+          </div>
+
+          <div class="trust-strip-item">
+            <span class="trust-strip-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+            </span>
+            <div class="trust-strip-info">
+              <strong class="trust-strip-label">Production Websites</strong>
+              <span class="trust-strip-sub">Live environments with real users</span>
+            </div>
+          </div>
+
+          <div class="trust-strip-item">
+            <span class="trust-strip-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+            </span>
+            <div class="trust-strip-info">
+              <strong class="trust-strip-label">University Software</strong>
+              <span class="trust-strip-sub">Academic foundation &amp; group collaboration</span>
+            </div>
+          </div>
+
+          <div class="trust-strip-item">
+            <span class="trust-strip-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+            </span>
+            <div class="trust-strip-info">
+              <strong class="trust-strip-label">Web + Mobile</strong>
+              <span class="trust-strip-sub">Responsive full-spectrum engineering</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -739,58 +1676,109 @@
     <section id="contact" class="section contact-section" aria-labelledby="contact-title">
       <div class="container">
         <!-- Section Eyebrow & Title -->
-        <span class="section-eyebrow">GET IN TOUCH</span>
+        <span class="section-eyebrow">CONTACT</span>
         <h2 id="contact-title" class="section-title">
-          Let's Discuss <span class="text-gradient">Engineering Roles or Project Inquiries</span>
+          Let's Build <span class="text-gradient">Something.</span>
         </h2>
         <p class="section-subtitle">
-          Whether you represent an engineering team seeking a disciplined developer or a business planning a new platform, my inbox is open.
+          Have an idea, a project, or a problem that needs a digital solution? Tell me what you're working on and let's discuss it.
         </p>
 
         <!-- 2-Column Dual-Track Conversion Grid -->
         <div class="contact-grid">
-          <!-- Column 1: Fast Channels & Direct Communication (Recruiter Focus) -->
+          <!-- Column 1: Fast Channels & Direct Communication (Lead Action) -->
           <div class="contact-card contact-channels-card">
-            <div class="channels-header">
-              <span class="channels-tag">Direct Channels</span>
-              <h3 class="channels-title">Fast-Track Communication</h3>
+
+            <!-- Primary Action Box -->
+            <div class="primary-cta-box">
+              <span class="channels-tag">PRIMARY ACTION</span>
+              <h3 class="channels-title">Start a Conversation</h3>
               <p class="channels-desc">
-                For recruiters, hiring managers, and urgent technical discussions. Reach out directly or copy my email address with one click.
+                The fastest way to reach me for project inquiries, custom builds, or engineering opportunities.
               </p>
-            </div>
 
-            <!-- Email Display & 1-Click Copy Box -->
-            <div class="email-copy-box">
-              <div class="email-details">
-                <span class="email-label">Primary Email</span>
-                <a href="mailto:ghourishayan09@gmail.com" class="email-address" id="contact-email-text">
-                  ghourishayan09@gmail.com
+              <div class="primary-cta-action">
+                <a href="https://wa.me/923272695810" target="_blank" rel="noopener noreferrer" class="btn btn-cta-primary" aria-label="Start a conversation with Shayan on WhatsApp (opens in new tab)">
+                  <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                  </svg>
+                  <span>Chat on WhatsApp</span>
+                  <svg class="icon-svg-xs icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
                 </a>
               </div>
-              <button type="button" class="btn-copy-email" id="btn-copy-email" aria-label="Copy email address to clipboard">
-                <svg class="icon-svg-sm icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                </svg>
-                <span class="copy-text">Copy Email</span>
-              </button>
             </div>
 
-            <!-- WhatsApp Direct Inbox Box -->
-            <div class="whatsapp-direct-box">
-              <div class="whatsapp-details">
-                <span class="whatsapp-label">Direct WhatsApp Inbox</span>
-                <a href="https://wa.me/923272695810" target="_blank" rel="noopener noreferrer" class="whatsapp-number" aria-label="Chat with Shayan on WhatsApp (+92 327 2695810)">
-                  +92 327 2695810
+            <!-- Compact Contact Methods Grid -->
+            <div class="contact-methods-wrapper">
+              <span class="methods-heading-label">Direct Contact Channels</span>
+              <div class="contact-methods-grid">
+
+                <!-- Method 1: Email Me (with 1-click copy) -->
+                <div class="contact-method-card">
+                  <div class="method-card-top">
+                    <span class="method-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                      </svg>
+                    </span>
+                    <div class="method-details">
+                      <span class="method-label">Email Me</span>
+                      <span class="method-sub">For project details</span>
+                    </div>
+                  </div>
+                  <div class="method-action-row">
+                    <a href="mailto:ghourishayan09@gmail.com" class="method-link" id="contact-email-text" aria-label="Send direct email to ghourishayan09@gmail.com">
+                      ghourishayan09@gmail.com
+                    </a>
+                    <button type="button" class="btn-copy-email" id="btn-copy-email" aria-label="Copy email address to clipboard">
+                      <svg class="icon-svg-xs icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                      </svg>
+                      <span class="copy-text">Copy</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Method 2: LinkedIn -->
+                <a href="https://www.linkedin.com/in/muhammad-shayan-ghouri" target="_blank" rel="noopener noreferrer" class="contact-method-card contact-method-link" aria-label="Connect with Shayan on LinkedIn (opens in new tab)">
+                  <div class="method-card-top">
+                    <span class="method-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                      </svg>
+                    </span>
+                    <div class="method-details">
+                      <span class="method-label">LinkedIn</span>
+                      <span class="method-sub">Professional connection</span>
+                    </div>
+                  </div>
+                  <span class="method-link-arrow" aria-hidden="true">Connect &rarr;</span>
                 </a>
+
+                <!-- Method 3: GitHub -->
+                <a href="https://github.com/MS-Ghouri" target="_blank" rel="noopener noreferrer" class="contact-method-card contact-method-link" aria-label="View Shayan's GitHub repositories (opens in new tab)">
+                  <div class="method-card-top">
+                    <span class="method-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                      </svg>
+                    </span>
+                    <div class="method-details">
+                      <span class="method-label">GitHub</span>
+                      <span class="method-sub">Explore my work</span>
+                    </div>
+                  </div>
+                  <span class="method-link-arrow" aria-hidden="true">View Repos &rarr;</span>
+                </a>
+
               </div>
-              <a href="https://wa.me/923272695810" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-chat" aria-label="Open WhatsApp chat with Shayan (opens in new tab)">
-                <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                </svg>
-                <span>Direct Chat &rarr;</span>
-                <span class="sr-only">(opens in new tab)</span>
-              </a>
             </div>
 
             <!-- Availability & Location Meta -->
@@ -798,13 +1786,13 @@
               <div class="contact-meta-item">
                 <div class="meta-icon" aria-hidden="true">
                   <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"/>
-                    <polyline points="12 6 12 12 16 14"/>
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
                   </svg>
                 </div>
                 <div class="meta-content">
                   <span class="meta-label">Location &amp; Timezone</span>
-                  <span class="meta-value">Karachi, Pakistan • UTC+5 (PKT)</span>
+                  <span class="meta-value">Karachi, Pakistan &bull; UTC+5 (PKT)</span>
                 </div>
               </div>
 
@@ -814,64 +1802,20 @@
                 </div>
                 <div class="meta-content">
                   <span class="meta-label">Availability Status</span>
-                  <span class="meta-value">Open to remote, hybrid, and local opportunities.</span>
+                  <span class="meta-value">Available for opportunities &amp; direct client projects.</span>
                 </div>
               </div>
             </div>
 
-            <!-- Quick Direct Connections -->
-            <div class="channels-footer">
-              <span class="channels-footer-label">Professional Profiles &amp; Direct Channels:</span>
-              <ul class="quick-links-list">
-                <li>
-                  <a href="https://github.com/MS-Ghouri" target="_blank" rel="noopener noreferrer" class="quick-link" aria-label="Visit Shayan's GitHub Profile (opens in new tab)">
-                    <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                    </svg>
-                    <span>GitHub</span>
-                    <span class="sr-only">(opens in new tab)</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/muhammad-shayan-ghouri" target="_blank" rel="noopener noreferrer" class="quick-link" aria-label="Visit Shayan's LinkedIn Profile (opens in new tab)">
-                    <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                      <rect x="2" y="9" width="4" height="12"/>
-                      <circle cx="4" cy="4" r="2"/>
-                    </svg>
-                    <span>LinkedIn</span>
-                    <span class="sr-only">(opens in new tab)</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://wa.me/923272695810" target="_blank" rel="noopener noreferrer" class="quick-link quick-link--whatsapp" aria-label="Direct message on WhatsApp (opens in new tab)">
-                    <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                    </svg>
-                    <span>WhatsApp</span>
-                    <span class="sr-only">(opens in new tab)</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:ghourishayan09@gmail.com" class="quick-link" aria-label="Send direct email to ghourishayan09@gmail.com">
-                    <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                      <polyline points="22,6 12,13 2,6"/>
-                    </svg>
-                    <span>Direct Mail</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
           </div>
 
           <!-- Column 2: Structured Project / Opportunity Inquiry Form (Clients & Hiring Managers) -->
           <div class="contact-card contact-form-card">
             <div class="form-card-header">
               <span class="channels-tag">Inquiry Form</span>
-              <h3 class="channels-title">Send a Structured Message</h3>
+              <h3 class="channels-title">Tell me a little about what you're building.</h3>
               <p class="channels-desc">
-                Fill out the details below. Messages are routed directly to my primary inbox with verified integrity.
+                Fill out the details below. Messages route directly to my primary inbox with verified integrity.
               </p>
             </div>
 
@@ -885,49 +1829,35 @@
               <!-- Name Field -->
               <div class="form-group">
                 <label for="contact-name" class="form-label">
-                  Your Full Name <span class="required-indicator" aria-hidden="true">*</span>
+                  Your Name <span class="required-indicator" aria-hidden="true">*</span>
                 </label>
-                <input 
-                  type="text" 
-                  name="name" 
-                  id="contact-name" 
-                  class="form-input" 
-                  placeholder="e.g., Alex Vance" 
-                  required 
-                  autocomplete="name"
-                >
+                <input type="text" name="name" id="contact-name" class="form-input" placeholder="Your name"
+                  required autocomplete="name">
                 <span class="form-error" id="error-name" aria-live="polite"></span>
               </div>
 
               <!-- Email Field -->
               <div class="form-group">
                 <label for="contact-email" class="form-label">
-                  Your Email Address <span class="required-indicator" aria-hidden="true">*</span>
+                  Your Email <span class="required-indicator" aria-hidden="true">*</span>
                 </label>
-                <input 
-                  type="email" 
-                  name="email" 
-                  id="contact-email" 
-                  class="form-input" 
-                  placeholder="alex@company.com" 
-                  required 
-                  autocomplete="email"
-                >
+                <input type="email" name="email" id="contact-email" class="form-input" placeholder="you@example.com"
+                  required autocomplete="email">
                 <span class="form-error" id="error-email" aria-live="polite"></span>
               </div>
 
               <!-- Inquiry Type Select -->
               <div class="form-group">
                 <label for="contact-type" class="form-label">
-                  Inquiry Type <span class="required-indicator" aria-hidden="true">*</span>
+                  What are you looking to build? <span class="required-indicator" aria-hidden="true">*</span>
                 </label>
                 <div class="select-wrapper">
                   <select name="inquiry_type" id="contact-type" class="form-select" required>
-                    <option value="" disabled selected>Select the nature of your inquiry...</option>
-                    <option value="engineering-role">Software Engineering Role / Internship</option>
-                    <option value="wordpress-project">Custom WordPress / E-Commerce Project</option>
+                    <option value="" disabled selected>Select project type...</option>
+                    <option value="wordpress-project">Custom WordPress / E-Commerce Solution</option>
                     <option value="app-development">Web / Mobile Application Development</option>
-                    <option value="general-inquiry">General Inquiry</option>
+                    <option value="engineering-role">Software Engineering Role / Internship</option>
+                    <option value="general-inquiry">General Project Inquiry</option>
                   </select>
                 </div>
                 <span class="form-error" id="error-type" aria-live="polite"></span>
@@ -938,14 +1868,9 @@
                 <label for="contact-message" class="form-label">
                   Project Details or Message <span class="required-indicator" aria-hidden="true">*</span>
                 </label>
-                <textarea 
-                  name="message" 
-                  id="contact-message" 
-                  rows="4" 
-                  class="form-textarea" 
-                  placeholder="Describe your role requirements, project scope, timeline, or questions..." 
-                  required
-                ></textarea>
+                <textarea name="message" id="contact-message" rows="4" class="form-textarea"
+                  placeholder="Tell me a little about your project..."
+                  required></textarea>
                 <span class="form-error" id="error-message" aria-live="polite"></span>
               </div>
 
@@ -956,9 +1881,10 @@
               <div class="form-actions">
                 <button type="submit" class="btn-submit" id="btn-submit-form">
                   <span>Send Message</span>
-                  <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <line x1="22" y1="2" x2="11" y2="13"/>
-                    <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                  <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="22" y1="2" x2="11" y2="13" />
+                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
                   </svg>
                 </button>
               </div>
@@ -969,14 +1895,133 @@
     </section>
   </main>
 
-  <!-- Footer Landmark (@Architect) -->
-  <footer class="site-footer">
-    <div class="container">
-      <p style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
-        &copy; 2026 Muhammad Shayan Ghouri. Built with semantic HTML5, modular CSS, and vanilla JS.
-      </p>
+  <!-- Footer Landmark (@Architect, @VisualDesigner, @FrontendEng) -->
+  <footer class="site-footer" id="site-footer" role="contentinfo">
+    <div class="container footer-container">
+      <!-- Top Grid: Brand & Statement, Quick Navigation, Direct Channels & Subtle CTA -->
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Identity Statement -->
+        <div class="footer-brand-col">
+          <a href="#hero" class="footer-brand-logo" aria-label="Shayan Ghouri Homepage">
+            <span class="brand-name">Shayan Ghouri</span>
+            <span class="brand-dot" aria-hidden="true"></span>
+          </a>
+          <p class="footer-role">Web &amp; Software Developer</p>
+          <p class="footer-statement">
+            Building practical digital products through thoughtful development and continuous learning.
+          </p>
+          <div class="footer-status-pill">
+            <span class="status-indicator-dot" aria-hidden="true"></span>
+            <span>Available for projects &amp; engineering opportunities</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="footer-nav-col">
+          <h3 class="footer-heading">Navigation</h3>
+          <ul class="footer-links-list" role="list">
+            <li><a href="#hero" class="footer-link">Home</a></li>
+            <li><a href="#about" class="footer-link">About</a></li>
+            <li><a href="#experience" class="footer-link">Experience</a></li>
+            <li><a href="#projects" class="footer-link">Selected Work</a></li>
+            <li><a href="#skills" class="footer-link">Skills &amp; Stack</a></li>
+            <li><a href="#services" class="footer-link">Services</a></li>
+            <li><a href="#process" class="footer-link">How I Work</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Direct Channels & Verified Socials -->
+        <div class="footer-connect-col">
+          <h3 class="footer-heading">Direct Channels</h3>
+          <ul class="footer-links-list" role="list">
+            <li>
+              <a href="https://github.com/MS-Ghouri" target="_blank" rel="noopener noreferrer" class="footer-link footer-social-link" aria-label="Visit Shayan's GitHub Profile (opens in new tab)">
+                <svg class="icon-svg-xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>GitHub</span>
+                <span class="footer-ext-icon" aria-hidden="true">&nearr;</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/muhammad-shayan-ghouri" target="_blank" rel="noopener noreferrer" class="footer-link footer-social-link" aria-label="Visit Shayan's LinkedIn Profile (opens in new tab)">
+                <svg class="icon-svg-xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+                <span>LinkedIn</span>
+                <span class="footer-ext-icon" aria-hidden="true">&nearr;</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/923272695810" target="_blank" rel="noopener noreferrer" class="footer-link footer-social-link" aria-label="Message Shayan on WhatsApp (opens in new tab)">
+                <svg class="icon-svg-xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.997.545 1.78.847 2.796.847h.001c3.181 0 5.768-2.586 5.769-5.766 0-3.18-2.587-5.634-5.77-5.634zm3.385 8.165c-.14.394-.811.737-1.12.784-.309.047-.714.072-2.062-.486-1.722-.711-2.822-2.464-2.907-2.578-.086-.115-.694-.925-.694-1.764 0-.839.439-1.252.595-1.424.156-.172.341-.215.455-.215.114 0 .228.001.328.006.105.006.246-.04.385.293.144.343.488 1.192.531 1.28.043.088.072.19.014.305-.057.115-.086.186-.172.287-.086.1-.181.224-.258.301-.086.086-.176.18-.076.352.1.172.445.734.954 1.189.656.586 1.209.768 1.381.854.172.086.273.072.373-.043.1-.115.43-.502.545-.674.115-.172.229-.144.387-.086.157.057 1 .472 1.172.558.172.086.287.129.329.201.042.072.042.417-.098.811zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.636 0-3.158-.492-4.43-1.334l-.317-.208-2.96.776.79-2.884-.228-.363A8.163 8.163 0 013.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z"/>
+                </svg>
+                <span>WhatsApp</span>
+                <span class="footer-ext-icon" aria-hidden="true">&nearr;</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:ghourishayan09@gmail.com" class="footer-link footer-social-link" aria-label="Send email to Shayan Ghouri">
+                <svg class="icon-svg-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                <span>Email</span>
+                <span class="footer-ext-icon" aria-hidden="true">&nearr;</span>
+              </a>
+            </li>
+            <li>
+              <a href="assets/resume/Muhammad_Shayan_Ghouri_Resume.pdf" target="_blank" rel="noopener noreferrer" class="footer-link footer-social-link" aria-label="Download Resume PDF (opens in new tab)">
+                <svg class="icon-svg-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                  <polyline points="10 9 9 9 8 9"/>
+                </svg>
+                <span>Resume (PDF)</span>
+                <span class="footer-ext-icon" aria-hidden="true">&nearr;</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Subtle Footer CTA -->
+        <div class="footer-cta-col">
+          <h3 class="footer-heading">Start a Conversation</h3>
+          <p class="footer-cta-text">
+            Have a project in mind or an engineering opportunity to discuss?
+          </p>
+          <a href="#contact" class="btn-footer-cta">
+            <span>Let's talk</span>
+            <svg class="icon-svg-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Bar: Legal / Copyright & Status -->
+      <div class="footer-bottom-bar">
+        <p class="footer-copyright">
+          &copy; <span id="current-year">2026</span> Shayan Ghouri. All rights reserved.
+        </p>
+        <p class="footer-tech-stack">
+          Designed &amp; built with semantic HTML5, modern CSS &amp; vanilla ES modules.
+        </p>
+        <a href="#hero" class="back-to-top-link" aria-label="Back to top of page">
+          <span>Back to top</span>
+          <svg class="icon-svg-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </a>
+      </div>
     </div>
   </footer>
 
 </body>
+
 </html>

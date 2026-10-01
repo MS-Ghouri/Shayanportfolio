@@ -1,7 +1,7 @@
 /**
  * Modern Accessible CSS Reset & Baseline
  * Portfolio Engineering Team
- * Personas: @FrontendEng & @AccessibilityEng
+ * Step 1: Global Visual Design System Foundation
  * Standard: WCAG 2.2 Level AA
  */
 
@@ -14,13 +14,15 @@
   padding: 0;
 }
 
-/* 2. HTML baseline & smooth scrolling (scoped to prefers-reduced-motion: no-preference) */
+/* 2. HTML baseline & smooth scrolling (respecting prefers-reduced-motion) */
 html {
   -webkit-text-size-adjust: 100%;
   tab-size: 4;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
+  color-scheme: dark;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -29,7 +31,32 @@ html {
   }
 }
 
-/* 3. Fluid media rules */
+/* 3. Text Selection Styling */
+::selection {
+  background-color: rgba(59, 130, 246, 0.35);
+  color: #FFFFFF;
+}
+
+/* 4. Sleek Dark Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* 5. Fluid media rules */
 img,
 picture,
 video,
@@ -40,7 +67,7 @@ svg {
   height: auto;
 }
 
-/* 4. Form and button typography inheritance */
+/* 6. Form and button typography inheritance */
 button,
 input,
 optgroup,
@@ -64,7 +91,7 @@ button,
   cursor: pointer;
 }
 
-/* 5. List and link resets */
+/* 7. List and link resets */
 ul,
 ol {
   list-style: none;
@@ -75,29 +102,43 @@ a {
   text-decoration: none;
 }
 
-/* 6. Typography heading and paragraph baseline */
+/* 8. Typography heading and paragraph baseline */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
   font-weight: var(--font-weight-bold);
   line-height: var(--leading-tight);
-  color: var(--color-text-primary);
-  letter-spacing: -0.02em;
+  color: var(--foreground);
+  letter-spacing: var(--tracking-tight);
   text-wrap: balance;
 }
 
-h1 { font-size: var(--font-h1); }
-h2 { font-size: var(--font-h2); }
-h3 { font-size: var(--font-h3); }
+h1 {
+  font-size: var(--font-h1);
+  letter-spacing: var(--tracking-tighter);
+  line-height: var(--leading-tight);
+}
+
+h2 {
+  font-size: var(--font-h2);
+  letter-spacing: var(--tracking-tight);
+}
+
+h3 {
+  font-size: var(--font-h3);
+  letter-spacing: var(--tracking-tight);
+}
+
 h4 { font-size: var(--font-h4); }
 h5 { font-size: var(--font-h5); }
 h6 { font-size: var(--font-h6); }
 
 p {
-  color: var(--color-text-secondary);
+  color: var(--foreground-muted);
   line-height: var(--leading-relaxed);
   text-wrap: pretty;
 }
 
-/* 7. Strict prefers-reduced-motion accessibility guardrail */
+/* 9. Strict prefers-reduced-motion accessibility guardrail */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
