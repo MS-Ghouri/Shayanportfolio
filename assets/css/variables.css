@@ -183,8 +183,8 @@
   --space-20: 5rem;     /* 80px */
   --space-24: 6rem;     /* 96px */
 
-  /* Section Spacing Rhythm */
-  --section-padding-y: clamp(3rem, 6vw, 6.5rem);
+  /* Section Spacing Rhythm — fluid clamp: 4rem mobile → 7rem wide desktop */
+  --section-padding-y: clamp(4rem, 8vw, 7rem);
 
   /* ==========================================================================
      8. Border Radii
@@ -252,7 +252,8 @@
      ========================================================================== */
   --container-max-width: 1200px;
   --container-lg: var(--container-max-width);
-  --container-padding: clamp(1rem, 4vw, 2rem);
+  /* Fixed 1.25rem horizontal gutter — consistent edge alignment across all viewports */
+  --container-padding: 1.25rem;
   --header-height: 4.25rem;
 
   --z-skip-link: 9999;

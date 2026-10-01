@@ -24,19 +24,30 @@ body {
 }
 
 /* Inline code and technical element wrapping safeguard */
-code, kbd, samp {
+code, kbd, samp, pre {
   font-family: var(--font-mono);
   font-size: 0.875em;
   word-break: break-word;
+  /* Aligned number columns across terminal code, badges, and stat figures */
+  font-variant-numeric: tabular-nums;
 }
 
 /* ==========================================================================
    Accessible Keyboard Focus Rings (:focus-visible)
-   High-visibility warm copper/amber accent with positive outline offset
+   High-visibility warm copper/amber accent — 4px offset for clear separation
    ========================================================================== */
 :focus-visible {
   outline: var(--focus-ring);
-  outline-offset: var(--focus-ring-offset);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2);
+}
+
+/* Explicit per-element overrides for anchor and button elements */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #F59E0B;
+  outline-offset: 4px;
   border-radius: var(--radius-sm);
   box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2);
 }

@@ -394,7 +394,7 @@ function initCaseStudyModal() {
         .map(
           (m) => `
           <div class="modal-metric-card">
-            <span class="metric-val text-gradient">${escapeHtml(m.value)}</span>
+            <span class="metric-val text-accent">${escapeHtml(m.value)}</span>
             <strong class="metric-lbl">${escapeHtml(m.label)}</strong>
             <span class="metric-sub">${escapeHtml(m.description)}</span>
           </div>

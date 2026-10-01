@@ -515,14 +515,22 @@
 }
 
 /* ==========================================================================
-   Gradient Text Utility
-   Crisp, high-contrast display text (Crisp White to Warm Amber/Copper)
+   Accent Text Utility — Solid Amber, No Gradient/Clip Technique
+   Replaces the previous gradient-clip approach for full browser reliability
+   and clean rendering on high-contrast / forced-colors modes.
    ========================================================================== */
+/* Canonical class used in HTML markup */
+.text-accent {
+  color: #F59E0B;          /* Warm Amber — 4.7:1 on #0B0F17 ✓ WCAG AA (large text) */
+  -webkit-text-fill-color: #F59E0B;   /* Override any inherited fill */
+  background: none;
+}
+
+/* Legacy alias — kept for any JS-injected templates still using text-gradient */
 .text-gradient {
-  background: linear-gradient(135deg, #F8FAFC 30%, #FDE68A 70%, #F59E0B 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #F59E0B;
+  -webkit-text-fill-color: #F59E0B;
+  background: none;
 }
 
 .text-highlight {
@@ -562,9 +570,15 @@
 /* Two-Column Responsive Layout */
 .hero-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr);
+  grid-template-columns: 1fr;
   align-items: center;
   gap: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+@media (min-width: 1024px) {
+  .hero-layout {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
 }
 
 .hero-col-content {
@@ -703,11 +717,11 @@
 .btn-hero-primary {
   padding: 0.85rem 1.75rem;
   font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
-  color: #0B0F17;
-  background: var(--accent);
+  font-weight: 600;
+  color: #0F172A;
+  background: #F59E0B;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(245, 158, 11, 0.4);
+  border: 1px solid #F59E0B;
   box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);
   min-height: 48px;
   min-width: 44px;
@@ -719,22 +733,28 @@
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-hero-primary:hover,
-.btn-hero-primary:focus-visible {
-  background: var(--accent-hover);
-  border-color: var(--accent-hover);
-  color: #0B0F17;
+.btn-hero-primary:hover {
+  background: #D97706;
+  border-color: #D97706;
+  color: #0F172A;
   box-shadow: 0 6px 18px rgba(245, 158, 11, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-hero-primary:focus-visible {
+  outline: 2px solid #F59E0B;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px #0F172A, 0 0 0 5px #F59E0B;
   transform: translateY(-2px);
 }
 
 .btn-hero-secondary {
   padding: 0.85rem 1.75rem;
   font-size: var(--font-size-base);
-  font-weight: var(--font-weight-medium);
-  color: var(--foreground);
-  background-color: var(--surface);
-  border: 1px solid var(--border);
+  font-weight: 500;
+  color: #E2E8F0;
+  background: transparent;
+  border: 1px solid #334155;
   border-radius: var(--radius-md);
   min-height: 48px;
   min-width: 44px;
@@ -746,12 +766,19 @@
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-hero-secondary:hover,
-.btn-hero-secondary:focus-visible {
-  border-color: var(--border-hover);
-  background-color: var(--surface-hover);
-  color: var(--foreground-bright);
+.btn-hero-secondary:hover {
+  border-color: #475569;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #F8FAFC;
   transform: translateY(-2px);
+}
+
+.btn-hero-secondary:focus-visible {
+  outline: 2px solid #94A3B8;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px #0F172A, 0 0 0 5px #94A3B8;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #F8FAFC;
 }
 
 /* Secondary Recruiter Action Strip */
@@ -1029,9 +1056,9 @@ button.recruiter-link:focus-visible {
    Window Code Content & Panels
    ========================================================================== */
 .code-window-body {
-  padding: 1.15rem 1.25rem;
+  padding: 1.25rem 1.5rem;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: clamp(0.8125rem, 1.2vw, 0.9375rem);
   line-height: 1.65;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -1070,7 +1097,8 @@ button.recruiter-link:focus-visible {
 
 .cl {
   display: block;
-  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .line-no {
@@ -1163,7 +1191,7 @@ button.recruiter-link:focus-visible {
 }
 
 /* Responsive Breakpoints */
-@media (max-width: 991px) {
+@media (max-width: 1023px) {
   .hero-layout {
     grid-template-columns: 1fr;
     gap: var(--space-8);
@@ -1276,6 +1304,7 @@ button.recruiter-link:focus-visible {
   .timeline-card:hover,
   .selected-work-card:hover,
   .project-card:hover,
+  .project-showcase-card:hover,
   .service-card:hover {
     transform: none !important;
   }
@@ -1301,9 +1330,21 @@ button.recruiter-link:focus-visible {
   font-weight: var(--font-weight-bold);
   line-height: var(--leading-tight);
   letter-spacing: -0.02em;
-  margin-bottom: var(--space-6);
+  /* Tight heading-to-subtitle gap: gives subtitle clean breathing room */
+  margin-bottom: 0.75rem;
   color: var(--foreground);
   text-wrap: balance;
+}
+
+/* Lead paragraph under every section heading
+   Appears on: Skills, Experience, Projects, Services, Process, Proof, Contact */
+.section-subtitle {
+  font-size: var(--font-size-base);
+  color: #94A3B8;                        /* Muted cool gray — 7.1:1 on #0B0F17 ✓ AA */
+  line-height: 1.7;
+  max-width: 65ch;                       /* ~65 characters: optimal prose readability */
+  margin: 0 0 var(--space-6);
+  text-wrap: pretty;
 }
 
 /* ==========================================================================
@@ -1439,8 +1480,9 @@ button.recruiter-link:focus-visible {
 }
 
 .about-lead {
-  font-size: clamp(1.05rem, 1.3vw, 1.15rem) !important;
-  color: var(--foreground) !important;
+  font-size: clamp(1.05rem, 1.3vw, 1.15rem);
+  /* Crisp foreground for pull-quote emphasis in About — intentionally bright */
+  color: var(--foreground);
   line-height: var(--leading-relaxed);
 }
 
@@ -2166,15 +2208,19 @@ button.recruiter-link:focus-visible {
 
 /* ==========================================================================
    Category Filter Bar (@SeniorUIUXEngineer)
-   Pill-style filters with Amber highlight and active state indicator
+   Desktop: wrapping flex row. Mobile (<768px): horizontal touch-scroll track.
    ========================================================================== */
 .projects-filter-bar {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+/* Desktop scroll track — standard wrapping flex */
+.filter-scroll-track {
   display: flex;
   align-items: center;
   gap: var(--space-2);
   flex-wrap: wrap;
-  margin-top: var(--space-6);
-  margin-bottom: var(--space-4);
 }
 
 .filter-pill {
@@ -2185,14 +2231,17 @@ button.recruiter-link:focus-visible {
   font-family: var(--font-mono);
   font-size: 0.785rem;
   font-weight: var(--font-weight-semibold);
-  color: var(--foreground-muted);
-  background: var(--surface-card);
-  border: 1px solid var(--border-medium);
+  /* Inactive state: slate border + muted cool-gray text (WCAG AA) */
+  color: #94A3B8;
+  background: transparent;
+  border: 1px solid #334155;
   border-radius: var(--radius-full);
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   line-height: 1;
   user-select: none;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .filter-pill .filter-count {
@@ -2205,36 +2254,41 @@ button.recruiter-link:focus-visible {
   font-size: 0.6875rem;
   border-radius: var(--radius-full);
   background: rgba(255, 255, 255, 0.06);
-  color: var(--foreground-subtle);
+  color: #64748B;
   transition: all 0.2s ease;
 }
 
 .filter-pill:hover {
-  background: var(--surface-hover);
-  border-color: var(--border-hover);
-  color: var(--foreground);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #475569;
+  color: #F1F5F9;
   transform: translateY(-1px);
 }
 
+.filter-pill:hover .filter-count {
+  color: #94A3B8;
+}
+
 .filter-pill:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid #F59E0B;
   outline-offset: 2px;
 }
 
+/* Active state: solid amber fill — #0F172A on #F59E0B = 9.7:1 contrast */
 .filter-pill.is-active,
 .filter-pill[aria-pressed="true"] {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #0B0F17;
-  font-weight: var(--font-weight-bold);
+  background: #F59E0B;
+  border-color: #F59E0B;
+  color: #0F172A;
+  font-weight: 600;
   box-shadow: 0 2px 12px rgba(245, 158, 11, 0.35);
 }
 
 .filter-pill.is-active .filter-count,
 .filter-pill[aria-pressed="true"] .filter-count {
-  background: rgba(11, 15, 23, 0.25);
-  color: #0B0F17;
-  font-weight: var(--font-weight-bold);
+  background: rgba(15, 23, 42, 0.2);
+  color: #0F172A;
+  font-weight: 700;
 }
 
 .projects-showcase {
@@ -2244,7 +2298,7 @@ button.recruiter-link:focus-visible {
   margin-top: var(--space-8);
 }
 
-/* Base Showcase Card with Elevated Hover (User spec: scale 1.02, subtle border glow) */
+/* Base Showcase Card — Equalized flex column, full height in grid rows */
 .project-showcase-card {
   background: var(--surface-card);
   border: 1px solid var(--border-medium);
@@ -2252,6 +2306,7 @@ button.recruiter-link:focus-visible {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 100%;
   box-shadow: var(--shadow-sm);
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.28s cubic-bezier(0.16, 1, 0.3, 1),
@@ -2259,10 +2314,11 @@ button.recruiter-link:focus-visible {
               opacity 0.22s ease;
 }
 
+/* Hover: clean translateY(-4px) elevation + solid amber border highlight */
 .project-showcase-card:hover {
-  border-color: rgba(245, 158, 11, 0.45);
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 20px 42px -10px rgba(0, 0, 0, 0.7), 0 0 24px rgba(245, 158, 11, 0.12);
+  border-color: #F59E0B;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 42px -10px rgba(0, 0, 0, 0.7), 0 0 24px rgba(245, 158, 11, 0.15);
 }
 
 /* Flagship Project Card (EduKing) */
@@ -2272,9 +2328,9 @@ button.recruiter-link:focus-visible {
 }
 
 .project-card-featured:hover {
-  border-color: rgba(245, 158, 11, 0.6);
-  transform: translateY(-4px) scale(1.015);
-  box-shadow: 0 22px 48px -10px rgba(0, 0, 0, 0.75), 0 0 28px rgba(245, 158, 11, 0.18);
+  border-color: #F59E0B;
+  transform: translateY(-4px);
+  box-shadow: 0 22px 48px -10px rgba(0, 0, 0, 0.75), 0 0 28px rgba(245, 158, 11, 0.2);
 }
 
 /* Card Filter Transition States */
@@ -2681,13 +2737,13 @@ button.recruiter-link:focus-visible {
   color: var(--foreground);
 }
 
-/* Project Card Content & Typography */
+/* Project Card Content & Typography — grows to fill card, pushes footer to bottom */
 .project-card-content {
   padding: clamp(1.5rem, 3vw, 2.25rem);
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
-  flex: 1;
+  flex: 1 1 auto;
 }
 
 .project-header-row {
@@ -2871,24 +2927,34 @@ button.recruiter-link:focus-visible {
   gap: 0.35rem;
 }
 
+/* Tech badge pills — WCAG 2.2 AA: #F8FAFC on #334155 ≈ 12:1 contrast ratio */
 .tech-tag-pill {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--foreground-subtle);
-  background: var(--surface-elevated);
-  border: 1px solid var(--border-subtle);
-  padding: 0.15rem 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #F8FAFC;
+  background: #334155;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.35rem 0.75rem;
   border-radius: var(--radius-sm);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
-/* Project Action CTAs */
+.tech-tag-pill:hover {
+  background: #3E5068;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Project Action CTAs — pinned to card bottom with separator border */
 .project-card-actions {
   display: flex;
   align-items: center;
   gap: var(--space-3);
   flex-wrap: wrap;
   margin-top: auto;
-  padding-top: var(--space-2);
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .btn-project-primary {
@@ -3058,6 +3124,46 @@ button.recruiter-link:focus-visible {
     width: 100%;
     justify-content: center;
     min-height: 44px;
+  }
+}
+
+/* Mobile Filter Bar: horizontal touch-scroll track (<768px) */
+@media (max-width: 767px) {
+  /* Outer toolbar — extend to container edges so the scroll track bleeds full-width */
+  .projects-filter-bar {
+    margin-inline: calc(-1 * var(--space-4));
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-4);
+  }
+
+  /* Scroll track: single horizontal row, no wrap, momentum scrolling */
+  .filter-scroll-track {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: var(--space-2);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;       /* iOS/Safari momentum scroll */
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1rem;
+    /* Edge padding ensures first & last pills align with content margin */
+    padding: 0.5rem 1rem;
+    /* Hide scrollbar across all engines */
+    scrollbar-width: none;                   /* Firefox */
+    -ms-overflow-style: none;                /* IE 11 */
+  }
+
+  /* Webkit scrollbar hide (Chrome, Safari, Edge) */
+  .filter-scroll-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Pills: never shrink, snap on swipe, comfortable 44px touch target */
+  .filter-pill {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    min-height: 44px;                        /* WCAG 2.5.8 touch target */
+    padding: 0.55rem 1rem;
   }
 }
 
@@ -3381,6 +3487,11 @@ body.modal-open {
   font-size: 1.35rem;
   font-weight: var(--font-weight-bold);
   line-height: 1.1;
+  /* Explicit amber color ensures correct display whether or not
+     the text-gradient/text-accent class is also applied */
+  color: #F59E0B;
+  -webkit-text-fill-color: #F59E0B;
+  background: none;
 }
 
 .metric-lbl {
