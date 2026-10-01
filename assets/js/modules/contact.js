@@ -188,27 +188,51 @@ function initContactForm() {
 
     if (!isValid) return;
 
-    // Simulate sending / route to mailto fallback
+    // Send Form Data to Formspree Endpoint
     submitBtn.setAttribute('disabled', '');
     submitBtn.classList.add('is-loading');
+    const submitBtnText = submitBtn.querySelector('span');
+    const originalBtnText = submitBtnText ? submitBtnText.textContent : 'Send Message';
+    if (submitBtnText) submitBtnText.textContent = 'Sending...';
 
-    setTimeout(() => {
-      submitBtn.removeAttribute('disabled');
-      submitBtn.classList.remove('is-loading');
+    const formData = new FormData(form);
+    const formspreeEndpoint = form.getAttribute('action') || 'https://formspree.io/f/mnpnqrqk';
 
-      const subject = encodeURIComponent(`[Portfolio Inquiry] ${typeSelect.value}: ${nameInput.value.trim()}`);
-      const body = encodeURIComponent(
-        `Name: ${nameInput.value.trim()}\nEmail: ${emailInput.value.trim()}\nProject Type: ${typeSelect.value}\n\nMessage:\n${messageInput.value.trim()}`
-      );
-
-      statusBox.innerHTML = `Thank you, <strong>${nameInput.value.trim()}</strong>! Your message is ready. Opening your email client...`;
-      statusBox.classList.add('status-success');
-      statusBox.removeAttribute('hidden');
-
-      // Launch native mailto
-      window.location.href = `mailto:ghourishayan09@gmail.com?subject=${subject}&body=${body}`;
-
-      form.reset();
-    }, 600);
+    fetch(formspreeEndpoint, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+      .then(async (response) => {
+        if (response.ok) {
+          const senderName = nameInput.value.trim();
+          statusBox.innerHTML = `Thank you, <strong>${senderName}</strong>! Your message has been sent successfully. I will review it and get back to you shortly.`;
+          statusBox.className = 'form-status status-success';
+          statusBox.removeAttribute('hidden');
+          form.reset();
+        } else {
+          const data = await response.json().catch(() => ({}));
+          const errorMsg = data.errors && data.errors.length > 0
+            ? data.errors.map(err => err.message).join(', ')
+            : 'Oops! There was a problem sending your message. Please try again or reach out directly at <a href="mailto:ghourishayan09@gmail.com" class="text-accent" style="text-decoration: underline;">ghourishayan09@gmail.com</a>.';
+          
+          statusBox.innerHTML = errorMsg;
+          statusBox.className = 'form-status status-error';
+          statusBox.removeAttribute('hidden');
+        }
+      })
+      .catch((err) => {
+        console.error('Form submission network error:', err);
+        statusBox.innerHTML = 'Network error. Please check your connection or email me directly at <a href="mailto:ghourishayan09@gmail.com" class="text-accent" style="text-decoration: underline;">ghourishayan09@gmail.com</a>.';
+        statusBox.className = 'form-status status-error';
+        statusBox.removeAttribute('hidden');
+      })
+      .finally(() => {
+        submitBtn.removeAttribute('disabled');
+        submitBtn.classList.remove('is-loading');
+        if (submitBtnText) submitBtnText.textContent = originalBtnText;
+      });
   });
 }

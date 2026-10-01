@@ -1963,7 +1963,10 @@
               </p>
             </div>
 
-            <form id="contact-form" class="contact-form" novalidate>
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/mnpnqrqk" method="POST" novalidate>
+              <!-- Hidden Subject Field for Formspree Notification Routing -->
+              <input type="hidden" name="_subject" value="New Portfolio Inquiry from Shayan Ghouri Portfolio">
+
               <!-- Honeypot Spam Protection (Invisible to humans, catches automated bots) -->
               <div class="sr-only" aria-hidden="true">
                 <label for="contact-gotcha">Do not fill this field if you are human</label>
