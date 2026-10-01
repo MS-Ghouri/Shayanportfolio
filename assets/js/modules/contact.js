@@ -203,7 +203,7 @@ function initContactForm() {
       _subject: 'New Portfolio Inquiry from Shayan Ghouri Portfolio'
     };
 
-    const formspreeEndpoint = form.getAttribute('action') || 'https://formspree.io/f/mnpnqrqk';
+    const formspreeEndpoint = form.getAttribute('action') || 'https://formspree.io/f/xbglepza';
 
     fetch(formspreeEndpoint, {
       method: 'POST',
