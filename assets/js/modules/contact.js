@@ -177,11 +177,11 @@ function initContactForm() {
     }
 
     // Message validation
-    if (!messageInput.value.trim() || messageInput.value.trim().length < 15) {
+    if (!messageInput.value.trim()) {
       isValid = false;
       messageInput.classList.add('is-invalid');
       if (errorMessage) {
-        errorMessage.textContent = 'Please describe your inquiry (at least 15 characters).';
+        errorMessage.textContent = 'Please enter your message.';
         errorMessage.removeAttribute('hidden');
       }
     }
@@ -195,14 +195,22 @@ function initContactForm() {
     const originalBtnText = submitBtnText ? submitBtnText.textContent : 'Send Message';
     if (submitBtnText) submitBtnText.textContent = 'Sending...';
 
-    const formData = new FormData(form);
+    const payload = {
+      name: nameInput.value.trim(),
+      email: emailInput.value.trim(),
+      inquiry_type: typeSelect.value,
+      message: messageInput.value.trim(),
+      _subject: 'New Portfolio Inquiry from Shayan Ghouri Portfolio'
+    };
+
     const formspreeEndpoint = form.getAttribute('action') || 'https://formspree.io/f/mnpnqrqk';
 
     fetch(formspreeEndpoint, {
       method: 'POST',
-      body: formData,
+      body: JSON.stringify(payload),
       headers: {
-        'Accept': 'application/json'
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
       }
     })
       .then(async (response) => {
