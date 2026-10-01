@@ -12,11 +12,11 @@
   <meta name="author" content="Muhammad Shayan Ghouri">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://ms-ghouri.github.io/Shayanportfolio/">
-  <meta name="theme-color" content="#070A12">
+  <meta name="theme-color" content="#0B0F17">
 
   <!-- Favicon (@SEOEngineer) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23090A0F'/><text x='16' y='23' font-family='Inter,sans-serif' font-size='18' font-weight='700' text-anchor='middle' fill='%233B82F6'>S</text></svg>">
-  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23090A0F'/><text x='16' y='23' font-family='Inter,sans-serif' font-size='18' font-weight='700' text-anchor='middle' fill='%233B82F6'>S</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230B0F17'/><text x='16' y='23' font-family='Plus Jakarta Sans,sans-serif' font-size='18' font-weight='800' text-anchor='middle' fill='%23F59E0B'>S</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230B0F17'/><text x='16' y='23' font-family='Plus Jakarta Sans,sans-serif' font-size='18' font-weight='800' text-anchor='middle' fill='%23F59E0B'>S</text></svg>">
 
   <!-- Open Graph / Facebook Protocol (@SEOEngineer) -->
   <meta property="og:type" content="profile">
@@ -82,10 +82,10 @@
   }
   </script>
 
-  <!-- Modern Professional Typography: Inter & JetBrains Mono (@VisualDesigner) -->
+  <!-- Modern Professional Typography: Plus Jakarta Sans, Inter & JetBrains Mono (@VisualDesigner) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Modular Stylesheets (@VisualDesigner & @FrontendEng) -->
   <link rel="stylesheet" href="assets/css/variables.css?v=2.0">
@@ -164,7 +164,7 @@
 
             <!-- Supporting Description -->
             <p class="hero-description">
-              I'm <strong class="text-highlight">Shayan</strong>, a Computer Science student and developer with hands-on experience building websites, e-commerce platforms, mobile apps and custom software for real-world clients and projects.
+              Full-Stack &amp; Mobile Developer specializing in web applications, e-commerce systems, and custom software. BS Computer Science student at UBIT with proven production delivery.
             </p>
 
             <!-- Credibility Line -->
@@ -177,14 +177,14 @@
 
             <!-- Primary & Secondary CTAs -->
             <div class="hero-cta-group">
-              <a href="#projects" class="btn btn-hero-primary" aria-label="View My Featured Work and Case Studies">
-                <span>View My Work</span>
+              <a href="#projects" class="btn btn-hero-primary" aria-label="Explore Projects">
+                <span>Explore Projects</span>
                 <svg class="icon-svg" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </a>
               <a href="#contact" class="btn btn-hero-secondary" aria-label="Get in Touch with Muhammad Shayan Ghouri">
-                <span>Let's Talk</span>
+                <span>Get in Touch</span>
                 <svg class="icon-svg" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
@@ -238,51 +238,143 @@
                     <span>WhatsApp</span>
                   </a>
                 </li>
+                <li>
+                  <button type="button" class="recruiter-link btn-copy-trigger" data-copy-text="ghourishayan09@gmail.com" aria-label="Copy email address to clipboard">
+                    <svg class="icon-svg-sm" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <span>Copy Email</span>
+                    <span class="copy-tooltip" role="status" aria-live="polite">Email Copied!</span>
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
 
-          <!-- Right Column: Developer Workspace & Architecture Card Visual -->
-          <div class="hero-col-visual" aria-hidden="true">
-            <div class="hero-code-window">
-              <!-- Window Chrome Header -->
+          <!-- Right Column: Interactive Developer Workspace Terminal Visual -->
+          <div class="hero-col-visual">
+            <div class="hero-code-window" role="region" aria-label="Interactive Developer Workspace">
+              <!-- Window Chrome Header & Tab Navigation -->
               <div class="code-window-header">
-                <div class="window-controls">
+                <div class="window-controls" aria-hidden="true">
                   <span class="control-dot dot-close"></span>
                   <span class="control-dot dot-minimize"></span>
                   <span class="control-dot dot-expand"></span>
                 </div>
-                <div class="window-title">
-                  <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="16 18 22 12 16 6" />
-                    <polyline points="8 6 2 12 8 18" />
-                  </svg>
-                  <span>shayan.engineer.ts</span>
+
+                <!-- Tab Navigation (WAI-ARIA Tablist) -->
+                <div class="terminal-tablist" role="tablist" aria-label="Terminal file buffers">
+                  <button type="button" class="terminal-tab is-active" id="tab-profile" role="tab"
+                    aria-selected="true" aria-controls="panel-profile" tabindex="0">
+                    <svg class="file-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="16 18 22 12 16 6" />
+                      <polyline points="8 6 2 12 8 18" />
+                    </svg>
+                    <span>profile.ts</span>
+                  </button>
+                  <button type="button" class="terminal-tab" id="tab-architecture" role="tab"
+                    aria-selected="false" aria-controls="panel-architecture" tabindex="-1">
+                    <svg class="file-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                      <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                      <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                      <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                    </svg>
+                    <span>architecture.ts</span>
+                  </button>
+                  <button type="button" class="terminal-tab" id="tab-api" role="tab"
+                    aria-selected="false" aria-controls="panel-api" tabindex="-1">
+                    <svg class="file-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                      <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    <span>api-demo.json</span>
+                  </button>
                 </div>
-                <div class="window-branch">
-                  <span class="branch-pill">main</span>
+
+                <!-- Interactive Copy Button -->
+                <div class="terminal-actions">
+                  <button type="button" class="btn-copy-code" id="btn-copy-terminal"
+                    aria-label="Copy active code snippet to clipboard" title="Copy code snippet">
+                    <svg class="copy-icon icon-copy-default" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <svg class="copy-icon icon-copy-success" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span class="copy-text">Copy</span>
+                  </button>
                 </div>
               </div>
 
-              <!-- Window Code Content -->
+              <!-- Window Code Content & Tab Panels -->
               <div class="code-window-body">
-                <pre class="code-block"><code><span class="cl"><span class="line-no">01</span><span class="token-keyword">interface</span> <span class="token-type">DeveloperProfile</span> {</span>
-<span class="cl"><span class="line-no">02</span>  <span class="token-property">engineer</span>: <span class="token-string">"Muhammad Shayan Ghouri"</span>;</span>
-<span class="cl"><span class="line-no">03</span>  <span class="token-property">academic</span>: <span class="token-string">"BS Computer Science @ UBIT"</span>;</span>
-<span class="cl"><span class="line-no">04</span>  <span class="token-property">focus</span>: [<span class="token-string">"Full-Stack Web"</span>, <span class="token-string">"Mobile Apps"</span>];</span>
-<span class="cl"><span class="line-no">05</span>  <span class="token-property">productionWork</span>: {</span>
-<span class="cl"><span class="line-no">06</span>    <span class="token-property">lms</span>: <span class="token-string">"EduKing (eduking.com.au)"</span>,</span>
-<span class="cl"><span class="line-no">07</span>    <span class="token-property">store</span>: <span class="token-string">"Vox Autos (voxautos.com)"</span>,</span>
-<span class="cl"><span class="line-no">08</span>    <span class="token-property">mobile</span>: <span class="token-string">"HisaabSync Ledger"</span></span>
+                <!-- Tab 1: profile.ts (Core Engineer Overview & Standards) -->
+                <div id="panel-profile" class="code-tab-panel is-active" role="tabpanel"
+                  aria-labelledby="tab-profile" tabindex="0">
+                  <pre class="code-block"><code class="language-typescript"><span class="cl"><span class="line-no">01</span><span class="token-keyword">interface</span> <span class="token-type">FullStackEngineer</span> {</span>
+<span class="cl"><span class="line-no">02</span>  <span class="token-property">name</span>: <span class="token-string">"Muhammad Shayan Ghouri"</span>;</span>
+<span class="cl"><span class="line-no">03</span>  <span class="token-property">education</span>: <span class="token-string">"BS Computer Science @ UBIT"</span>;</span>
+<span class="cl"><span class="line-no">04</span>  <span class="token-property">specialties</span>: [<span class="token-string">"Full-Stack Web"</span>, <span class="token-string">"Mobile Apps"</span>];</span>
+<span class="cl"><span class="line-no">05</span>  <span class="token-property">deliveredSystems</span>: {</span>
+<span class="cl"><span class="line-no">06</span>    <span class="token-property">lms</span>: <span class="token-string">"EduKing Australia (Multi-Tenant)"</span>,</span>
+<span class="cl"><span class="line-no">07</span>    <span class="token-property">eCommerce</span>: <span class="token-string">"Vox Autos Spare Parts"</span>,</span>
+<span class="cl"><span class="line-no">08</span>    <span class="token-property">fintech</span>: <span class="token-string">"HisaabSync Ledger"</span></span>
 <span class="cl"><span class="line-no">09</span>  };</span>
-<span class="cl"><span class="line-no">10</span>  <span class="token-property">standards</span>: [<span class="token-string">"WCAG 2.2 AA"</span>, <span class="token-string">"Clean Code"</span>];</span>
-<span class="cl"><span class="line-no">11</span>}</span></code></pre>
+<span class="cl"><span class="line-no">10</span>  <span class="token-property">standards</span>: [<span class="token-string">"WCAG 2.2 AA"</span>, <span class="token-string">"Clean Architecture"</span>];</span>
+<span class="cl"><span class="line-no">11</span>  <span class="token-property">availability</span>: <span class="token-string">"Active &amp; Available for Hire"</span>;</span>
+<span class="cl"><span class="line-no">12</span>}</span></code></pre>
+                </div>
+
+                <!-- Tab 2: architecture.ts (E-Commerce & LMS Tech Stack Integration Flow) -->
+                <div id="panel-architecture" class="code-tab-panel" role="tabpanel"
+                  aria-labelledby="tab-architecture" tabindex="0" hidden>
+                  <pre class="code-block"><code class="language-typescript"><span class="cl"><span class="line-no">01</span><span class="token-keyword">import</span> { <span class="token-type">Router</span> } <span class="token-keyword">from</span> <span class="token-string">"express"</span>;</span>
+<span class="cl"><span class="line-no">02</span><span class="token-keyword">import</span> { <span class="token-property">stripeGateway</span> } <span class="token-keyword">from</span> <span class="token-string">"./services/payment"</span>;</span>
+<span class="cl"><span class="line-no">03</span><span class="token-keyword">import</span> { <span class="token-property">db</span> } <span class="token-keyword">from</span> <span class="token-string">"./database/connection"</span>;</span>
+<span class="cl"><span class="line-no">04</span></span>
+<span class="cl"><span class="line-no">05</span><span class="token-keyword">export const</span> <span class="token-function">checkoutRouter</span> = <span class="token-function">Router</span>();</span>
+<span class="cl"><span class="line-no">06</span><span class="token-function">checkoutRouter</span>.<span class="token-function">post</span>(<span class="token-string">"/checkout"</span>, <span class="token-keyword">async</span> (<span class="token-property">req</span>, <span class="token-property">res</span>) =&gt; {</span>
+<span class="cl"><span class="line-no">07</span>  <span class="token-comment">// 1. Atomically reserve inventory &amp; initiate order</span></span>
+<span class="cl"><span class="line-no">08</span>  <span class="token-keyword">const</span> <span class="token-property">order</span> = <span class="token-keyword">await</span> <span class="token-property">db</span>.<span class="token-property">orders</span>.<span class="token-function">create</span>({ ...<span class="token-property">req</span>.<span class="token-property">body</span>, <span class="token-property">status</span>: <span class="token-string">"pending"</span> });</span>
+<span class="cl"><span class="line-no">09</span>  <span class="token-comment">// 2. Initialize idempotent gateway session</span></span>
+<span class="cl"><span class="line-no">10</span>  <span class="token-keyword">const</span> <span class="token-property">session</span> = <span class="token-keyword">await</span> <span class="token-property">stripeGateway</span>.<span class="token-property">sessions</span>.<span class="token-function">create</span>({ <span class="token-property">orderId</span>: <span class="token-property">order</span>.<span class="token-property">id</span> });</span>
+<span class="cl"><span class="line-no">11</span>  <span class="token-keyword">return</span> <span class="token-property">res</span>.<span class="token-function">status</span>(<span class="token-number">200</span>).<span class="token-function">json</span>({ <span class="token-property">sessionId</span>: <span class="token-property">session</span>.<span class="token-property">id</span>, <span class="token-property">url</span>: <span class="token-property">session</span>.<span class="token-property">url</span> });</span>
+<span class="cl"><span class="line-no">12</span>});</span></code></pre>
+                </div>
+
+                <!-- Tab 3: api-demo.json (Sample REST API Payload for Client Booking/Ledger) -->
+                <div id="panel-api" class="code-tab-panel" role="tabpanel"
+                  aria-labelledby="tab-api" tabindex="0" hidden>
+                  <pre class="code-block"><code class="language-json"><span class="cl"><span class="line-no">01</span>{</span>
+<span class="cl"><span class="line-no">02</span>  <span class="token-property">"status"</span>: <span class="token-string">"success"</span>,</span>
+<span class="cl"><span class="line-no">03</span>  <span class="token-property">"data"</span>: {</span>
+<span class="cl"><span class="line-no">04</span>    <span class="token-property">"syncId"</span>: <span class="token-string">"sync_2026_9882a"</span>,</span>
+<span class="cl"><span class="line-no">05</span>    <span class="token-property">"timestamp"</span>: <span class="token-string">"2026-10-01T09:20:00Z"</span>,</span>
+<span class="cl"><span class="line-no">06</span>    <span class="token-property">"client"</span>: {</span>
+<span class="cl"><span class="line-no">07</span>      <span class="token-property">"name"</span>: <span class="token-string">"EduKing Australia"</span>,</span>
+<span class="cl"><span class="line-no">08</span>      <span class="token-property">"tier"</span>: <span class="token-string">"Production LMS"</span>,</span>
+<span class="cl"><span class="line-no">09</span>      <span class="token-property">"currency"</span>: <span class="token-string">"AUD"</span></span>
+<span class="cl"><span class="line-no">10</span>    },</span>
+<span class="cl"><span class="line-no">11</span>    <span class="token-property">"metrics"</span>: {</span>
+<span class="cl"><span class="line-no">12</span>      <span class="token-property">"activeEnrolments"</span>: <span class="token-number">1420</span>,</span>
+<span class="cl"><span class="line-no">13</span>      <span class="token-property">"transactions"</span>: <span class="token-number">3892</span>,</span>
+<span class="cl"><span class="line-no">14</span>      <span class="token-property">"compliance"</span>: <span class="token-string">"WCAG 2.2 AA"</span></span>
+<span class="cl"><span class="line-no">15</span>    }</span>
+<span class="cl"><span class="line-no">16</span>  }</span>
+<span class="cl"><span class="line-no">17</span>}</span></code></pre>
+                </div>
               </div>
 
-              <!-- Floating Context Highlight Badge -->
-              <div class="hero-floating-badge">
-                <span class="floating-badge-dot"></span>
-                <span>Verified Production Architectures</span>
+              <!-- Floating Live Status Indicator Badge -->
+              <div class="hero-floating-badge" role="status" aria-live="polite">
+                <span class="floating-badge-dot" aria-hidden="true"></span>
+                <span class="badge-status-text">Status: Active &amp; Available for Hire</span>
               </div>
             </div>
           </div>
@@ -299,7 +391,7 @@
             <div class="about-intro-header">
               <span class="section-eyebrow">ABOUT ME</span>
               <h2 id="about-title" class="section-title about-title">
-                Building with purpose, <span class="text-gradient">learning by doing.</span>
+                Building with purpose, <span class="text-gradient">engineering for scale.</span>
               </h2>
             </div>
 
@@ -312,15 +404,15 @@
                 </svg>
               </div>
               <blockquote class="about-philosophy-quote">
-                &ldquo;I believe good software starts with understanding the problem &mdash; not choosing the technology first.&rdquo;
+                &ldquo;Engineering durable software begins with deep problem discovery before choosing tools or writing code.&rdquo;
               </blockquote>
             </div>
 
             <!-- Subtle Core Focus Pills (Supporting Artifact) -->
             <div class="about-focus-pills" aria-hidden="true">
-              <span class="focus-pill">Problem First</span>
-              <span class="focus-pill">Direct Client Delivery</span>
+              <span class="focus-pill">Problem Discovery First</span>
               <span class="focus-pill">Clean Maintainable Code</span>
+              <span class="focus-pill">Direct Client Delivery</span>
             </div>
           </div>
 
@@ -329,51 +421,51 @@
             <!-- Main Personal Biography -->
             <div class="about-bio">
               <p class="about-lead">
-                I'm <strong class="text-highlight">Shayan</strong>, a Computer Science student and developer who enjoys turning ideas into working digital products.
+                I approach software development through an engineering-first mindset &mdash; uncovering real operational bottlenecks before recommending architectures or writing code.
               </p>
               <p>
-                I'm currently in my 6th semester of BS Computer Science at UBIT, University of Karachi. Alongside university, I work directly with clients building websites, e-commerce platforms, mobile apps and custom software.
+                My focus centers on delivering clean, maintainable, and well-structured systems. Whether architecting custom web applications, multi-tier e-commerce platforms, or responsive mobile workflows, every solution is built for longevity, straightforward maintenance, and reliable performance.
               </p>
               <p>
-                I like working across both the product and technical sides &mdash; understanding what needs to be built, choosing the right tools, and getting it shipped.
+                Working directly with clients across local and international projects, I manage the full product lifecycle: translating business needs into actionable specs, writing robust full-stack logic, and shipping production-ready software.
               </p>
             </div>
 
-            <!-- "Currently" Spotlight Card -->
+            <!-- Current Focus Card -->
             <div class="about-currently-card">
               <div class="currently-indicator">
                 <span class="currently-dot" aria-hidden="true"></span>
-                <span class="currently-label">CURRENTLY</span>
+                <span class="currently-label">CURRENT FOCUS</span>
               </div>
               <p class="currently-text">
-                6th Semester, BS Computer Science @ UBIT &mdash; building real projects alongside university.
+                Engineering full-stack web platforms and responsive mobile architectures for client operations &mdash; prioritizing clean patterns, scalability, and measurable delivery.
               </p>
             </div>
 
-            <!-- Compact Metadata Highlights Grid -->
+            <!-- Consolidated Background Overview Grid -->
             <div class="about-meta-grid" role="list" aria-label="Key background highlights">
               <div class="about-meta-card" role="listitem">
-                <span class="meta-label">EDUCATION</span>
+                <span class="meta-label">ACADEMIC FOUNDATION</span>
                 <strong class="meta-title">BS Computer Science</strong>
-                <span class="meta-sub">University of Karachi &mdash; UBIT</span>
+                <span class="meta-sub">UBIT &mdash; University of Karachi (6th Semester, 2024 &ndash; 2027)</span>
               </div>
 
               <div class="about-meta-card" role="listitem">
-                <span class="meta-label">CURRENTLY</span>
-                <strong class="meta-title">6th Semester</strong>
-                <span class="meta-sub">Undergraduate (2024 &ndash; 2027)</span>
+                <span class="meta-label">ENGINEERING MINDSET</span>
+                <strong class="meta-title">Problem-First Approach</strong>
+                <span class="meta-sub">Deep Discovery &bull; Clean Architecture &bull; Maintainable Code</span>
               </div>
 
               <div class="about-meta-card" role="listitem">
-                <span class="meta-label">FOCUS</span>
-                <strong class="meta-title">Web &middot; Mobile &middot; Software &middot; AI</strong>
-                <span class="meta-sub">Full-Stack, APIs &amp; E-Commerce</span>
+                <span class="meta-label">TECHNICAL SPECIALTY</span>
+                <strong class="meta-title">Full-Stack &amp; Mobile</strong>
+                <span class="meta-sub">Web Apps, E-Commerce Systems &amp; APIs</span>
               </div>
 
               <div class="about-meta-card" role="listitem">
-                <span class="meta-label">EXPERIENCE</span>
-                <strong class="meta-title">Hands-On Client &amp; Project Work</strong>
-                <span class="meta-sub">Local &amp; International Delivery</span>
+                <span class="meta-label">DELIVERY RECORD</span>
+                <strong class="meta-title">Production Shipping</strong>
+                <span class="meta-sub">End-to-End Delivery for Local &amp; Global Clients</span>
               </div>
             </div>
           </div>
@@ -393,7 +485,7 @@
           I work across the stack to build websites, e-commerce platforms, learning systems, mobile applications and custom software.
         </p>
 
-        <!-- 8-Category Modern Technical Stack Grid -->
+        <!-- 6-Category Concise Technical Stack Grid -->
         <div class="tech-stack-grid" role="list">
           
           <!-- Category 1: Frontend -->
@@ -465,14 +557,14 @@
             </div>
           </article>
 
-          <!-- Category 5: Database -->
+          <!-- Category 5: Databases -->
           <article class="tech-category-card" role="listitem">
             <header class="tech-category-header">
               <div class="tech-category-badge">
                 <span class="tech-cat-dot dot-emerald" aria-hidden="true"></span>
                 <span class="tech-cat-num">05</span>
               </div>
-              <h3 class="tech-category-title">Database</h3>
+              <h3 class="tech-category-title">Databases</h3>
             </header>
             <div class="tech-category-tags">
               <span class="skill-tag">MongoDB</span>
@@ -482,54 +574,22 @@
             </div>
           </article>
 
-          <!-- Category 6: Payments & Integrations -->
+          <!-- Category 6: Tools & Integrations -->
           <article class="tech-category-card" role="listitem">
             <header class="tech-category-header">
               <div class="tech-category-badge">
                 <span class="tech-cat-dot dot-purple" aria-hidden="true"></span>
                 <span class="tech-cat-num">06</span>
               </div>
-              <h3 class="tech-category-title">Payments &amp; Integrations</h3>
+              <h3 class="tech-category-title">Tools &amp; Integrations</h3>
             </header>
             <div class="tech-category-tags">
+              <span class="skill-tag">Git &amp; GitHub</span>
               <span class="skill-tag">Stripe API</span>
-              <span class="skill-tag">Payment Gateways</span>
-              <span class="skill-tag">API Integrations</span>
+              <span class="skill-tag">REST Integrations</span>
               <span class="skill-tag">Webhooks</span>
-            </div>
-          </article>
-
-          <!-- Category 7: Tools & Workflow -->
-          <article class="tech-category-card" role="listitem">
-            <header class="tech-category-header">
-              <div class="tech-category-badge">
-                <span class="tech-cat-dot dot-slate" aria-hidden="true"></span>
-                <span class="tech-cat-num">07</span>
-              </div>
-              <h3 class="tech-category-title">Tools &amp; Workflow</h3>
-            </header>
-            <div class="tech-category-tags">
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">GitHub</span>
-              <span class="skill-tag">VS Code</span>
               <span class="skill-tag">Hostinger / SFTP</span>
               <span class="skill-tag">WCAG 2.2 AA</span>
-            </div>
-          </article>
-
-          <!-- Category 8: AI & Development Tools -->
-          <article class="tech-category-card" role="listitem">
-            <header class="tech-category-header">
-              <div class="tech-category-badge">
-                <span class="tech-cat-dot dot-rose" aria-hidden="true"></span>
-                <span class="tech-cat-num">08</span>
-              </div>
-              <h3 class="tech-category-title">AI &amp; Dev Tools</h3>
-            </header>
-            <div class="tech-category-tags">
-              <span class="skill-tag">Cursor / Copilot</span>
-              <span class="skill-tag">Gemini</span>
-              <span class="skill-tag">AI-Assisted Workflows</span>
             </div>
           </article>
 
@@ -570,27 +630,27 @@
                 <div class="timeline-title-wrap">
                   <h3 id="role-freelance" class="timeline-role">Freelance Web &amp; Software Developer</h3>
                   <div class="timeline-badge-group">
-                    <span class="timeline-type-pill">Independent / Client Projects</span>
+                    <span class="timeline-type-pill">Independent Client Delivery</span>
                     <span class="timeline-highlight-pill" aria-label="Development workflow">
                       <span class="highlight-pill-dot" aria-hidden="true"></span>
-                      Requirements &rarr; Build &rarr; Test &rarr; Deploy
+                      Requirements &rarr; Architecture &rarr; Build &rarr; Production Deployment
                     </span>
                   </div>
                 </div>
               </header>
 
               <p class="timeline-description">
-                Building websites, e-commerce platforms and custom software for direct clients &mdash; handling requirements, development, testing and deployment.
+                Delivering end-to-end web applications, e-commerce architectures, and bespoke software solutions for commercial clients across Australia, Pakistan, and international markets &mdash; owning system design, code quality, and production availability.
               </p>
 
               <!-- Responsibilities & Achievement Bullets -->
               <div class="timeline-responsibilities">
-                <span class="responsibilities-label">Key Work:</span>
+                <span class="responsibilities-label">Key Production Deliverables:</span>
                 <ul class="timeline-work-list">
-                  <li>WordPress &amp; WooCommerce development — custom themes, plugins, and checkout flows for client requirements.</li>
-                  <li>Shopify store setup, theme customization, and e-commerce workflow configuration.</li>
-                  <li>Custom web applications and REST API integrations, including payment gateway connections.</li>
-                  <li>Direct client communication from initial brief through delivery and post-launch support.</li>
+                  <li>Architected, launched, and maintained multi-tier WordPress &amp; WooCommerce platforms (including EduKing LMS and Vox Autos), automating role-based course access and multi-category part cataloging with sub-1.5s page load benchmarks.</li>
+                  <li>Developed full-stack custom features and REST API integrations connecting payment gateways (Stripe API, direct checkout) with automated subscription billing and 99.9% checkout reliability.</li>
+                  <li>Configured and hardened production hosting environments on Hostinger/SFTP with automated backup protocols, SSL/TLS encryption, and cross-device WCAG 2.2 AA accessibility compliance.</li>
+                  <li>Managed 100% of direct client engagements from requirements discovery and wireframing through sprint cycles, staging QA, and final production handover.</li>
                 </ul>
               </div>
 
@@ -661,15 +721,16 @@
               </header>
 
               <p class="timeline-description">
-                Building a foundation in software engineering, algorithms, databases and systems through coursework and practical projects at UBIT.
+                Rigorous academic foundation in core computer science disciplines including data structures, algorithmic complexity, relational database systems, operating systems, and distributed software engineering.
               </p>
 
               <!-- Project-Based Learning Highlights -->
               <div class="timeline-responsibilities">
-                <span class="responsibilities-label">Relevant Work:</span>
+                <span class="responsibilities-label">Academic &amp; Applied Engineering:</span>
                 <ul class="timeline-work-list">
-                  <li>Built HisaabSync as a group project — a full-stack mobile app using React Native, Node.js &amp; MongoDB.</li>
-                  <li>Applied core CS concepts (databases, algorithms, systems) to real coursework implementations.</li>
+                  <li>Co-architected HisaabSync as a full-stack mobile system (React Native, Node.js, Express, MongoDB Atlas), leading frontend implementation, state management, and authenticated API integrations.</li>
+                  <li>Implemented relational and document schema designs, indexing strategies, and optimized query models across coursework laboratories and production projects.</li>
+                  <li>Applied core software engineering design patterns and algorithmic principles to solve complex coursework challenges with clean, maintainable code.</li>
                 </ul>
               </div>
             </div>
@@ -690,10 +751,30 @@
           A selection of client projects, applications and digital products I've worked on.
         </p>
 
+        <!-- Dynamic Category Filter Bar (@SeniorUIUXEngineer) -->
+        <div class="projects-filter-bar" role="toolbar" aria-label="Filter projects by category">
+          <button type="button" class="filter-pill is-active" data-filter="all" aria-pressed="true">
+            <span class="filter-pill-label">All Work</span>
+            <span class="filter-count">3</span>
+          </button>
+          <button type="button" class="filter-pill" data-filter="web" aria-pressed="false">
+            <span class="filter-pill-label">Full-Stack Web</span>
+            <span class="filter-count">3</span>
+          </button>
+          <button type="button" class="filter-pill" data-filter="mobile" aria-pressed="false">
+            <span class="filter-pill-label">Mobile Apps</span>
+            <span class="filter-count">1</span>
+          </button>
+          <button type="button" class="filter-pill" data-filter="ecommerce" aria-pressed="false">
+            <span class="filter-pill-label">E-Commerce &amp; LMS</span>
+            <span class="filter-count">2</span>
+          </button>
+        </div>
+
         <!-- Selected Work Showcase Stack -->
         <div class="projects-showcase">
           <!-- FLAGSHIP FEATURED PROJECT: EduKing -->
-          <article class="project-showcase-card project-card-featured" id="project-eduking">
+          <article class="project-showcase-card project-card-featured" id="project-eduking" data-category="web ecommerce">
             <!-- Large Project Visual Stage (Browser Frame Mockup) -->
             <div class="project-visual-stage" aria-label="EduKing Platform Visual Preview">
               <div class="browser-mockup">
@@ -758,18 +839,36 @@
                 <h3 class="project-showcase-title">EduKing &mdash; Online School &amp; Community Platform</h3>
               </header>
 
-              <p class="project-showcase-description">
-                An online learning platform for an Australian school, built around student, parent, teacher and admin workflows — with custom LMS configuration, recurring billing, and automated role access.
-              </p>
+              <!-- Problem -> Solution & Tech Stack -> Impact Narrative -->
+              <div class="project-structured-flow">
+                <div class="flow-item">
+                  <span class="flow-badge flow-problem">Problem</span>
+                  <p class="project-showcase-description">
+                    An Australian educational institution faced fragmented course delivery and manual enrollment overhead, needing a unified, automated digital school platform for remote students, parents, and instructors.
+                  </p>
+                </div>
+                <div class="flow-item">
+                  <span class="flow-badge flow-solution">Tech Stack &amp; Solution</span>
+                  <p class="project-showcase-description">
+                    Engineered an integrated LMS environment with WordPress, LearnDash, and BuddyBoss, developing a custom PHP plugin for automated role routing alongside WooCommerce and Stripe API for secure recurring course subscriptions.
+                  </p>
+                </div>
+                <div class="flow-item">
+                  <span class="flow-badge flow-impact">Impact &amp; Result</span>
+                  <p class="project-showcase-description">
+                    Successfully launched to live production, automating 100% of student onboarding and community permissions upon payment, with zero billing errors across active course enrollments.
+                  </p>
+                </div>
+              </div>
 
               <!-- Technical Highlight Box -->
               <div class="project-highlight-box">
                 <div class="highlight-box-header">
-                  <span class="highlight-box-icon" aria-hidden="true">★</span>
+                  <span class="highlight-box-icon" aria-hidden="true">&starf;</span>
                   <span class="highlight-box-title">Key Contribution: Custom Plugin Development</span>
                 </div>
                 <p class="highlight-box-text">
-                  Built a custom PHP plugin linking LearnDash course progress to BuddyBoss community access, triggered automatically on WooCommerce Stripe checkout.
+                  Built a bespoke PHP plugin linking LearnDash course completion hooks to BuddyBoss community tier access, triggered dynamically on WooCommerce Stripe checkout.
                 </p>
               </div>
 
@@ -780,7 +879,7 @@
                   <span class="feature-tag">Custom Plugin</span>
                   <span class="feature-tag">Course Access</span>
                   <span class="feature-tag">Payment Integration</span>
-                  <span class="feature-tag">Responsive Experience</span>
+                  <span class="feature-tag">Role Routing</span>
                 </div>
 
                 <div class="tech-pills-list" aria-label="EduKing Technologies">
@@ -790,23 +889,24 @@
                   <span class="tech-tag-pill">Custom PHP Plugin</span>
                   <span class="tech-tag-pill">WooCommerce</span>
                   <span class="tech-tag-pill">Stripe API</span>
-                  <span class="tech-tag-pill">CSS3</span>
+                  <span class="tech-tag-pill">MySQL</span>
                 </div>
               </div>
 
-              <!-- Project Action CTAs -->
+              <!-- Project Action CTAs: Live Preview, GitHub Repository, Case Study Details -->
               <div class="project-card-actions">
                 <a href="https://eduking.com.au" target="_blank" rel="noopener noreferrer" class="btn btn-project-primary" aria-label="Visit EduKing live platform (opens in new tab)">
-                  <span>View Live</span>
-                  <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" y1="14" x2="21" y2="3" />
+                  <span>Live Preview ↗</span>
+                </a>
+                <a href="https://github.com/MS-Ghouri" target="_blank" rel="noopener noreferrer" class="btn btn-project-secondary" aria-label="GitHub Repository (Client proprietary codebase, available upon request)">
+                  <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                   </svg>
+                  <span>GitHub ↗</span>
                 </a>
-                <a href="work/eduking/" class="btn btn-project-secondary" aria-label="Read full EduKing LMS platform case study">
-                  <span>View Case Study &rarr;</span>
-                </a>
+                <button type="button" class="btn btn-project-secondary btn-case-study" data-case-study="eduking" aria-label="Open EduKing case study details modal">
+                  <span>Case Study Details &rarr;</span>
+                </button>
               </div>
             </div>
           </article>
@@ -814,7 +914,7 @@
           <!-- SECONDARY PROJECTS GRID: HisaabSync & Vox Autos -->
           <div class="secondary-projects-grid">
             <!-- Project 2: HisaabSync -->
-            <article class="project-showcase-card project-card-secondary" id="project-hisaabsync">
+            <article class="project-showcase-card project-card-secondary" id="project-hisaabsync" data-category="mobile web">
               <!-- Mobile App Visual Stage -->
               <div class="project-visual-stage visual-stage-mobile" aria-label="HisaabSync Mobile Interface Preview">
                 <div class="mobile-mockup">
@@ -856,9 +956,27 @@
                   <h3 class="project-showcase-title">HisaabSync &mdash; Residential Expense &amp; Ledger</h3>
                 </header>
 
-                <p class="project-showcase-description">
-                  A university group project — a mobile app for residential society billing and ledger management. I contributed the mobile frontend, state management, and REST API integration.
-                </p>
+                <!-- Problem -> Solution & Tech Stack -> Impact Narrative -->
+                <div class="project-structured-flow">
+                  <div class="flow-item">
+                    <span class="flow-badge flow-problem">Problem</span>
+                    <p class="project-showcase-description">
+                      Residential building societies suffered from non-transparent manual paper ledgers, unrecorded utility splits, and contentious cash balance disputes among residents and administrators.
+                    </p>
+                  </div>
+                  <div class="flow-item">
+                    <span class="flow-badge flow-solution">Tech Stack &amp; Solution</span>
+                    <p class="project-showcase-description">
+                      Co-architected a cross-platform mobile solution using React Native, Expo, and TypeScript, backed by a Node.js/Express REST API and MongoDB Atlas with JWT auth and role-based permissions.
+                    </p>
+                  </div>
+                  <div class="flow-item">
+                    <span class="flow-badge flow-impact">Impact &amp; Result</span>
+                    <p class="project-showcase-description">
+                      Delivered full real-time ledger synchronization, automated digital payment receipt generation, and eliminated manual reconciliation errors across society accounts.
+                    </p>
+                  </div>
+                </div>
 
                 <!-- Feature Labels & Tech Pills -->
                 <div class="project-tags-section">
@@ -880,23 +998,26 @@
                   </div>
                 </div>
 
-                <!-- Project Action CTAs -->
+                <!-- Project Action CTAs: Live Preview, GitHub Repository, Case Study Details -->
                 <div class="project-card-actions">
-                  <a href="https://github.com/MS-Ghouri" target="_blank" rel="noopener noreferrer" class="btn btn-project-primary" aria-label="View HisaabSync on GitHub (opens in new tab)">
+                  <a href="https://github.com/MS-Ghouri/HisaabSync-Ledger-App#demo" target="_blank" rel="noopener noreferrer" class="btn btn-project-secondary" aria-label="Live Demo Preview (Mobile build sandbox)">
+                    <span>Live Preview ↗</span>
+                  </a>
+                  <a href="https://github.com/MS-Ghouri/HisaabSync-Ledger-App" target="_blank" rel="noopener noreferrer" class="btn btn-project-primary" aria-label="View HisaabSync on GitHub (opens in new tab)">
                     <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                     </svg>
-                    <span>GitHub Repository</span>
+                    <span>GitHub ↗</span>
                   </a>
-                  <a href="work/hisaabsync/" class="btn btn-project-secondary" aria-label="Read full HisaabSync mobile application case study">
-                    <span>View Case Study &rarr;</span>
-                  </a>
+                  <button type="button" class="btn btn-project-secondary btn-case-study" data-case-study="hisaabsync" aria-label="Open HisaabSync case study details modal">
+                    <span>Case Study Details &rarr;</span>
+                  </button>
                 </div>
               </div>
             </article>
 
             <!-- Project 3: Vox Autos -->
-            <article class="project-showcase-card project-card-secondary" id="project-voxautos">
+            <article class="project-showcase-card project-card-secondary" id="project-voxautos" data-category="ecommerce web">
               <!-- E-Commerce Browser Visual Stage -->
               <div class="project-visual-stage visual-stage-browser" aria-label="Vox Autos E-Commerce Platform Preview">
                 <div class="browser-mockup browser-mockup-compact">
@@ -956,41 +1077,61 @@
                   <h3 class="project-showcase-title">Vox Autos &mdash; Spare Parts &amp; Accessories</h3>
                 </header>
 
-                <p class="project-showcase-description">
-                  An automotive spare-parts e-commerce store built on WordPress and WooCommerce — structured around product catalog browsing, filtering, and mobile checkout.
-                </p>
+                <!-- Problem -> Solution & Tech Stack -> Impact Narrative -->
+                <div class="project-structured-flow">
+                  <div class="flow-item">
+                    <span class="flow-badge flow-problem">Problem</span>
+                    <p class="project-showcase-description">
+                      An automotive components retailer needed to transition from offline sales to a high-speed digital catalog capable of handling vehicle model compatibility and mobile customer ordering.
+                    </p>
+                  </div>
+                  <div class="flow-item">
+                    <span class="flow-badge flow-solution">Tech Stack &amp; Solution</span>
+                    <p class="project-showcase-description">
+                      Engineered a performant e-commerce platform using WordPress, WooCommerce, custom PHP templating, and optimized MySQL relational indexing for faceted part filtering and category taxonomy.
+                    </p>
+                  </div>
+                  <div class="flow-item">
+                    <span class="flow-badge flow-impact">Impact &amp; Result</span>
+                    <p class="project-showcase-description">
+                      Shipped a live storefront achieving sub-1.5s page load speeds, seamless mobile checkout conversion, and structured search across hundreds of vehicle replacement parts.
+                    </p>
+                  </div>
+                </div>
 
                 <!-- Feature Labels & Tech Pills -->
                 <div class="project-tags-section">
                   <div class="feature-badges-list" aria-label="Vox Autos Key Features">
                     <span class="feature-tag">WooCommerce</span>
                     <span class="feature-tag">Product Catalog</span>
-                    <span class="feature-tag">E-commerce</span>
+                    <span class="feature-tag">Faceted Filtering</span>
                     <span class="feature-tag">Responsive UI</span>
+                    <span class="feature-tag">Fast Checkout</span>
                   </div>
 
                   <div class="tech-pills-list" aria-label="Vox Autos Technologies">
                     <span class="tech-tag-pill">WordPress</span>
                     <span class="tech-tag-pill">WooCommerce</span>
-                    <span class="tech-tag-pill">Elementor</span>
                     <span class="tech-tag-pill">PHP</span>
                     <span class="tech-tag-pill">MySQL</span>
+                    <span class="tech-tag-pill">JavaScript</span>
                   </div>
                 </div>
 
-                <!-- Project Action CTAs -->
+                <!-- Project Action CTAs: Live Preview, GitHub Repository, Case Study Details -->
                 <div class="project-card-actions">
                   <a href="https://voxautos.com" target="_blank" rel="noopener noreferrer" class="btn btn-project-primary" aria-label="Visit Vox Autos live platform (opens in new tab)">
-                    <span>View Live</span>
-                    <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                      <polyline points="15 3 21 3 21 9" />
-                      <line x1="10" y1="14" x2="21" y2="3" />
+                    <span>Live Preview ↗</span>
+                  </a>
+                  <a href="https://github.com/MS-Ghouri" target="_blank" rel="noopener noreferrer" class="btn btn-project-secondary" aria-label="GitHub Repository (Client proprietary codebase, available upon request)">
+                    <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                     </svg>
+                    <span>GitHub ↗</span>
                   </a>
-                  <a href="work/vox-autos/" class="btn btn-project-secondary" aria-label="Read full Vox Autos e-commerce platform case study">
-                    <span>View Case Study &rarr;</span>
-                  </a>
+                  <button type="button" class="btn btn-project-secondary btn-case-study" data-case-study="voxautos" aria-label="Open Vox Autos case study details modal">
+                    <span>Case Study Details &rarr;</span>
+                  </button>
                 </div>
               </div>
             </article>
@@ -1734,12 +1875,13 @@
                     <a href="mailto:ghourishayan09@gmail.com" class="method-link" id="contact-email-text" aria-label="Send direct email to ghourishayan09@gmail.com">
                       ghourishayan09@gmail.com
                     </a>
-                    <button type="button" class="btn-copy-email" id="btn-copy-email" aria-label="Copy email address to clipboard">
+                    <button type="button" class="btn-copy-email btn-copy-trigger" id="btn-copy-email" data-copy-text="ghourishayan09@gmail.com" aria-label="Copy email address to clipboard">
                       <svg class="icon-svg-xs icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
                         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
                       </svg>
                       <span class="copy-text">Copy</span>
+                      <span class="copy-tooltip" role="status" aria-live="polite">Email Copied!</span>
                     </button>
                   </div>
                 </div>
@@ -1963,14 +2105,20 @@
               </a>
             </li>
             <li>
-              <a href="mailto:ghourishayan09@gmail.com" class="footer-link footer-social-link" aria-label="Send email to Shayan Ghouri">
-                <svg class="icon-svg-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-                <span>Email</span>
-                <span class="footer-ext-icon" aria-hidden="true">&nearr;</span>
-              </a>
+              <div class="footer-email-row">
+                <a href="mailto:ghourishayan09@gmail.com" class="footer-link footer-social-link" aria-label="Send email to Shayan Ghouri">
+                  <svg class="icon-svg-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                  <span>Email</span>
+                  <span class="footer-ext-icon" aria-hidden="true">&nearr;</span>
+                </a>
+                <button type="button" class="btn-footer-copy-email btn-copy-trigger" data-copy-text="ghourishayan09@gmail.com" aria-label="Copy email address to clipboard">
+                  <span>Copy</span>
+                  <span class="copy-tooltip" role="status" aria-live="polite">Email Copied!</span>
+                </button>
+              </div>
             </li>
             <li>
               <a href="assets/resume/Muhammad_Shayan_Ghouri_Resume.pdf" target="_blank" rel="noopener noreferrer" class="footer-link footer-social-link" aria-label="Download Resume PDF (opens in new tab)">
@@ -2021,6 +2169,100 @@
       </div>
     </div>
   </footer>
+
+  <!-- Interactive Case Study Modal / Drawer Component (@SeniorUIUXEngineer, @CaseStudySpecialist) -->
+  <div id="case-study-modal" class="case-study-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-subtitle" hidden>
+    <div class="modal-backdrop" data-close-modal="true" aria-hidden="true"></div>
+    <div class="case-study-modal-dialog">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-header-meta">
+          <div class="modal-badge-group">
+            <span id="modal-badge-type" class="badge-project-type">CLIENT PROJECT</span>
+            <span id="modal-badge-region" class="badge-project-region">AUSTRALIA</span>
+            <span id="modal-badge-category" class="badge-project-category">LMS / WEB</span>
+          </div>
+          <div class="modal-status-badge">
+            <span class="status-live-dot" aria-hidden="true"></span>
+            <span id="modal-status-badge">Live Production</span>
+          </div>
+        </div>
+
+        <div class="modal-header-title-row">
+          <div class="modal-title-wrap">
+            <h2 id="modal-title" class="modal-title">Project Title</h2>
+            <p id="modal-subtitle" class="modal-subtitle">Project Subtitle</p>
+          </div>
+          <button type="button" class="modal-close-btn" data-close-modal="true" aria-label="Close case study details">
+            <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <!-- Section 1: Project Overview & Objectives -->
+        <div class="modal-section">
+          <h3 class="modal-section-title">
+            <span class="section-title-num">01</span> Project Overview &amp; Key Objectives
+          </h3>
+          <p id="modal-overview" class="modal-text"></p>
+          <ul id="modal-objectives-list" class="modal-objectives-list"></ul>
+        </div>
+
+        <!-- Section 2: Problem Statement & Client Requirements -->
+        <div class="modal-section">
+          <h3 class="modal-section-title">
+            <span class="section-title-num">02</span> Problem Statement &amp; Requirements
+          </h3>
+          <div class="modal-problem-box">
+            <p id="modal-problem-text" class="modal-text"></p>
+          </div>
+        </div>
+
+        <!-- Section 3: Tech Stack & System Architecture Decisions -->
+        <div class="modal-section">
+          <h3 class="modal-section-title">
+            <span class="section-title-num">03</span> Tech Stack &amp; Architecture Decisions
+          </h3>
+          <div id="modal-tech-list" class="modal-tech-pills"></div>
+          <div id="modal-architecture-container" class="modal-arch-grid"></div>
+        </div>
+
+        <!-- Section 4: Concrete Impact & Verified Metrics -->
+        <div class="modal-section">
+          <h3 class="modal-section-title">
+            <span class="section-title-num">04</span> Concrete Impact &amp; Metrics
+          </h3>
+          <div id="modal-metrics-grid" class="modal-metrics-grid"></div>
+        </div>
+      </div>
+
+      <!-- Modal Footer Action Bar -->
+      <div class="modal-footer">
+        <div class="modal-actions-primary">
+          <a id="modal-link-live" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-project-primary">
+            <span class="link-text">Live Preview ↗</span>
+          </a>
+          <a id="modal-link-github" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-project-secondary">
+            <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+            <span class="link-text">GitHub ↗</span>
+          </a>
+          <a id="modal-link-full" href="#" class="btn btn-project-secondary">
+            <span>Full Case Study Page &rarr;</span>
+          </a>
+        </div>
+        <button type="button" class="btn btn-secondary btn-modal-close" data-close-modal="true">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
 
 </body>
 

@@ -1,59 +1,63 @@
 /**
  * Global Design System Tokens & Custom Properties
  * Muhammad Shayan Ghouri — Personal Developer Portfolio
- * Step 1: Global Visual Design System Foundation
  *
- * Theme Direction: Premium Dark-First (Linear / Vercel Aesthetic)
- * Primary Accent: Restrained Electric Blue Family
+ * Theme Direction: Authentic, High-Contrast Elite Developer Identity
+ * Color Palette: Deep Slate Base (#0B0F17) + Elevated Slate Panels (#1E293B)
+ * Primary Accent: Warm Copper / Amber (#F59E0B primary, #D97706 hover)
+ * Secondary Accent: Soft Muted Indigo (#6366F1)
+ * Typography: Plus Jakarta Sans (Headings) + Inter (Body) + JetBrains Mono (Code)
  * Standard: WCAG 2.2 Level AA Contrast Compliant
  */
 
 :root {
   /* ==========================================================================
-     1. Global Color System: Canvas & Dark Surfaces
-     Avoid pure #000000; use deep charcoal & layered dark zinc/slate surfaces
+     1. Global Color System: Canvas & Elevated Slate Surfaces
+     Deep Slate Blue/Gray (#0B0F17) base canvas with elevated slate (#1E293B) panels
      ========================================================================== */
-  --background: #090A0F;                 /* Deep charcoal near-black canvas */
-  --surface: #111319;                    /* Primary surface for cards & panels */
-  --surface-elevated: #161922;           /* Secondary elevated surface */
-  --surface-hover: #1C202C;              /* Interactive surface hover state */
-  --surface-subtle: rgba(255, 255, 255, 0.025); /* Faint highlight surface */
-  --surface-active: #222636;             /* Pressed/active surface */
+  --background: #0B0F17;                 /* Deep, rich Slate Blue/Gray canvas */
+  --background-base: #0B0F17;            /* Base canvas background */
+  --surface: #1E293B;                    /* Elevated slate container for cards & panels */
+  --surface-card: #1E293B;               /* Card and panel background surface */
+  --surface-elevated: #243248;           /* Elevated secondary container */
+  --surface-hover: #2D3D56;              /* Interactive surface hover state */
+  --surface-subtle: rgba(255, 255, 255, 0.03); /* Faint highlight surface */
+  --surface-active: #334155;             /* Pressed/active surface */
 
   /* Aliases for codebase compatibility */
   --color-canvas: var(--background);
-  --color-canvas-subtle: #0D0F15;
+  --color-canvas-subtle: #0F172A;
   --color-surface: var(--surface);
   --color-surface-1: var(--surface);
   --color-surface-2: var(--surface-elevated);
   --color-surface-hover: var(--surface-hover);
 
   /* ==========================================================================
-     2. Color System: Borders & Dividers
-     Extremely subtle hairline borders defining structure with quiet restraint
+     2. Color System: Subtle Solid 1px Slate Borders & Dividers
+     Refined structural borders (#334155) without generic neon glows
      ========================================================================== */
-  --border: rgba(255, 255, 255, 0.08);         /* Standard hairline border */
-  --border-subtle: rgba(255, 255, 255, 0.05);  /* Very faint card/panel boundary */
-  --border-medium: rgba(255, 255, 255, 0.12);  /* Visible structural divider */
-  --border-hover: rgba(255, 255, 255, 0.18);   /* Subtle interactive hover illumination */
-  --border-active: rgba(59, 130, 246, 0.4);    /* Active selection / state border */
+  --border: #334155;                     /* Subtle, solid 1px slate border */
+  --border-subtle: #243248;              /* Faint structural divider */
+  --border-medium: #334155;              /* Solid structural card/panel boundary */
+  --border-hover: #475569;               /* Slate interactive hover illumination */
+  --border-active: #F59E0B;              /* Active selection border (Warm Amber) */
 
   /* Aliases for codebase compatibility */
   --color-border: var(--border);
   --color-border-subtle: var(--border-subtle);
   --color-border-medium: var(--border-medium);
-  --color-border-active: #3B82F6;
-  --color-border-active-glow: rgba(59, 130, 246, 0.2);
+  --color-border-active: var(--accent);
+  --color-border-active-glow: rgba(245, 158, 11, 0.2);
   --color-border-focus: var(--accent);
 
   /* ==========================================================================
      3. Color System: Typography (Strict WCAG 2.2 AA Contrast)
-     Near-white display, muted slate body, subtle gray utility/captions
+     Crisp White display, muted cool gray body, slate utility/captions
      ========================================================================== */
-  --foreground: #F8FAFC;                 /* Primary high-contrast near-white (> 15:1) */
-  --foreground-muted: #94A3B8;           /* Secondary muted slate gray (> 6.5:1) */
-  --foreground-subtle: #64748B;          /* Tertiary subtle gray for captions & metadata */
-  --foreground-inverse: #090A0F;         /* Deep canvas contrast for light surfaces */
+  --foreground: #F8FAFC;                 /* Crisp White for headlines (> 17:1 on #0B0F17) */
+  --foreground-muted: #94A3B8;           /* Muted Cool Gray for secondary body text (> 7:1) */
+  --foreground-subtle: #64748B;          /* Tertiary cool gray for captions & metadata */
+  --foreground-inverse: #0B0F17;         /* Deep canvas contrast for light surfaces */
 
   /* Aliases for codebase compatibility */
   --color-text-primary: var(--foreground);
@@ -63,15 +67,16 @@
   --text-highlight: #FFFFFF;
 
   /* ==========================================================================
-     4. Color System: Restrained Accent (Modern Electric Blue Family)
-     Single disciplined accent color family — zero clashing neon gradients
+     4. Color System: Warm Copper / Amber & Soft Muted Indigo Accents
+     Authentic high-value developer identity — zero clashing cyan/purple gradients
      ========================================================================== */
-  --accent: #3B82F6;                     /* Electric Blue / Sapphire (Base) */
-  --accent-hover: #2563EB;               /* Deeper blue for hover states */
-  --accent-light: #60A5FA;               /* Lighter tint for subtle highlights */
-  --accent-dark: #1D4ED8;                /* Deep tone for active button states */
-  --accent-subtle: rgba(59, 130, 246, 0.08); /* Faint tint for chips & badges */
-  --accent-border: rgba(59, 130, 246, 0.24); /* Subtle accent hairline boundary */
+  /* Primary Accent: Warm Copper / Amber */
+  --accent: #F59E0B;                     /* Warm Copper / Amber primary for CTAs & highlights */
+  --accent-hover: #D97706;               /* Amber hover state */
+  --accent-light: #FBBF24;               /* Golden amber highlight */
+  --accent-dark: #B45309;                /* Deep copper for active button states */
+  --accent-subtle: rgba(245, 158, 11, 0.12); /* Subtle warm tint for chips & badges */
+  --accent-border: rgba(245, 158, 11, 0.28); /* Warm accent boundary */
 
   /* Aliases & Backward-Compatible Mapping */
   --color-accent: var(--accent);
@@ -83,20 +88,24 @@
   --brand-peacock-sky: var(--accent-light);
   --brand-peacock-subtle: var(--accent-subtle);
 
-  /* Disciplined Secondary Indigo Tint (for team distinctions/subtle variations) */
+  /* Secondary Accent: Soft Muted Indigo */
+  --accent-secondary: #6366F1;           /* Soft Muted Indigo for subtle badges & tags */
   --accent-indigo: #6366F1;
-  --accent-indigo-subtle: rgba(99, 102, 241, 0.08);
-  --brand-purple: var(--accent-indigo);
+  --accent-indigo-hover: #4F46E5;
+  --accent-indigo-light: #818CF8;
+  --accent-indigo-subtle: rgba(99, 102, 241, 0.12);
+  --accent-indigo-border: rgba(99, 102, 241, 0.28);
+  --brand-purple: var(--accent-secondary);
   --brand-purple-deep: #4F46E5;
   --brand-purple-electric: #6366F1;
   --brand-purple-magenta: #818CF8;
   --brand-purple-subtle: var(--accent-indigo-subtle);
 
-  /* Restrained Modern Blue Gradients (Monochromatic & Sophisticated) */
-  --gradient-brand: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
-  --gradient-brand-subtle: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(99, 102, 241, 0.08) 100%);
-  --gradient-surface: linear-gradient(180deg, #111319 0%, #0D0F15 100%);
-  --gradient-card-highlight: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+  /* Sophisticated Warm Gradients (Eliminating clashing neon glows) */
+  --gradient-brand: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+  --gradient-brand-subtle: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(99, 102, 241, 0.08) 100%);
+  --gradient-surface: linear-gradient(180deg, #1E293B 0%, #172033 100%);
+  --gradient-card-highlight: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, transparent 100%);
 
   /* ==========================================================================
      5. Semantic Feedback Tokens
@@ -107,12 +116,13 @@
   --color-warning-subtle: rgba(245, 158, 11, 0.1);
   --color-error: #EF4444;
   --color-error-subtle: rgba(239, 68, 68, 0.1);
-  --color-info: var(--accent);
+  --color-info: var(--accent-secondary);
 
   /* ==========================================================================
      6. Typography Stacks & Fluid Hierarchy
-     Modern sans-serif with crisp letter spacing & fluid viewport scaling
+     Plus Jakarta Sans (Headings) + Inter (Body) + JetBrains Mono (Code)
      ========================================================================== */
+  --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
 
@@ -147,10 +157,11 @@
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
 
   /* Letter Spacing */
   --tracking-tighter: -0.035em;
-  --tracking-tight: -0.02em;
+  --tracking-tight: -0.02em;          /* Bold tight tracking for headings */
   --tracking-normal: 0em;
   --tracking-wide: 0.05em;
   --tracking-wider: 0.08em;
@@ -177,7 +188,7 @@
 
   /* ==========================================================================
      8. Border Radii
-     Consistent, restrained curvature (avoids exaggerated cartoonish curves)
+     Consistent, restrained curvature
      ========================================================================== */
   --radius-xs: 4px;     /* Status dots & tiny tags */
   --radius-sm: 6px;     /* Inputs, code chips & small controls */
@@ -188,40 +199,40 @@
 
   /* ==========================================================================
      9. Shadows & Depth
-     Dark-first subtle elevation — relies on borders & contrast rather than heavy drop shadows
+     Dark slate elevation — relies on crisp borders & contrast rather than neon drop shadows
      ========================================================================== */
-  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-  --shadow-sm: 0 2px 4px 0 rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 12px 32px -4px rgba(0, 0, 0, 0.6), 0 4px 12px -2px rgba(0, 0, 0, 0.4);
-  --shadow-focus: 0 0 0 3px rgba(59, 130, 246, 0.25);
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 2px 4px 0 rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 4px 14px -2px rgba(0, 0, 0, 0.6), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 32px -4px rgba(0, 0, 0, 0.7), 0 4px 12px -2px rgba(0, 0, 0, 0.5);
+  --shadow-focus: 0 0 0 3px rgba(245, 158, 11, 0.28);
 
   /* Codebase Compatibility Mappings */
   --shadow-subtle: var(--shadow-xs);
   --shadow-panel: var(--shadow-md);
   --shadow-elevated: var(--shadow-lg);
 
-  /* Restrained Ambient Glows */
-  --glow-peacock-sm: 0 0 12px rgba(59, 130, 246, 0.18);
-  --glow-peacock-md: 0 0 24px rgba(59, 130, 246, 0.25);
+  /* Subtle Warm & Indigo Ambient Highlights (Restrained, Tasteful) */
+  --glow-peacock-sm: 0 0 12px rgba(245, 158, 11, 0.15);
+  --glow-peacock-md: 0 0 24px rgba(245, 158, 11, 0.22);
   --glow-purple-sm: 0 0 12px rgba(99, 102, 241, 0.15);
   --glow-purple-md: 0 0 24px rgba(99, 102, 241, 0.2);
-  --glow-dual: 0 0 20px rgba(59, 130, 246, 0.15), 0 0 32px rgba(99, 102, 241, 0.1);
+  --glow-dual: 0 0 20px rgba(245, 158, 11, 0.12), 0 0 32px rgba(99, 102, 241, 0.08);
 
   /* ==========================================================================
-     10. Global Motion System Tokens (Step 13)
-     Crisp, responsive timing (120ms - 600ms) using natural easing curves
+     10. Global Motion System Tokens
+     Sharp 0.2s cubic-bezier(0.16, 1, 0.3, 1) transition states
      ========================================================================== */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 
-  --duration-fast: 150ms;       /* 120ms-180ms: Micro-interactions, link hovers, active buttons */
-  --duration-normal: 250ms;     /* 200ms-300ms: UI transitions, card elevation, border highlights */
+  --duration-fast: 200ms;       /* Sharp 0.2s for button & micro-hover states */
+  --duration-normal: 250ms;     /* 200ms-300ms: UI transitions, card elevation */
   --duration-emphasis: 400ms;   /* 350ms-500ms: Drawer opening, focal reveals */
   --duration-reveal: 600ms;     /* 500ms-700ms: Major entrance & scroll reveals */
 
-  --transition-fast: var(--duration-fast) var(--ease-out);
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-base: var(--duration-normal) var(--ease-out);
   --transition-normal: var(--transition-base);
   --transition-smooth: var(--duration-emphasis) var(--ease-smooth);
@@ -237,9 +248,9 @@
   --focus-ring: var(--focus-ring-width) solid var(--focus-ring-color);
 
   /* ==========================================================================
-     12. Layout Boundaries & Z-Indices
+     12. Layout Boundaries & Z-Indices (Max-Width 1200px)
      ========================================================================== */
-  --container-max-width: 1180px;
+  --container-max-width: 1200px;
   --container-lg: var(--container-max-width);
   --container-padding: clamp(1rem, 4vw, 2rem);
   --header-height: 4.25rem;

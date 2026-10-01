@@ -75,7 +75,7 @@
 .nav-back-link:hover,
 .nav-back-link:focus-visible {
   color: var(--accent-light);
-  background: rgba(59, 130, 246, 0.08);
+  background: var(--accent-subtle);
   transform: translateX(-2px);
 }
 
@@ -410,8 +410,8 @@
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   color: var(--accent-light);
-  background: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-border);
   padding: 0.15rem 0.45rem;
   border-radius: var(--radius-sm);
 }
@@ -500,8 +500,8 @@
    ========================================================================== */
 
 .engineering-spotlight-box {
-  background: rgba(59, 130, 246, 0.04);
-  border: 1px solid rgba(59, 130, 246, 0.25);
+  background: var(--surface-card);
+  border: 1px solid var(--border-medium);
   border-left: 4px solid var(--accent);
   border-radius: var(--radius-md);
   padding: clamp(1.25rem, 2.5vw, 1.75rem);

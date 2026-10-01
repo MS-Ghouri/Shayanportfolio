@@ -1,14 +1,14 @@
 /**
  * Navigation Module
  * Portfolio Engineering Team
- * Personas: @UXArchitect, @FrontendEng, @AccessibilityAuditor
+ * Lead Personas: @UXArchitect, @FrontendEng, @AccessibilityAuditor
  *
  * Handles:
  * - Mobile navigation drawer toggle with aria-expanded & body scroll lock
  * - Keyboard Escape key dismiss & focus restoration
  * - Click-outside and nav link click auto-dismiss
- * - Sticky header scroll state (.is-scrolled)
- * - Active section scroll-spy indicator via IntersectionObserver
+ * - Sticky header dynamic blur & scrolled state (.is-scrolled) past hero
+ * - Active section scroll-spy indicator via IntersectionObserver + Scroll monitoring
  * - Footer dynamic year synchronization
  */
 
@@ -16,8 +16,9 @@ export function initNavigation() {
   const toggleBtn = document.querySelector('.nav-toggle');
   const navMenu = document.getElementById('nav-menu');
   const header = document.querySelector('.site-header');
+  const heroSection = document.getElementById('hero');
   const navLinks = document.querySelectorAll('.nav-link, .nav-cta');
-  const internalNavLinks = document.querySelectorAll('.site-nav .nav-link[href^="#"], .site-nav .nav-cta[href^="#"]');
+  const internalNavLinks = Array.from(document.querySelectorAll('.site-nav .nav-link[href^="#"]'));
 
   // ==========================================================================
   // 1. Mobile Menu Drawer Management (WCAG 2.2 AA compliant)
@@ -45,13 +46,11 @@ export function initNavigation() {
       }
     }
 
-    // Toggle button click listener
     toggleBtn.addEventListener('click', (event) => {
       event.stopPropagation();
       toggleMenu();
     });
 
-    // Close menu on pressing Escape key and return focus to toggle button
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && toggleBtn.getAttribute('aria-expanded') === 'true') {
         closeMenu();
@@ -59,7 +58,6 @@ export function initNavigation() {
       }
     });
 
-    // Close menu when clicking on any nav link
     navLinks.forEach((link) => {
       link.addEventListener('click', () => {
         if (toggleBtn.getAttribute('aria-expanded') === 'true') {
@@ -68,7 +66,6 @@ export function initNavigation() {
       });
     });
 
-    // Close menu when clicking outside of the navigation container
     document.addEventListener('click', (event) => {
       if (
         toggleBtn.getAttribute('aria-expanded') === 'true' &&
@@ -79,7 +76,6 @@ export function initNavigation() {
       }
     });
 
-    // Close mobile drawer automatically if viewport resized beyond mobile breakpoint
     window.addEventListener('resize', () => {
       if (window.innerWidth > 860 && toggleBtn.getAttribute('aria-expanded') === 'true') {
         closeMenu();
@@ -88,18 +84,19 @@ export function initNavigation() {
   }
 
   // ==========================================================================
-  // 2. Sticky Header Scrolled State (Subtle border & elevated background)
+  // 2. Sticky Header Scrolled State with Dynamic Blur
   // ==========================================================================
   if (header) {
     let ticking = false;
 
     const updateHeaderState = () => {
-      const isScrolled = window.scrollY > 20;
-      if (isScrolled) {
-        header.classList.add('is-scrolled');
-      } else {
-        header.classList.remove('is-scrolled');
-      }
+      const scrollY = window.scrollY;
+      const heroThreshold = heroSection ? Math.min(heroSection.offsetHeight - 120, 150) : 60;
+      const isScrolled = scrollY > 20;
+      const isPastHero = scrollY > heroThreshold;
+
+      header.classList.toggle('is-scrolled', isScrolled);
+      header.classList.toggle('is-past-hero', isPastHero);
       ticking = false;
     };
 
@@ -114,12 +111,11 @@ export function initNavigation() {
       { passive: true }
     );
 
-    // Initial check on page load
     updateHeaderState();
   }
 
   // ==========================================================================
-  // 3. Active Section Scroll-Spy via IntersectionObserver
+  // 3. Active Section Scroll-Spy (IntersectionObserver & Scroll Coordinate sync)
   // ==========================================================================
   const trackedSectionIds = [
     'about',
@@ -135,40 +131,58 @@ export function initNavigation() {
     .map((id) => document.getElementById(id))
     .filter(Boolean);
 
-  if ('IntersectionObserver' in window && trackedSections.length > 0) {
+  if (trackedSections.length > 0 && internalNavLinks.length > 0) {
     const navLinkMap = new Map();
-    document.querySelectorAll('.site-nav .nav-link[href^="#"]').forEach((link) => {
+    internalNavLinks.forEach((link) => {
       const href = link.getAttribute('href');
       if (href && href.startsWith('#')) {
-        const id = href.slice(1);
-        navLinkMap.set(id, link);
+        navLinkMap.set(href.slice(1), link);
       }
     });
 
-    const observerOptions = {
-      root: null,
-      rootMargin: '-25% 0px -55% 0px',
-      threshold: 0
-    };
-
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const currentId = entry.target.id;
-          navLinkMap.forEach((link, id) => {
-            if (id === currentId) {
-              link.classList.add('is-active');
-              link.setAttribute('aria-current', 'page');
-            } else {
-              link.classList.remove('is-active');
-              link.removeAttribute('aria-current');
-            }
-          });
+    function setActiveSection(activeId) {
+      navLinkMap.forEach((link, id) => {
+        if (id === activeId) {
+          link.classList.add('is-active');
+          link.setAttribute('aria-current', 'page');
+        } else {
+          link.classList.remove('is-active');
+          link.removeAttribute('aria-current');
         }
       });
-    }, observerOptions);
+    }
 
-    trackedSections.forEach((section) => sectionObserver.observe(section));
+    if ('IntersectionObserver' in window) {
+      const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -55% 0px',
+        threshold: 0
+      };
+
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      }, observerOptions);
+
+      trackedSections.forEach((section) => sectionObserver.observe(section));
+    }
+
+    // Scroll fallback to clear active when scrolled back to hero top
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (window.scrollY < 120) {
+          navLinkMap.forEach((link) => {
+            link.classList.remove('is-active');
+            link.removeAttribute('aria-current');
+          });
+        }
+      },
+      { passive: true }
+    );
   }
 
   // ==========================================================================

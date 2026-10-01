@@ -13,8 +13,8 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--background);
-  /* Linear/Vercel-inspired subtle top radial spotlight */
-  background-image: radial-gradient(ellipse 75% 45% at 50% -10%, rgba(59, 130, 246, 0.08), transparent 75%);
+  /* Subtle warm amber ambient spotlight */
+  background-image: radial-gradient(ellipse 75% 45% at 50% -10%, rgba(245, 158, 11, 0.04), transparent 75%);
   background-repeat: no-repeat;
   color: var(--foreground);
   font-family: var(--font-sans);
@@ -32,13 +32,13 @@ code, kbd, samp {
 
 /* ==========================================================================
    Accessible Keyboard Focus Rings (:focus-visible)
-   High-visibility electric blue accent with positive outline offset
+   High-visibility warm copper/amber accent with positive outline offset
    ========================================================================== */
 :focus-visible {
   outline: var(--focus-ring);
   outline-offset: var(--focus-ring-offset);
   border-radius: var(--radius-sm);
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2);
 }
 
 :focus:not(:focus-visible) {
@@ -56,10 +56,10 @@ code, kbd, samp {
   z-index: var(--z-skip-link);
   padding: var(--space-2) var(--space-4);
   background-color: var(--accent);
-  color: #FFFFFF;
+  color: #0B0F17;
   font-family: var(--font-mono);
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
+  font-weight: 700;
   letter-spacing: var(--tracking-wide);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-md);
@@ -150,19 +150,29 @@ section[id],
   top: 0;
   z-index: var(--z-nav);
   height: var(--header-height);
-  background-color: rgba(9, 10, 15, 0.75);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background-color: rgba(11, 15, 23, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
   display: flex;
   align-items: center;
-  transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+  transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), backdrop-filter var(--transition-base);
 }
 
 .site-header.is-scrolled {
-  background-color: rgba(9, 10, 15, 0.94);
+  background-color: rgba(11, 15, 23, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.site-header.is-past-hero {
+  background-color: rgba(11, 15, 23, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-medium);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
 }
 
 .site-main {

@@ -1,10 +1,11 @@
 /**
  * Contact & Inquiries Module
  * Portfolio Engineering Team
- * Personas: @SecurityEng, @FrontendEng, @AccessibilityEng
+ * Lead Personas: @SecurityEng, @FrontendEng, @AccessibilityEng
  *
  * Handles:
- * - 1-Click Email Copy-to-Clipboard with accessible inline feedback
+ * - 1-Click Email Copy-to-Clipboard with interactive tooltip feedback state
+ * - Unified trigger handler across Hero, Contact section, and Footer
  * - Client-side validation for required fields, email format, and message length
  * - Anti-spam Honeypot detection to silently reject automated bot submissions
  * - Zero hardcoded secrets / endpoint hookup with graceful mailto fallback
@@ -16,41 +17,57 @@ export function initContact() {
 }
 
 /**
- * 1-Click Copy Email to Clipboard
+ * 1-Click Copy Email to Clipboard with Tooltip Feedback State
  */
 function initEmailCopy() {
-  const copyBtn = document.getElementById('btn-copy-email');
-  const emailTextEl = document.getElementById('contact-email-text');
+  const copyTriggers = document.querySelectorAll('.btn-copy-trigger, #btn-copy-email');
+  if (copyTriggers.length === 0) return;
 
-  if (!copyBtn || !emailTextEl) return;
+  const defaultEmail = 'ghourishayan09@gmail.com';
 
-  const email = emailTextEl.textContent.trim();
-  const copyTextSpan = copyBtn.querySelector('.copy-text');
-  let copyTimeout = null;
+  copyTriggers.forEach((trigger) => {
+    let copyTimeout = null;
 
-  copyBtn.addEventListener('click', async () => {
-    try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(email);
-      } else {
-        fallbackCopyText(email);
+    trigger.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const emailToCopy = trigger.getAttribute('data-copy-text') || defaultEmail;
+
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(emailToCopy);
+        } else {
+          fallbackCopyText(emailToCopy);
+        }
+
+        // Apply visual feedback & tooltip state
+        trigger.classList.add('is-copied');
+        const tooltip = trigger.querySelector('.copy-tooltip');
+        if (tooltip) {
+          tooltip.textContent = 'Email Copied!';
+        }
+        const textSpan = trigger.querySelector('.copy-text');
+        if (textSpan) {
+          textSpan.textContent = 'Copied!';
+        }
+
+        trigger.setAttribute('aria-label', `Email ${emailToCopy} copied to clipboard!`);
+
+        clearTimeout(copyTimeout);
+        copyTimeout = setTimeout(() => {
+          trigger.classList.remove('is-copied');
+          if (tooltip) {
+            tooltip.textContent = 'Email Copied!';
+          }
+          if (textSpan) {
+            textSpan.textContent = 'Copy';
+          }
+          trigger.setAttribute('aria-label', 'Copy email address to clipboard');
+        }, 2200);
+      } catch (err) {
+        console.warn('Clipboard write failed, falling back:', err);
+        fallbackCopyText(emailToCopy);
       }
-
-      // Visual feedback
-      copyBtn.classList.add('is-copied');
-      if (copyTextSpan) copyTextSpan.textContent = 'Email Copied!';
-      copyBtn.setAttribute('aria-label', 'Email address copied to clipboard');
-
-      clearTimeout(copyTimeout);
-      copyTimeout = setTimeout(() => {
-        copyBtn.classList.remove('is-copied');
-        if (copyTextSpan) copyTextSpan.textContent = 'Copy Email';
-        copyBtn.setAttribute('aria-label', 'Copy email address to clipboard');
-      }, 2000);
-    } catch (err) {
-      console.warn('Clipboard write failed, falling back:', err);
-      fallbackCopyText(email);
-    }
+    });
   });
 }
 
@@ -99,105 +116,99 @@ function initContactForm() {
       if (el) el.classList.remove('is-invalid');
     });
     [errorName, errorEmail, errorType, errorMessage].forEach((el) => {
-      if (el) el.textContent = '';
+      if (el) {
+        el.textContent = '';
+        el.setAttribute('hidden', '');
+      }
     });
     statusBox.textContent = '';
+    statusBox.setAttribute('hidden', '');
     statusBox.className = 'form-status';
   }
 
   function validateEmail(email) {
-    // Standard RFC 5322 compliant regex for practical client validation
-    const re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
-    return re.test(String(email).toLowerCase());
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
     clearErrors();
 
-    // 1. Honeypot check: If the hidden gotcha field has content, bot detected!
+    // 1. Honeypot check (Spam bot trap)
     if (gotchaInput && gotchaInput.value.trim() !== '') {
-      // Silent drop: Act like it succeeded so bot does not retry with different vectors
-      statusBox.className = 'form-status status-success';
-      statusBox.textContent = 'Thank you! Your message has been received.';
+      console.warn('Bot submission blocked.');
+      statusBox.textContent = 'Submission processed.';
+      statusBox.classList.add('status-success');
+      statusBox.removeAttribute('hidden');
       form.reset();
       return;
     }
 
-    // 2. Validate Fields
     let isValid = true;
-    let firstInvalid = null;
 
-    const nameVal = nameInput ? nameInput.value.trim() : '';
-    const emailVal = emailInput ? emailInput.value.trim() : '';
-    const typeVal = typeSelect ? typeSelect.value : '';
-    const messageVal = messageInput ? messageInput.value.trim() : '';
-
-    if (!nameVal || nameVal.length < 2) {
+    // Name validation
+    if (!nameInput.value.trim()) {
       isValid = false;
       nameInput.classList.add('is-invalid');
-      if (errorName) errorName.textContent = 'Please enter your name (minimum 2 characters).';
-      if (!firstInvalid) firstInvalid = nameInput;
+      if (errorName) {
+        errorName.textContent = 'Please enter your name.';
+        errorName.removeAttribute('hidden');
+      }
     }
 
-    if (!emailVal || !validateEmail(emailVal)) {
+    // Email validation
+    if (!emailInput.value.trim() || !validateEmail(emailInput.value.trim())) {
       isValid = false;
       emailInput.classList.add('is-invalid');
-      if (errorEmail) errorEmail.textContent = 'Please enter a valid email address.';
-      if (!firstInvalid) firstInvalid = emailInput;
+      if (errorEmail) {
+        errorEmail.textContent = 'Please provide a valid email address.';
+        errorEmail.removeAttribute('hidden');
+      }
     }
 
-    if (!typeVal) {
+    // Project type validation
+    if (!typeSelect.value) {
       isValid = false;
       typeSelect.classList.add('is-invalid');
-      if (errorType) errorType.textContent = 'Please select an inquiry type.';
-      if (!firstInvalid) firstInvalid = typeSelect;
+      if (errorType) {
+        errorType.textContent = 'Please select a project type.';
+        errorType.removeAttribute('hidden');
+      }
     }
 
-    if (!messageVal || messageVal.length < 10) {
+    // Message validation
+    if (!messageInput.value.trim() || messageInput.value.trim().length < 15) {
       isValid = false;
       messageInput.classList.add('is-invalid');
-      if (errorMessage) errorMessage.textContent = 'Please enter your message (minimum 10 characters).';
-      if (!firstInvalid) firstInvalid = messageInput;
+      if (errorMessage) {
+        errorMessage.textContent = 'Please describe your inquiry (at least 15 characters).';
+        errorMessage.removeAttribute('hidden');
+      }
     }
 
-    if (!isValid) {
-      statusBox.className = 'form-status status-error';
-      statusBox.textContent = 'Please correct the highlighted errors above.';
-      if (firstInvalid) firstInvalid.focus();
-      return;
-    }
+    if (!isValid) return;
 
-    // 3. Graceful Client-Side Handshake & Mailto Dispatch
-    // Allows immediate zero-backend inquiry routing while keeping user in control
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = `
-      <span>Dispatching...</span>
-      <span class="status-dot" aria-hidden="true"></span>
-    `;
+    // Simulate sending / route to mailto fallback
+    submitBtn.setAttribute('disabled', '');
+    submitBtn.classList.add('is-loading');
 
     setTimeout(() => {
-      const typeText = typeSelect.options[typeSelect.selectedIndex].text;
-      const subject = encodeURIComponent(`[Portfolio Inquiry] ${typeText} — ${nameVal}`);
+      submitBtn.removeAttribute('disabled');
+      submitBtn.classList.remove('is-loading');
+
+      const subject = encodeURIComponent(`[Portfolio Inquiry] ${typeSelect.value}: ${nameInput.value.trim()}`);
       const body = encodeURIComponent(
-        `Hello Shayan,\n\nName: ${nameVal}\nEmail: ${emailVal}\nInquiry Type: ${typeText}\n\nMessage:\n${messageVal}\n\n---\nSent via portfolio contact system.`
+        `Name: ${nameInput.value.trim()}\nEmail: ${emailInput.value.trim()}\nProject Type: ${typeSelect.value}\n\nMessage:\n${messageInput.value.trim()}`
       );
 
-      statusBox.className = 'form-status status-success';
-      statusBox.textContent = 'Inquiry generated! Opening your email client to send...';
+      statusBox.innerHTML = `Thank you, <strong>${nameInput.value.trim()}</strong>! Your message is ready. Opening your email client...`;
+      statusBox.classList.add('status-success');
+      statusBox.removeAttribute('hidden');
 
-      // Launch mailto
+      // Launch native mailto
       window.location.href = `mailto:ghourishayan09@gmail.com?subject=${subject}&body=${body}`;
 
       form.reset();
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = `
-        <span>Send Message</span>
-        <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="22" y1="2" x2="11" y2="13"/>
-          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-        </svg>
-      `;
     }, 600);
   });
 }
