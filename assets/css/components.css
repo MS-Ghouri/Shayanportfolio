@@ -5982,167 +5982,288 @@ body.modal-open {
 }
 
 /* ==========================================================================
-   Mobile-First Responsiveness & Viewport Overrides (Screens <= 768px)
+   Mobile-First Responsiveness & Viewport Overrides — Comprehensive Global Fix
    Portfolio Engineering Team — Mobile UX, Overflow & Padding Polish
    Standard: WCAG 2.2 Level AA Compliant
    ========================================================================== */
+
+/* ---- GLOBAL OVERFLOW CONTAINMENT at base level (no media query) ---- */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ---- MOBILE OVERRIDES (<=768px) ---- */
 @media (max-width: 768px) {
-  /* 1. Global Overflow Control */
+
+  /* 1. Force overflow hidden at every level */
   body,
+  html,
   main,
-  .site-main {
-    max-width: 100vw;
-    overflow-x: hidden;
+  .site-main,
+  section,
+  .section,
+  .hero-section,
+  .hero-container,
+  .hero-layout,
+  .hero-col-content,
+  .hero-col-visual,
+  article {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
   }
 
-  /* 2. Hero & Fast Links Flex Wrapping */
-  .fast-links,
-  .recruiter-links,
-  .hero-recruiter-strip .recruiter-links,
-  .social-links {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 0.75rem !important;
-    width: 100%;
+  /* 2. Container padding */
+  .container,
+  .experience-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-inline: 1rem !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
   }
 
-  .hero-recruiter-strip {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-3);
-    width: 100%;
-  }
-
-  .recruiter-link {
-    min-height: 44px;
-    padding: 0.35rem 0.65rem;
-  }
-
-  /* Status Pills & Credibility Text Wrapping */
-  .hero-credibility,
-  .credibility-text,
-  .status-pill,
-  .hero-status-pill,
-  .timeline-status-pill {
-    white-space: normal !important;
-    text-align: left !important;
-    word-break: break-word;
-  }
-
-  .hero-credibility {
-    display: flex;
-    align-items: flex-start;
-    padding: 0.6rem 0.85rem;
-    max-width: 100%;
-  }
-
-  .credibility-dot {
-    margin-top: 0.35rem;
-    flex-shrink: 0;
-  }
-
-  /* 3. Code Terminal Responsiveness */
-  .code-window-header {
-    padding: 0.55rem 0.75rem;
-    gap: 0.5rem;
-    overflow: hidden;
-  }
-
-  .terminal-tablist,
-  .terminal-tabs {
-    display: flex !important;
-    overflow-x: auto !important;
-    white-space: nowrap !important;
-    scrollbar-width: none !important;
-    -webkit-overflow-scrolling: touch !important;
-    flex: 1 1 auto;
+  /* Global min-width: 0 so flex/grid children can shrink */
+  * {
     min-width: 0;
   }
 
-  .terminal-tablist::-webkit-scrollbar,
-  .terminal-tabs::-webkit-scrollbar {
+  /* 3. Hero Layout: single column stack */
+  .hero-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    width: 100% !important;
+  }
+
+  .hero-col-content,
+  .hero-col-visual {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* 4. Availability badge — wrap */
+  .badge-availability {
+    display: inline-flex !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    font-size: 0.72rem !important;
+    padding: 0.3rem 0.65rem !important;
+  }
+
+  /* 5. Hero Title */
+  .hero-title {
+    font-size: clamp(1.6rem, 7vw, 2.4rem) !important;
+    line-height: 1.2 !important;
+    max-width: 100% !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* 6. Hero Description — contained and wrapping */
+  .hero-description {
+    font-size: clamp(0.9rem, 4vw, 1rem) !important;
+    max-width: 100% !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* 7. Credibility Pill — full width row with wrapping text */
+  .hero-credibility {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.55rem 0.75rem !important;
+    overflow: hidden !important;
+  }
+
+  .credibility-dot {
+    flex-shrink: 0 !important;
+    margin-top: 0.3rem !important;
+  }
+
+  .credibility-text {
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    font-size: 0.72rem !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* 8. CTA Buttons — stacked */
+  .hero-cta-group {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    width: 100% !important;
+    justify-content: center !important;
+    min-height: 48px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 9. Recruiter / Fast Links — wrapped rows */
+  .hero-recruiter-strip {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    padding-top: 1rem !important;
+  }
+
+  .recruiter-links,
+  .fast-links {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 0.25rem 0.75rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .recruiter-links li {
+    flex-shrink: 0 !important;
+  }
+
+  .recruiter-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    min-height: 44px !important;
+    padding: 0.3rem 0.5rem !important;
+    font-size: 0.85rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* 10. Terminal Code Window */
+  .hero-code-window {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .code-window-header {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding: 0.5rem 0.75rem !important;
+    overflow: hidden !important;
+    max-width: 100% !important;
+  }
+
+  .window-controls {
+    flex-shrink: 0 !important;
+  }
+
+  .terminal-tablist {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    white-space: nowrap !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 4px !important;
+  }
+
+  .terminal-tablist::-webkit-scrollbar {
     display: none !important;
   }
 
   .terminal-tab {
     flex-shrink: 0 !important;
     white-space: nowrap !important;
+    font-size: 0.65rem !important;
+    padding: 0.3rem 0.5rem !important;
+  }
+
+  .terminal-actions {
+    flex-shrink: 0 !important;
   }
 
   .code-window-body {
+    padding: 1rem !important;
+    font-size: clamp(0.65rem, 2.8vw, 0.75rem) !important;
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch !important;
-    max-width: 100%;
-    padding: 1rem !important;
+    max-width: 100% !important;
   }
 
-  pre code,
-  .code-block code,
   .code-block,
-  .code-block .cl {
+  .code-block .cl,
+  pre code,
+  .code-block code {
     white-space: pre-wrap !important;
     word-break: break-word !important;
     overflow-wrap: break-word !important;
+    max-width: 100% !important;
   }
 
-  .line-no {
-    flex-shrink: 0;
+  /* 11. Experience Section — Badge & Timeline Fix */
+  .timeline-badge-group {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+    align-items: flex-start !important;
+    max-width: 100% !important;
   }
 
-  /* 4. Experience Section Badges Fix */
   .timeline-highlight-pill,
   .workflow-badge,
   .pipeline-badge {
-    display: inline-flex !important;
+    display: flex !important;
     flex-wrap: wrap !important;
-    font-size: 0.75rem !important;
-    line-height: 1.45 !important;
+    align-items: center !important;
+    gap: 0.3rem !important;
+    font-size: 0.7rem !important;
+    line-height: 1.5 !important;
     white-space: normal !important;
     max-width: 100% !important;
     word-break: break-word !important;
-    border-radius: var(--radius-md) !important;
+    overflow-wrap: break-word !important;
     padding: 0.35rem 0.65rem !important;
+    border-radius: var(--radius-md) !important;
+    box-sizing: border-box !important;
   }
 
-  .timeline-highlight-pill .highlight-pill-dot {
-    flex-shrink: 0;
-    margin-top: 0.35rem;
+  .highlight-pill-dot {
+    flex-shrink: 0 !important;
   }
 
-  .timeline-badge-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    align-items: center;
+  .timeline-type-pill,
+  .timeline-status-pill {
+    white-space: normal !important;
+    word-break: break-word !important;
+    max-width: 100% !important;
   }
 
-  /* 5. Container & Section Inner Padding Adjustments (1rem) */
-  .container,
-  .experience-container {
-    padding-inline: 1rem !important;
+  .timeline-card {
+    padding: 1.25rem 1rem !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
   }
 
-  .project-showcase-card .project-card-content,
-  .project-card-content {
-    padding-inline: 1rem !important;
-  }
-
-  .project-visual-stage,
-  .viewport-canvas {
-    padding-inline: 1rem !important;
-  }
-
-  .case-study-modal-dialog {
-    margin-inline: 0.5rem;
-  }
-
-  .modal-header,
-  .modal-body,
-  .modal-footer {
-    padding-inline: 1rem !important;
-  }
-
-  .timeline-card,
+  /* 12. Cards & Project elements */
+  .project-showcase-card,
   .service-card,
   .process-step-card,
   .proof-card,
@@ -6150,7 +6271,98 @@ body.modal-open {
   .contact-method-card,
   .about-philosophy-card,
   .about-currently-card,
-  .about-meta-card {
-    padding-inline: 1rem !important;
+  .about-meta-card,
+  .selected-work-card,
+  .tech-category-card {
+    max-width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .project-card-content {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .project-visual-stage,
+  .viewport-canvas {
+    padding: 1rem !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .secondary-projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* 13. Modal */
+  .case-study-modal-dialog {
+    margin: 0.5rem !important;
+    max-height: 94dvh !important;
+    border-radius: 12px !important;
+  }
+
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: 1rem !important;
+  }
+
+  .modal-footer {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .modal-actions-primary {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .modal-actions-primary .btn,
+  .modal-actions-primary a {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* 14. Filter pills */
+  .filter-pills-container {
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    overflow-x: hidden !important;
+  }
+
+  /* 15. Grids — collapse to single column */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .skills-categories-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
+
+/* ---- SMALL MOBILE (<=480px) ---- */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(1.45rem, 8vw, 1.875rem) !important;
+  }
+
+  .recruiter-links,
+  .fast-links {
+    gap: 0.2rem 0.5rem !important;
+  }
+
+  .recruiter-link {
+    font-size: 0.8rem !important;
+  }
+
+  .skills-categories-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .timeline-highlight-pill,
+  .workflow-badge,
+  .pipeline-badge {
+    font-size: 0.65rem !important;
+  }
+}
+
