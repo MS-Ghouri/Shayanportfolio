@@ -165,8 +165,11 @@ section[id],
    Header, Main & Footer Structural Landmarks
    ========================================================================== */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: var(--z-nav);
   height: var(--header-height);
   background-color: rgba(11, 15, 23, 0.75);
@@ -196,6 +199,7 @@ section[id],
 
 .site-main {
   flex: 1;
+  padding-top: var(--header-height);
 }
 
 .site-footer {
