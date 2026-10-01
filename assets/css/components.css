@@ -5997,6 +5997,44 @@ body {
 /* ---- MOBILE OVERRIDES (<=768px) ---- */
 @media (max-width: 768px) {
 
+  /* 0. Mobile Header & Hamburger Icon Alignment Fix */
+  .site-header {
+    height: var(--header-height, 3.875rem) !important;
+  }
+
+  .site-header .container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+  }
+
+  .brand-logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+  }
+
+  .nav-toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    align-self: center !important;
+    height: 40px !important;
+    width: 40px !important;
+    padding: 0 !important;
+    border: 1px solid var(--border-medium) !important;
+    border-radius: var(--radius-md) !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+  }
+
+  .nav-toggle-icon {
+    margin: auto !important;
+  }
+
   /* 1. Force overflow hidden at every level */
   body,
   html,
@@ -6152,7 +6190,7 @@ body {
     white-space: nowrap !important;
   }
 
-  /* 10. Terminal Code Window */
+  /* 10. Terminal Code Window & Slidable Code Screen */
   .hero-code-window {
     width: 100% !important;
     max-width: 100% !important;
@@ -6162,8 +6200,9 @@ body {
   .code-window-header {
     display: flex !important;
     align-items: center !important;
+    justify-content: space-between !important;
     gap: 0.5rem !important;
-    padding: 0.5rem 0.75rem !important;
+    padding: 0.55rem 0.75rem !important;
     overflow: hidden !important;
     max-width: 100% !important;
   }
@@ -6182,6 +6221,7 @@ body {
     scrollbar-width: none !important;
     -ms-overflow-style: none !important;
     -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-x !important;
     gap: 4px !important;
   }
 
@@ -6192,8 +6232,8 @@ body {
   .terminal-tab {
     flex-shrink: 0 !important;
     white-space: nowrap !important;
-    font-size: 0.65rem !important;
-    padding: 0.3rem 0.5rem !important;
+    font-size: 0.7rem !important;
+    padding: 0.35rem 0.6rem !important;
   }
 
   .terminal-actions {
@@ -6201,21 +6241,43 @@ body {
   }
 
   .code-window-body {
-    padding: 1rem !important;
-    font-size: clamp(0.65rem, 2.8vw, 0.75rem) !important;
+    padding: 1rem 0.85rem !important;
+    font-size: clamp(0.72rem, 2.8vw, 0.82rem) !important;
     overflow-x: auto !important;
+    overflow-y: hidden !important;
     -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-x !important;
     max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  .code-block,
+  .code-tab-panel {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-x !important;
+  }
+
+  .code-block {
+    margin: 0 !important;
+    white-space: pre !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    display: block !important;
+    width: max-content !important;
+    min-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
   .code-block .cl,
   pre code,
   .code-block code {
-    white-space: pre-wrap !important;
-    word-break: break-word !important;
-    overflow-wrap: break-word !important;
-    max-width: 100% !important;
+    white-space: pre !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    display: inline-block !important;
+    min-width: max-content !important;
   }
 
   /* 11. Experience Section — Badge & Timeline Fix */
