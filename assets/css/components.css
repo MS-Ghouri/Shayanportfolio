@@ -1694,10 +1694,13 @@ button.recruiter-link:focus-visible {
   width: 7px;
   height: 7px;
   border-radius: var(--radius-full);
+  background-color: var(--accent, #F59E0B);
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
 }
 
-.dot-blue {
-  background-color: var(--accent);
+.dot-blue,
+.dot-amber {
+  background-color: var(--accent, #F59E0B);
   box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
 }
 
